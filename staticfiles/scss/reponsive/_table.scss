@@ -1,0 +1,112 @@
+// 4.2 Table
+
+@media (min-device-width: $screen-sm) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* STYLES GO HERE */
+    .ver4 .prod-choose .prod-price .productPriceDiscount {
+        bottom: 44%;
+        left: 30%;
+    }
+    .product-item.ver4 .prod-item-img {
+        width: 44%;
+    }
+    .product-item.ver4 .prod-info {
+        padding-left: 0;
+    }
+}
+
+@media (min-device-width: $screen-sm) and (max-device-width: 991px) and (orientation: portrait) {
+    /* STYLES GO HERE */
+    .ver4 .prod-choose .prod-price .productPriceDiscount {
+        bottom: 25%;
+        left: 36%;
+    }
+    .sale-list .product-item.ver1 {
+        width: 50%;
+        float: left;
+        border-bottom: 0;
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: 1024px) {
+
+    //homepage 1 index
+    .menubar>li>a {
+        padding: 16px 5px;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .menubar.v2>li>a {
+        padding: 14px;
+    } //Feature
+    .search-form {
+        width: 350px
+    }
+
+    .social li {
+        margin: 0;
+    }
+    .top-nav .nav-search .search-form.v3 {
+        width: 190px;
+    }
+    .menubar.v4>li>a {
+        padding: 16px 5px;
+    }
+    .coundown.v3 {
+        top: 0;
+    }
+    .prod-info.v3 {
+        padding-left: 15px;
+    }
+    .product-item-info.v4 {
+        padding: 15px 0;
+    } // blog-single
+    .search-v2 .search-form-2 {
+        width: 100%;
+    }
+
+    .menubar.v5 li:first-child {
+        padding-left: 0;
+        border: 0;
+    }
+    .top-nav .nav-search.v5 {
+        float: left
+    } //homepage 5 slide
+}
+
+@media (max-width: $screen-sm) {
+    .fea-column-inner {
+        margin-bottom: 30px;
+        border: 0;
+        &:nth-child(n+1) {
+            margin-top: 30px;
+        }
+    }
+    .deal {
+        display: none;
+    }
+    .button {
+        width: 100%;
+        text-align: center;
+        opacity: 1;
+    }
+    .product-item.ver4 .prod-item-img,
+    {
+        display: block;
+        vertical-align: unset;
+        padding-right: 0;
+        text-align: center;
+    }
+    .ver4 .prod-choose {
+        text-align: center;
+    }
+    .productPriceDiscount {
+        display: none;
+    }
+    .product-item.ver4 .prod-info,
+    {
+        display: block;
+        vertical-align: unset;
+        text-align: center;
+    }
+}

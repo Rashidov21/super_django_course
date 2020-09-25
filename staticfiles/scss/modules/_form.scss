@@ -1,0 +1,196 @@
+/*
+    2.6 Form
+        
+ */
+
+//form
+.sub-form {
+    .form-control {
+        height: 40px;
+        padding: 6px 20px;
+        border: 1px solid #e7e7e7;
+        border-radius: 20px;
+    }
+    .send {
+        border: none;
+        background: transparent;
+        color: #6bce04;
+        font-weight: bold;
+        font-family: $base-font-family;
+        margin-top: 20px;
+    }
+}
+
+.search-form {
+    width: 370px;
+    position: relative;
+    .form-control {
+        height: 45px;
+        padding: 10px 18px;
+        background-color: #f0f0f0;
+        @include border-radius(23px);
+        border: 0;
+        font-style: italic;
+        font-size: 13px;
+    }
+    .search-icon {
+        position: absolute;
+        top: 3px;
+        right: 15px;
+        background-color: transparent;
+        border: 0;
+        &:after {
+            content: "\f4a4";
+            font-family: 'ionicons';
+            color: #333333;
+            font-size: 24px;
+        }
+    }
+}
+
+.news-letter-form {
+    position: relative;
+    .form-control {
+        height: 50px;
+        padding: 15px 20px;
+        color: #6c6c6c;
+        background-color: #eeeeee;
+        border: none;
+        @include border-radius(4px);
+        @media (max-width: $screen-sm) {
+            padding: 15px 8px;
+        }
+    }
+    .btnsub {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #fff;
+        border: none;
+        padding: 0 25px;
+        line-height: 48px;
+        @include border-radius(4px);
+        background: #333;
+        &:hover {
+            background: $color-hover;
+            @include transition2;
+        }
+        @media (max-width:$screen-sm) {
+            font-size: 12px;
+        }
+    }
+}
+
+//==========HOME PAGE 3======//
+.news-letter-form.v3 {
+    margin-left: 15px;
+    .form-control {
+        height: 46px;
+        @include border-radius(0);
+        background-color: #fff;
+        font-family: $font-custom;
+        text-transform: uppercase;
+        color: #212121;
+        @include placeholder(#212121, 12px);
+    }
+    .btnsub {
+        @include border-radius(0);
+        background: #8ee830;
+        top: 0;
+        font-size: 13px;
+        color: #333;
+        line-height: 46px;
+        padding: 0 23px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+//==========HOME PAGE 4======//
+.search-form.v4 {
+    width: 505px;
+}
+
+.select-option {
+    width: 200px;
+    height: 45px;
+    @include border-radius(23px 0 0 23px);
+    border: 0;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    border-radius: none;
+    -webkit-box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px 18px;
+}
+
+.form-control.v4 {
+    float: right;
+    width: 300px;
+    @include border-radius(0 23px 23px 0);
+    margin-left: 5px;
+    font-style: normal;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    border-radius: none;
+    -webkit-box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.news-letter-form.v4 .form-control {
+    background-color: #434343;
+}
+
+.btnsub.v4 {
+    position: initial;
+    background: transparent;
+    border: 1px solid #434343;
+    width: 100%;
+    line-height: 46px;
+    padding: 0;
+    &:before {
+        content: "\f473";
+        font-family: ionicons;
+        font-size: 28px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+}
+
+//==========HOME PAGE 5======//
+.news-letter-form.v5 {
+    .form-control {
+        line-height: 40px;
+        height: 40px;
+        width: 100%;
+        @include border-radius(0);
+        background-color: #434343;
+    }
+    .btnsub.v5 {
+        @include border-radius(0);
+        @extend .btnsub.v4;
+        width: 200px;
+        position: absolute;
+        background: #1f1f1f;
+        line-height: 38px;
+        @media (min-width: $screen-sm) and (max-width: 1024px) {
+            width: 50%;
+        }
+        @media(max-width: $screen-xs) {
+            width: 50%;
+        }
+    }
+}
+
+.form-inline .form-control {
+    background: #f1f1f1;
+}

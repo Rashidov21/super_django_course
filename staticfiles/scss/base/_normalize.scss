@@ -1,0 +1,103 @@
+/**   1.4 Normalize  **/
+
+html,
+body,
+ul,
+p,h1,h2,h3,h4,h5,
+ol {
+   margin: 0;
+  padding: 0;
+}
+.top-row{
+	margin-bottom:30px;
+}
+.top30{
+	margin-bottom:30px;
+}
+.pd20{
+	padding-bottom:26px;
+}
+.top20{
+	margin-top:20px;
+}
+.no--padding{
+	padding-left:0px;
+}
+.margin-bottom-90{
+	margin-bottom:90px ;
+}
+.top-inner{
+	padding-top: 40px;
+	padding-bottom:32px;
+	@media (min-width: $screen-sm) and (max-width:$screen-sm-max){
+		padding:0;
+	}
+}
+.no-padding-bottom{
+	padding-bottom:0;
+}
+.top60{
+	margin-bottom:60px;
+}
+.no-padding-right{
+
+	
+	@media (min-width: 320px) { 
+					padding-right:15px;
+				}
+	
+	@media (min-width:1200px){
+		padding-right:14px;
+	}
+}
+.no-padding{
+	padding: 0 ;
+   	margin: 0 ;
+}
+.row-no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  [class*="col-"] {
+    padding-left: 0 ;
+    padding-right: 0 ;
+  }
+}
+.padding--bottom{
+	
+	border-bottom: $border-line;
+	border-bottom-style:dotted;
+}
+.margin-r{
+	@media(min-width: $screen-md){
+		margin-right:40px;
+	}
+	@media (max-width: $screen-xs) {
+		margin-right:0;
+	}
+}
+.pd-left{
+	@media(min-width: $screen-md){
+		padding-left:68px;
+	}
+}
+.set--width{
+	width: 52%;
+}
+.set--width50{
+	width: 50%;
+}
+.pd--top{
+	padding-top: 8px;
+}
+.pd--top50{
+	padding-top:50px;
+}
+.bd-style{
+	border-bottom: 1px solid #eeeeee;
+}
+.bd-style-2{
+	border-bottom: 1px dotted #eeeeee;
+}
+.bd-style-3{
+	border-right:1px dotted #eeee;
+}

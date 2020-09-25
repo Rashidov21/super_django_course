@@ -1,0 +1,712 @@
+/*
+    2.8 Megamenu
+
+ */
+
+//MAIN MENU
+.menubar {}
+
+.menubar .menu-item-has-child {
+    position: relative;
+}
+
+.menubar .menu-demo-page.menu-item-has-child {
+    position: static;
+    @media (max-width: $screen-xs-max) {
+        position:relative;
+    }
+}
+
+.menubar .menu-level {
+    padding: 10px 20px;
+    >li {
+        line-height: 24px;
+        >a {
+            padding: 8px 15px;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+.menubar .menu-level {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 9999;
+    min-width: 200px;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    @include box-shawdow;
+    @media (max-width: $screen-xs-max) {
+        width:100%;
+        left: 0;
+        top: 54px;
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.menubar {
+    >li {
+        &:hover {
+            .menu-level,
+            .dropdown-menu-bg {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+            }
+        }
+        @media(max-width:$screen-xs-max) {
+            position: relative;
+        }
+    }
+    >.open {
+        .dropdown-menu.menu-level,
+        .dropdown-menu.dropdown-menu-bg {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+}
+
+.dropdown-menu-bg {
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 50px 45px 35px 50px;
+    background: #fff;
+    border: 1px solid #6bce04;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    @include box-shawdow;
+    @media (max-width: $screen-xs-max) {
+        width:100%;
+        left: 0;
+        top: 54px;
+        position: static;
+        padding: 15px 35px;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        visibility: visible;
+        opacity: 1;
+    }
+    .col-3 {
+        width: 33.3333%;
+        float: left;
+        @media (max-width: $screen-xs-max) and (min-width: 481px) {
+            width:100%;
+            display: block;
+            overflow: hidden;
+        }
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 15px;
+        }
+        @media (max-width:$screen-xs) {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+        }
+    }
+}
+
+.dropdown-menu-bg {
+    >.level1 {
+        >li {
+            a {
+                text-transform: uppercase;
+                font: 700 15px/20px "Poppins", sans-serif;
+                color: #333;
+                position: relative;
+                @include notrans;
+                &:hover {
+                    color: $color-hover;
+                }
+                @media(max-width: $screen-xs-max) {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.dropdown-menu-bg .level1 .level2 {
+    padding-top: 25px;
+    @media(max-width: $screen-xs-max) {
+        padding-top:15px;
+    }
+}
+
+.dropdown-menu-bg .level1 .level2>li>a {
+    font: 13px/30px "Open Sans", sans-serif;
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .menubar .menu-level-last {
+        right: 0;
+        left: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .menubar>li:hover .menu-level {
+        display: none;
+    }
+    .menubar>li:hover .dropdown-menu-bg {
+        display: none;
+    }
+}
+
+
+@media (max-width:$screen-xs-max) {
+    .plus,
+    .minus {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .plus:after {
+        content: "\f489";
+        display: block;
+        font-family: "ionicons";
+        font-size: 18px;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        color: #333;
+        cursor: pointer;
+        @include transition;
+    }
+    .minus:after {
+        content: "\f462";
+        display: block;
+        font-family: "ionicons";
+        font-size: 18px;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        color: #333;
+        cursor: pointer;
+        @include transition;
+    }
+}
+
+#column-left {
+    position: relative;
+}
+
+.menu-heading {
+    color: $primary-color;
+    background: $bg-color2;
+    padding: 0 25px 0 55px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 55px;
+    height: 55px;
+    position: relative;
+    &:after {
+        content: "\f394";
+        font-family: Ionicons;
+        font-size: 20px;
+        left: 25px;
+        position: absolute;
+        top: -1px;
+        @media (max-width: $screen-xs) {
+            left:15px;
+        }
+    }
+    @media (max-width: $screen-xs) {
+        padding: 0 15px 0 44px;
+        font-size: 12px;
+    }
+    @media (max-width: 320px) {}
+}
+
+.vertical-wrapper {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+
+    &.active {
+        @media screen and (max-width: 768px) {
+            display:block;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+    @media (max-width: $screen-xs) {
+        min-width: 320px;
+    }
+}
+
+.level0 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    position: relative;
+    border: $border-main;
+    background: $primary-color;
+    >li {
+        margin-right: 0px;
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+            border-bottom: 0;
+        }
+        @media (max-width: $screen-xs-max) {
+            position: relative;
+        }
+        >a {
+            outline: 0;
+            position: relative;
+            padding-left: 25px;
+            padding-right: 21px;
+            text-decoration: none;
+            display: block;
+            font: 13px/51px $font-custom;
+            text-transform: capitalize;
+            cursor: pointer;
+            &:before {
+                content: "\f125";
+                font-family: ionicons;
+                font-size: 13px;
+                float: right;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.sub-form-li {
+    padding: 45px 30px 60px 30px;
+    text-align: center;
+    background: url('../img/menubg.jpg') no-repeat center;
+    background-size: cover;
+    @media (max-width: $screen-md) {
+        padding: 12px 30px;
+    }
+    div {
+        font: 24px/34px $base-font-family;
+        color: $title-color;
+        position: relative;
+        margin-bottom: 30px;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 1px;
+            bottom: 0;
+            left: 40%;
+            border-bottom: 1px solid;
+        }
+    }
+}
+
+.level0>li {
+    &:nth-child(1)>a:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        @extend .icon-camera;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(2)>a:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 14px;
+        @extend .icon-lap;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(3)>a:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        @extend .icon-phone;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(4)>a:after {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        @extend .icon-game;
+        float: left;
+        margin-top: 15px;
+        margin-right: 13px
+    }
+    &:nth-child(5)>a:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        @extend .icon-head;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(6)>a:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        @extend .icon-mouse;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(7)>a:after {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 22px;
+        @extend .icon-washing;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(8)>a:after {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 20px;
+        @extend .icon-aircon;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(9)>a:after {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 17px;
+        @extend .icon-access;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+    &:nth-child(10)>a:after {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 22px;
+        @extend .icon-other;
+        float: left;
+        margin-top: 15px;
+        margin-right: 15px
+    }
+}
+
+//ICON
+.icon-cameraver1 {
+    @include icon(photo-camera);
+}
+
+.icon-lap {
+    @include icon(laptob);
+}
+
+.icon-phone {
+    @include icon(smartphone);
+}
+
+.icon-game {
+    @include icon(gamepad);
+}
+
+.icon-head {
+    @include icon(headset);
+}
+
+.icon-mouse {
+    @include icon(mouse);
+}
+
+.icon-camera {
+    @include icon(photo-camera);
+}
+
+.icon-washing {
+    @include icon(washing-machine);
+}
+
+.icon-aircon {
+    @include icon(air-conditioner);
+}
+
+.icon-access {
+    @include icon(wallet);
+}
+
+.icon-other {
+    @include icon(washing-machine);
+}
+
+//icon white
+.icon-camera-v2 {
+    @include icon(photo-camera-w);
+}
+
+.icon-lap-v2 {
+    @include icon(laptob-w);
+}
+
+.icon-phone-v2 {
+    @include icon(smartphone-w);
+}
+
+.icon-game-v2 {
+    @include icon(gamepad-w);
+}
+
+.icon-head-v2 {
+    @include icon(headset-w);
+}
+
+.icon-mouse-v2 {
+    @include icon(mouse-w);
+}
+
+.icon-washing-v2 {
+    @include icon(washing-machine-w);
+}
+
+.icon-aircon-v2 {
+    @include icon(air-conditioner-w);
+}
+
+.icon-access-v2 {
+    @include icon(wallet);
+}
+
+.icon-other-v2 {
+    @include icon(washing-machine-w);
+}
+
+.dropdown-content {
+    display: block;
+    right: 0;
+    width: 901px;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 100%;
+    padding: 50px 45px 35px 50px;
+    background: #fff;
+    border: $border-main;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: $screen-md-max) {
+        width: 745px;
+    }
+    @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+        width: 520px;
+    }
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+        left: 0;
+        top: 54px;
+    }
+    @media (max-width:$screen-xs-max) {
+        padding: 30px 20px;
+    }
+}
+
+
+/* drop down width */
+
+.dropdown-content {
+    .col-full {
+        width: 100%;
+    }
+    .col-2,
+    .levels .col-2 {
+        width: 230px;
+        float: left;
+    }
+    .col-3 {
+        width: 33.3333%;
+        float: left;
+        @media (max-width: $screen-xs-max) and (min-width: 481px) {
+            width:100%;
+            display: block;
+            overflow: hidden;
+        }
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 15px;
+        }
+        @media (max-width:$screen-xs) {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+        }
+    }
+    .col-4 {
+        width: 370px;
+        float: left;
+    }
+    .col-5 {
+        width: 580px;
+        float: left;
+    }
+    .col-6 {
+        width: 50%;
+        float: left;
+    }
+    .col-7 {
+        width: 870px;
+        float: left;
+    }
+    .col-8 {
+        width: 980px;
+        float: left;
+    }
+    .col-9 {
+        width: 1170px;
+        float: left;
+    }
+}
+
+
+/*-- level2 --*/
+
+.dropdown-content {
+    .level1 {
+        >li {
+            >a {
+                text-transform: uppercase;
+                font: 700 15px/20px $base-font-family;
+                color: $title-color;
+                position: relative;
+                &:hover {
+                    color: $color-hover;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 55px;
+                    height: 1px;
+                    bottom: -13px;
+                    left: 0;
+                    border-bottom: $border-line;
+                    border-bottom-style: dotted;
+                }
+            }
+        }
+    }
+}
+
+.dropdown-content .col-3 {
+    .level2 {
+        padding-top: 25px;
+        >li {
+            >a {
+                font: 13px/30px $font-custom;
+            }
+        }
+    }
+}
+
+//banner
+
+/*-- categories-banners --*/
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
+    @media (max-width: $screen-xs-max) {
+        margin-top: 15px;
+    }
+}
+
+.vertical-wrapper {
+    .level0 {
+        >li {
+            &:hover {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+                .dropdown-content {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+//home page 2
+.vertical-wrapper.v2 {
+    width: 250px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: none;
+    &.active {
+        display: block;
+    }
+    @media(max-width:$screen-xs) {
+        min-width: 290px;
+    }
+}
+
+.level0-ver2 {
+    padding: 25px 50px;
+    background: #fff;
+    >li {
+        padding: 10px 0;
+        >a {
+            text-transform: uppercase;
+        }
+    }
+}
+
+//homepage 3
+.vertical-wrapper.v3 {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+//home page 5
+.vertical-wrapper.v5 {
+    width: 300px;
+}

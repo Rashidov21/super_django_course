@@ -1,0 +1,83 @@
+/**   1.2 Mixin  **/
+
+@mixin transition {
+	-moz-transition: all 0.1s ease 0s;
+	-webkit-transition: all 0.1s ease 0s;
+	-o-transition: all 0.1s ease 0s;
+}
+@mixin transition2 {
+	-webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+@mixin notrans {
+	-moz-transition: none;
+	-webkit-transition: none;
+	-o-transition: color 0 ease-in;
+	transition: none;
+}
+@mixin transition-btn {
+	-webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+	-o-transition: all .3s ease 0s;
+}
+@mixin scale($scale){
+	-webkit-transform: scale($scale);
+    transform: scale($scale);
+}
+@mixin noscale{
+	-webkit-transform: none;
+  	transform: none;
+}
+@mixin box-shawdow{
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+@mixin border-radius($radius){
+	-moz-border-radius:$radius;
+	-webkit-border-radius:$radius;
+	border-radius:$radius;
+}
+// Create placeholder mixin
+@mixin placeholder($color, $size:"") {
+  &::-webkit-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+}
+
+//background url 
+@mixin icon($name) {
+  $url:"../img/#{$name}.svg";
+  background: url($url) no-repeat center;
+}
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  } 
+  &:after {
+    clear: both;
+  }
+}

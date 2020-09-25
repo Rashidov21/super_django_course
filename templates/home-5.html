@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ClickBuy</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+				              <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown" class="ion-ios-search"></i></button>
+				            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="topbar-mobile v5 hidden-lg hidden-md">
+            <div class="active-mobile">
+                <span>Welcome to our Store!</span>
+            </div>
+            <div class="right-nav">
+                <div class="active-mobile search-popup pull-right">
+                    <div class="search-popup dropdown" data-toggle="modal" data-target="#myModal">
+                        <i class="ion-search fa-3a"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="content-full hidden-xs hidden-sm clearfix">
+            <div class="top-nav v5">
+                <div class="box-column left-column pull-left">
+                    <span>Welcome to our Store!</span>
+                </div>
+                <div class="center-column">
+                    <ul class="menubar v5">
+                        <li><a href="#">MEN</a></li>
+                        <li><a href="#">WoMEN</a></li>
+                        <li><a href="#">KID’S</a></li>
+                        <li><a href="#">BIKE</a></li>
+                        <li><a href="#">Equipments</a></li>
+                    </ul>
+                </div>
+                <div class="box-column right-column pull-right">
+                    <div class="nav-search v5">
+                        <form action="#" class="search-form v3">
+                            <input type="text" name="s" class="form-control" placeholder="Search...">
+                            <button type="submit" class="search-icon fa-3"></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="bottom v5">
+            <div class="content-full clearfix">
+                <div class="bottom-box-column left-column pull-left">
+                    <div class="navbar-default menu-button">
+                        <div class="menu-heading v2 v5 js-nav-menu"><span class="ion-android-menu fa-5b"></span></div>
+                        <div class="vertical-wrapper v2 js-dropdown-menu">
+                            <ul class="level0-ver2">
+                                <li><a href="#">MEN</a></li>
+                                <li><a href="#">WoMEN</a></li>
+                                <li><a href="#">KID’S</a></li>
+                                <li><a href="#">BIKE</a></li>
+                                <li><a href="#">Equipments</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-box-column logo-5 center-column text-center">
+                    <a href="#"><img src="img/Logo_5.png" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="bottom-box-column column-left pull-right">
+                    <div class="cart v5">
+                        <a href="#" title="" id="cart" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <div class="photo">
+                                <img src="img/icon-cart_5.png" alt="images" class="img-reponsive">
+                                <span class="quantity">[0]</span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-cart" aria-labelledby="cart">
+                            <ul>
+                                <li>
+                                    <div class="item-order">
+                                        <div class="item-photo">
+                                            <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                        </div>
+                                        <div class="item-content">
+                                            <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                            <p class="price black">$199.69</p>
+                                            <p class="quantity">x1</p>
+                                        </div>
+                                    </div>
+                                    <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                </li>
+                                <li>
+                                    <div class="item-order">
+                                        <div class="item-photo">
+                                            <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                        </div>
+                                        <div class="item-content">
+                                            <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                            <p class="price black">$199.69</p>
+                                            <p class="quantity">x1</p>
+                                        </div>
+                                    </div>
+                                    <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                </li>
+                            </ul>
+                            <div class="content-1">
+                                <span class="total">Total: <strong class="price black">$399.00</strong></span>
+                                <span class="quantity"><strong class="number">02</strong> products</span>
+                            </div>
+                            <div class="content-2">
+                                <a href="#" class="addcart">ADD TO CART</a>
+                                <a href="#" class="viewcart">View Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <div class="slide v5">
+        <div class="content-full clearfix">
+            <div class="single-item js-banner">
+                <div class="slide-img">
+                    <img src="img/slide_5_1.jpg" alt="images" class="img-reponsive">
+                    <div class="slide-content-ver3">
+                        <h3>BICYCLE<br><strong>43% off</strong></h3>
+                        <a href="#" class="btn slide-button-ver3">Shop Now <i class="ion-ios-arrow-forward"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subbanner v5">
+        <div class="container">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-ver2">
+                    <a href="#"><img src="img/subbanner_5_1.jpg" alt="images" class="img-reponsive">
+					<div class="sub-banner-content text-center">
+						<div class="photo">
+							<img src="img/gift.png" alt="images" class="img-reponsive">
+						</div>
+						<p class="inform-ver2 top20">
+							<span class="strong">Deal of the day<br></span>
+						</p>
+					</div>
+					</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-ver2">
+                    <a href="#"><img src="img/subbanner_5_2.jpg" alt="images" class="img-reponsive">
+						<div class="sub-banner-content text-center">
+							<div class="photo">
+								<img src="img/fly.png" alt="images" class="img-reponsive">
+							</div>
+							<p class="inform-ver2 top20">
+								<span class="strong">Free Shipping<br></span>
+							</p>
+						</div>
+					</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-ver2">
+                    <a href="#"><img src="img/subbanner_5_3.jpg" alt="images" class="img-reponsive">
+						<div class="sub-banner-content text-center">
+							<div class="photo">
+								<img src="img/security-badge.png" alt="images" class="img-reponsive">
+							</div>
+							<p class="inform-ver2 top20">
+								<span class="strong">Best services medal<br></span>
+							</p>
+						</div>
+					</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="products">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <ul class="otherr-link v5 text-center">
+                    <li class="active"><a data-toggle="pill" href="#all">All</a></li>
+                    <li><a data-toggle="pill" href="#bicycle">Bicycle</a></li>
+                    <li><a data-toggle="pill" href="#clothing">Clothing</a></li>
+                    <li><a data-toggle="pill" href="#parts">Parts</a></li>
+                    <li><a data-toggle="pill" href="#access">Accessories</a></li>
+                    <li><a data-toggle="pill" href="#tire">Tire&Tube</a></li>
+                    <li><a data-toggle="pill" href="#frame">Frame</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="all" class="tab-pane fade in active">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_4.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 photopage">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img sub-banner-ver2">
+                                    <a href="#"><img src="img/Black-&-White-5.jpg" alt="images" class="img-responsive">
+									<div class="prod-info prod-info-text">
+										<h3>Bicycle</h3>
+										<p class="hidden-xs hidden-sm">The city plays by its own set of rules, but there's no reason to be intimidated, because we have a line of city bikes that are designed specifically for riding in urban areas.</p>
+										<p class="hidden-xs hidden-sm">With features like reflective paint jobs and tires, we've taken away some of the stress of fitting a ride in after dark. </p>
+									</div>
+									</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_5.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_6.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_7.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price  ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/products/cycle_5_8.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bicycle" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="clothing" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="parts" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3  black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3  black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3  black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="access" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3  black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tire" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="frame" class="tab-pane fade in">
+                    <div class="row top-row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_1.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_2.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="product-item ver2">
+                                <div class="prod-item-img">
+                                    <a href="#"><img src="img/pd_5_3.jpg" alt="images" class="img-responsive"></a>
+                                    <div class="button v5">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <div class="prod-info">
+                                    <h3><a href="#">Women Turbo Level #1</a></h3>
+                                    <div class="prod-price">
+                                        <span class="price ver3 black">$424.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news">
+        <div class="container">
+            <div class="news-content">
+                <h3>NEXT RESTOCK JANUARY 15th 12:00 CET</h3>
+            </div>
+        </div>
+    </section>
+    <section class="about-us">
+        <div class="container">
+            <h2>Somthing About Us</h2>
+            <p class="top30">Being active in the great outdoors is a great way to get people together, create a sense of fulfilment and enjoy life. GoodSHop’s aim is to give as many people as possible the choice to access cycling and tri-sports; to experience the aforementioned benefits for themselves.
+            </p>
+            <a href="#" class="btn btn-read v5">READ Full Story</a>
+        </div>
+    </section>
+    <section class="instagram">
+        <div class="container">
+            <div class="row row-no-padding">
+                <div class=" col-sm-13 col-xs-13 col-md-13">
+                    <div class="instagram-item">
+                        <a href="#"><img src="img/instagram_5_1.jpg" alt="images" class="img-responsive"></a>
+                    </div>
+                    <div class="instagram-item">
+                        <a href="#"><img src="img/instagram_5_4.jpg" alt="images" class="img-responsive"></a>
+                    </div>
+                </div>
+                <div class=" col-sm-16 col-xs-16 col-md-16">
+                    <div class="instagram-item">
+                        <a href="#"><img src="img/instagram_5_2.jpg" alt="images" class="img-responsive">
+						<div class="instagram-content-text">
+							<h3>Shop Instagram</h3>
+						</div>
+						</a>
+                    </div>
+                </div>
+                <div class=" col-sm-13 col-xs-13 col-md-13">
+                    <div class="instagram-item">
+                        <a href="#"><img src="img/instagram_5_3.jpg" alt="images" class="img-responsive"></a>
+                    </div>
+                    <div class="instagram-item">
+                        <a href="#"><img src="img/instagram_5_5.jpg" alt="images" class="img-responsive"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="v5 content-full pd40 clearfix">
+        <div class="container">
+            <div class="info v4 v5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <h3>shop</h3>
+                                    <ul class="fmenu">
+                                        <li><a href="#">new in</a></li>
+                                        <li><a href="#">women</a></li>
+                                        <li><a href="#">men</a></li>
+                                        <li><a href="#">Schuhe Shoes</a></li>
+                                        <li><a href="#">Bags & Accessories</a></li>
+                                        <li><a href="#">Top Brands</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <h3>INFOMATION</h3>
+                                    <ul class="fmenu">
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Customer Service</a></li>
+                                        <li><a href="#">New Collection</a></li>
+                                        <li><a href="#">Best Sellers</a></li>
+                                        <li><a href="#">Manufacturers</a></li>
+                                        <li><a href="#">Privacy policy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <h3>Customer services</h3>
+                                    <ul class="fmenu">
+                                        <li><a href="#">Search Terms</a></li>
+                                        <li><a href="#">Orders and Returns</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">RSS</a></li>
+                                        <li><a href="#">Help & FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <h3>NEWSLETTER SIGN UP</h3>
+                            <form action="#" class="news-letter-form v5 form-inline">
+                                <input type="text" name="e" class="form-control" placeholder="Enter your e-mail">
+                                <button type="submit" class="btn btnsub v5">Subscribe</button>
+                            </form>
+                            <h3 class="titles">Stay connected</h3>
+                            <ul class="social v5">
+                                <li><a href="#"><i class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter fa-3" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus fa-3" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube fa-3" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="ion-social-linkedin fa-3" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line-footer"></div>
+                </div>
+            </div>
+            <div class="copyright v5">
+                <div class="container">
+                    <span>© 2017 <a href="#" title="">ClickBuy</a> Designed by <a href="#" class="author" title="">EngoTheme</a></span>
+                    <ul class="payment">
+                        <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
+                        <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
+                        <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
+                        <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

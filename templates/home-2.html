@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ClickBuy</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+				              <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown" class="ion-ios-search"></i></button>
+				            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="v2">
+        <div class="topbar-mobile hidden-lg hidden-md">
+            <div class="active-mobile">
+                <div class="language-popup dropdown">
+                    <a id="label" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				<span class="icon"><i class="ion-ios-world-outline" aria-hidden="true"></i></span>
+			      <span>English</span>
+			      <span class="ion-chevron-down"></span>
+			    </a>
+                    <ul class="dropdown-menu" aria-labelledby="label">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Vietnamese</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-nav">
+                <div class="active-mobile">
+                    <div class="header_user_info popup-over e-scale hidden-lg hidden-md dropdown">
+                        <div data-toggle="dropdown" class="popup-title dropdown-toggle" title="Account">
+                            <i class="ion-android-person"></i><span> Account</span>
+                        </div>
+                        <ul class="links dropdown-menu list-unstyled">
+                            <li>
+                                <a id="customer_login_link" href="#" title="Sign in"><i class="ion-log-in"></i> Login</a>
+                            </li>
+                            <li>
+                                <a id="customer_register_link" href="#" title="Register"><i class="ion-ios-personadd"></i> Register</a>
+                            </li>
+                            <li>
+                                <a class="account" rel="nofollow" href="#" title="My account"><i class="ion-ios-person"></i> My account</a>
+                            </li>
+                            <li>
+                                <a id="wishlist-total" title="Wishlist" href="#"><i class="ion-ios-heart"></i> Wishlist</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Check out"><i class="ion-ios-cart"></i> Check out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="active-mobile search-popup pull-right">
+                    <div class="search-popup dropdown" data-toggle="modal" data-target="#myModal">
+                        <i class="ion-search fa-3a"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="top-nav v2 hidden-xs hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="left-nav">
+                            <div class="location dropdown">
+                                <a id="label1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="icon"><i class="ion-ios-location" aria-hidden="true"></i></span>
+							      <span>Our Store</span>
+							      <span class="ion-chevron-down"></span>
+							    </a>
+                                <ul class="dropdown-menu" aria-labelledby="label1">
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">California</a></li>
+                                </ul>
+                            </div>
+                            <div class="language dropdown">
+                                <a id="label2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="icon"><i class="ion-ios-world-outline" aria-hidden="true"></i></span>
+							      <span>English</span>
+							      <span class="ion-chevron-down"></span>
+							    </a>
+                                <ul class="dropdown-menu" aria-labelledby="label2">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Vietnamese</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="right-nav v2">
+                            <ul>
+                                <li><a href="#"><i class="ion-ios-heart fa-1a" aria-hidden="true"></i>wishlist</a></li>
+                                <li><a href="#"><i class="ion-arrow-swap fa-1a" aria-hidden="true"></i>compare</a></li>
+                                <li><a href="#"><i class="ion-ios-personadd fa-1a" aria-hidden="true"></i>create account</a></li>
+                                <li><a href="#"><i class="ion-log-in fa-1a" aria-hidden="true"></i>login</a></li>
+                            </ul>
+                            <span class="phone v2">800-123-6789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom v2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3  logo">
+                        <a href="#"><img src="img/logo_h2.png" alt="images" class="img-reponsive"></a>
+                    </div>
+                    <div class="col-md-9  nextlogo">
+                        <div class="block block-2 v2">
+                            <div class="cart">
+                                <a href="#" title="" id="label3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="photo photo-cart">
+                                        <img src="img/cart_2.png" alt="images" class="img-reponsive">
+                                        <span class="lbl v2">05</span>
+                                    </div>
+                                    <p class="inform inform-cart">
+                                        <span class="strong v2">CART<br></span>
+                                        <span class="price-cart">$1150.69</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-cart" aria-labelledby="label3">
+                                    <ul>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                    </ul>
+                                    <div class="content-1">
+                                        <span class="total">Total: <strong class="price black">$399.00</strong></span>
+                                        <span class="quantity"><strong class="number">02</strong> products</span>
+                                    </div>
+                                    <div class="content-2">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="viewcart">View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block block-1">
+                            <div class="protect v2">
+                                <div class="photo">
+                                    <svg width="28" height="33" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.05 214.27">
+                                        <defs>
+                                            <style>
+                                            .cls-1 {
+                                                fill: #fff;
+                                            }
+                                            </style>
+                                        </defs>
+                                        <title>security_w</title>
+                                        <path class="cls-1" d="M196.93,55.17c-.11-5.78-.21-11.25-.21-16.54a7.5,7.5,0,0,0-7.5-7.5c-32.07,0-56.5-9.22-76.85-29a7.5,7.5,0,0,0-10.46,0c-20.35,19.79-44.77,29-76.84,29a7.5,7.5,0,0,0-7.5,7.5c0,5.29-.1,10.76-.22,16.54-1,53.84-2.44,127.57,87.33,158.68a7.49,7.49,0,0,0,4.91,0C199.36,182.74,198,109,196.93,55.17ZM107.13,198.81c-77-28-75.82-89.23-74.79-143.35.06-3.25.12-6.4.16-9.48,30-1.27,54.06-10.37,74.63-28.28,20.57,17.91,44.59,27,74.63,28.28,0,3.08.1,6.23.16,9.48C183,109.58,184.12,170.84,107.13,198.81Z" transform="translate(-17.11 0)" />
+                                        <path class="cls-1" d="M133,81.08l-36.2,36.2L81.31,101.83a7.5,7.5,0,0,0-10.61,10.61l20.75,20.75a7.5,7.5,0,0,0,10.61,0l41.5-41.5A7.5,7.5,0,1,0,133,81.08Z" transform="translate(-17.11 0)" />
+                                    </svg>
+                                </div>
+                                <p class="inform v2">
+                                    <span class="strong v2">Infomation<br></span> Protected
+                                </p>
+                            </div>
+                            <div class="return v2">
+                                <div class="photo">
+                                   <svg width="30" height="30" id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612.85"><defs><style>.cls-1{fill:#fff;}</style></defs><title>update-arrows_w</title><path class="cls-1" d="M600.48,221.79c-14.43-50.5-40.14-94.33-77.94-132.13a300.48,300.48,0,0,0-100-66.57C385,7.84,346.58,0,306.78,0V37.47c69.91,0,138.93,27,190,78.28A264.15,264.15,0,0,1,564.7,231.16c12.55,43.87,14.38,88,4.68,132.47A261.77,261.77,0,0,1,509.83,482l-52.18-51.18V558.33l130.13,2-52.18-52.18Q587.78,448.93,604.84,373A301.45,301.45,0,0,0,600.48,221.79Z" transform="translate(-0.43)"/><path class="cls-1" d="M47.85,382A267.44,267.44,0,0,1,43.5,249.56,263.58,263.58,0,0,1,103.38,130.8l52.18,51.85V54.53L25.44,53.19l51.85,51.52Q25.11,163.92,8,239.85a301.82,301.82,0,0,0,4.35,151.54c14.34,50.2,40.14,94,77.95,131.81a300.35,300.35,0,0,0,100,66.57,306.59,306.59,0,0,0,116.42,23.08v-36.8a267,267,0,0,1-190.35-78.94C83.54,464.09,60.41,425.9,47.85,382Z" transform="translate(-0.43)"/></svg> 
+                                </div>
+                                <p class="inform v2">
+                                    <span class="strong v2">Free<br></span> Return
+                                </p>
+                            </div>
+                        </div>
+                        <div class="search v2 hidden-xs hidden-sm">
+                            <form action="#" class="search-form v2">
+                                <input type="text" name="s" class="form-control" placeholder="Search for item">
+                                <button type="submit" class="search-icon"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu v2">
+            <div class="container">
+                <div class="navbar-simple">
+                    <aside id="column-left" class="v2">
+                        <nav class="navbar-default">
+                            <div class="menu-heading v2 js-nav-menu"><i class="ion-android-menu"></i></div>
+                            <div class="vertical-wrapper v2 js-dropdown-menu">
+                                <ul class="level0-ver2">
+                                    <li><a href="#">camera</a></li>
+                                    <li><a href="#">laptop</a></li>
+                                    <li><a href="#">mobile phone</a></li>
+                                    <li><a href="#">headphone</a></li>
+                                    <li><a href="#">mouse</a></li>
+                                    <li><a href="#">washing machine</a></li>
+                                    <li><a href="#">others</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <aside id="column-right">
+                        <div class="collapse navbar-collapse v2" id="myNavbar">
+                            <ul class="menubar v2">
+                                <li>
+                                    <a href="#">
+								<span><svg width="26" height="18" id="Capa_4" data-name="Capa 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333.67 263.63"><defs><style>.cls-1{fill:#fff;}</style></defs><title>photo-camera</title><path class="cls-1" d="M295.1,298.65H38.56A38.6,38.6,0,0,1,0,260.09V103.7A38.6,38.6,0,0,1,38.56,65.14H90.91l4.58-15.46A19,19,0,0,1,114.19,35h105.3a19.39,19.39,0,0,1,18.73,14.74l.12.53,4.18,14.85h52.6a38.6,38.6,0,0,1,38.56,38.56V260.09A38.61,38.61,0,0,1,295.1,298.65ZM38.56,78A25.73,25.73,0,0,0,12.85,103.7V260.09a25.73,25.73,0,0,0,25.71,25.71H295.1a25.73,25.73,0,0,0,25.71-25.71V103.7A25.73,25.73,0,0,0,295.1,78H232.77l-7-25.1a6.46,6.46,0,0,0-6.26-5H114.18a6.38,6.38,0,0,0-6.26,5L100.49,78ZM166.84,259.8a81.57,81.57,0,1,1,81.56-81.56A81.66,81.66,0,0,1,166.84,259.8Zm0-150.29a68.71,68.71,0,1,0,68.7,68.72A68.8,68.8,0,0,0,166.84,109.51Zm120-7.66a11.86,11.86,0,1,0,11.85,11.86A11.86,11.86,0,0,0,286.8,101.85Z" transform="translate(0 -35.02)"/></svg></span>
+								Camera</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="24" height="24" id="Capa_5" data-name="Capa 5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><style>.cls-1{fill:#fff;}</style></defs><title>smartphone-w</title><path class="cls-1" d="M42.6,0H17.41A4.41,4.41,0,0,0,13,4.41V55.59A4.41,4.41,0,0,0,17.41,60H42.59A4.41,4.41,0,0,0,47,55.6V4.41A4.41,4.41,0,0,0,42.6,0ZM15,8H45V46H15Zm2.41-6H42.59A2.41,2.41,0,0,1,45,4.41V6H15V4.41A2.41,2.41,0,0,1,17.41,2ZM42.6,58H17.41A2.41,2.41,0,0,1,15,55.6V48H45v7.6A2.41,2.41,0,0,1,42.6,58Z" transform="translate(0)"/><path class="cls-1" d="M30,49a4,4,0,1,0,4,4A4,4,0,0,0,30,49Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,30,55Z" transform="translate(0)"/><path class="cls-1" d="M26,5h4a1,1,0,0,0,0-2H26a1,1,0,0,0,0,2Z" transform="translate(0)"/><path class="cls-1" d="M33,5h1a1,1,0,0,0,0-2H33a1,1,0,0,0,0,2Z" transform="translate(0)"/><path class="cls-1" d="M56.61,4.57A1,1,0,1,0,55.2,6a9.59,9.59,0,0,1,0,13.55,1,1,0,1,0,1.41,1.41A11.6,11.6,0,0,0,56.61,4.57Z" transform="translate(0)"/><path class="cls-1" d="M52.4,6.84A1,1,0,1,0,51,8.26a6.57,6.57,0,0,1,0,9.28,1,1,0,1,0,1.41,1.41,8.57,8.57,0,0,0,0-12.1Z" transform="translate(0)"/><path class="cls-1" d="M4.8,6A1,1,0,0,0,3.39,4.57a11.6,11.6,0,0,0,0,16.38A1,1,0,0,0,4.8,19.53,9.59,9.59,0,0,1,4.8,6Z" transform="translate(0)"/><path class="cls-1" d="M9,6.57a1,1,0,0,0-1.41,0,8.57,8.57,0,0,0,0,12.11A1,1,0,0,0,9,17.26,6.57,6.57,0,0,1,9,8,1,1,0,0,0,9,6.57Z" transform="translate(0)"/></svg></span>
+								Phone</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="26" height="16" id="Capa_3" data-name="Capa 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 367.21"><defs><style>.cls-1{fill:#fff;}</style></defs><title>laptob-w</title><g id="Shape_353" data-name="Shape 353"><path class="cls-1" d="M61.2,448.8H550.8a20.42,20.42,0,0,0,20.4-20.41V142.79a20.4,20.4,0,0,0-20.4-20.4H61.2A20.4,20.4,0,0,0,40.8,142.8V428.4A20.41,20.41,0,0,0,61.2,448.8ZM61.2,153a10.2,10.2,0,0,1,10.2-10.2H540.6A10.2,10.2,0,0,1,550.8,153V418.2a10.22,10.22,0,0,1-10.2,10.21H71.4A10.22,10.22,0,0,1,61.2,418.2ZM601.8,469.21H10.2a10.2,10.2,0,1,0,0,20.39H601.8a10.2,10.2,0,1,0,0-20.39Z" transform="translate(0 -122.39)"/></g></svg></span>
+								Laptop</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="25" height="25" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496.75 512"><defs><style>.cls-1{fill:#fff;}</style></defs><title>headset-w</title><path class="cls-1" d="M459.07,236.29v-30A203.2,203.2,0,0,0,334.67,19V10a10,10,0,0,0-10-10H187.3a10,10,0,0,0-10,10v9.07A203.1,203.1,0,0,0,52.95,206.29v30a59.81,59.81,0,0,0-45.33,58V356a59.76,59.76,0,0,0,59.7,59.69H76a27.06,27.06,0,0,0,50.51-13.52V248.06A27.07,27.07,0,0,0,99.44,221,27.22,27.22,0,0,0,76,234.52H72.91V206.29A183.07,183.07,0,0,1,180.67,39.39,28.91,28.91,0,0,0,206.2,54.77h99.6a28.89,28.89,0,0,0,25.53-15.41A183.26,183.26,0,0,1,439.1,206.29v28.23H436a27.06,27.06,0,0,0-42.58-5.61,26.9,26.9,0,0,0-7.93,19.15V402.18a27.06,27.06,0,0,0,12.95,23A90.53,90.53,0,0,1,331.35,466a35.73,35.73,0,0,0-34.1-25.23H279a35.67,35.67,0,0,0-35.63,35.63A35.65,35.65,0,0,0,279,512h18.21a35.68,35.68,0,0,0,34.3-26,110.53,110.53,0,0,0,88.26-57.74A27.31,27.31,0,0,0,436,415.7h8.67a59.76,59.76,0,0,0,59.7-59.7V294.24A59.8,59.8,0,0,0,459.07,236.29ZM92.32,248.06h0a7.27,7.27,0,0,1,.15-1.49,7.12,7.12,0,0,1,12-3.54,7.07,7.07,0,0,1,2.08,5V402.17a7.11,7.11,0,1,1-14.23,0V248.06Zm-20,147.67h-5A39.78,39.78,0,0,1,27.59,356V294.23a39.78,39.78,0,0,1,39.73-39.74h5ZM314.7,25.91a8.91,8.91,0,0,1-8.9,8.9H206.2a8.92,8.92,0,0,1-8.92-8.9V20H314.7ZM278.41,492a15.65,15.65,0,0,1-15-15.63,15.67,15.67,0,0,1,15-15.63V492Zm20,0V460.76a15.66,15.66,0,0,1,14.53,15.61A15.67,15.67,0,0,1,298.38,492Zm121.32-89.8h0a7.21,7.21,0,0,1-.16,1.49,7.12,7.12,0,0,1-14.08-1.49V248.06a7.05,7.05,0,0,1,2.07-5,7.13,7.13,0,0,1,12,3.53,7.28,7.28,0,0,1,.15,1.49V402.17ZM484.41,356a39.77,39.77,0,0,1-39.73,39.73h-5V254.49h5a39.78,39.78,0,0,1,39.73,39.75Z" transform="translate(-7.62)"/></svg></span>
+								Headset</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="16" height="26" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.26 401.39"><defs><style>.cls-1{fill:#fff;}</style></defs><title>mouse-w</title><path class="cls-1" d="M200.7,0A125.27,125.27,0,0,0,75.57,125.13V276.27a125.13,125.13,0,0,0,250.26,0V125.13A125.27,125.27,0,0,0,200.7,0ZM310.83,125.13v2a237.08,237.08,0,0,1-105.13,27.06V112.32a23.57,23.57,0,0,0,18.54-23V58a23.57,23.57,0,0,0-18.54-23V15.12A110.26,110.26,0,0,1,310.83,125.13ZM200.7,44.42A13.55,13.55,0,0,1,214.23,58V89.33a13.54,13.54,0,1,1-27.07,0V58A13.55,13.55,0,0,1,200.7,44.42Zm-5-29.31V35a23.57,23.57,0,0,0-18.53,23V89.33a23.57,23.57,0,0,0,18.53,23v41.84A237.06,237.06,0,0,1,90.57,127.1v-2A110.26,110.26,0,0,1,195.69,15.12Zm5,371.28A110.25,110.25,0,0,1,90.57,276.27V138.34a247.28,247.28,0,0,0,110.13,25.88,247.3,247.3,0,0,0,110.13-25.88V276.27A110.25,110.25,0,0,1,200.7,386.4Z" transform="translate(-75.57)"/></svg></span>
+								Accessories</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="26" height="18" id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.95 312.4"><defs><style>.cls-1{fill:#fff;}</style></defs><title>gamepad-w</title><path class="cls-1" d="M170.67,175.28h-40.4v-40a8,8,0,0,0-16,0v40H74.67a8,8,0,0,0,0,16h39.6v40a8,8,0,1,0,16,0v-40h40.4a8,8,0,0,0,0-16Z" transform="translate(0 -63.27)"/><path class="cls-1" d="M266.27,167.28l-2.8,2.8a15.94,15.94,0,0,0,0,22.8,17.19,17.19,0,0,0,11.2,4.4,15.79,15.79,0,0,0,11.2-4.8l2.8-2.8a15.94,15.94,0,0,0,0-22.8A15.47,15.47,0,0,0,266.27,167.28Z" transform="translate(0 -63.27)"/><path class="cls-1" d="M307.07,124.48l-2.4,3.2a15.94,15.94,0,0,0,0,22.8,17.19,17.19,0,0,0,11.2,4.4,15.79,15.79,0,0,0,11.2-4.8l2.8-2.8a16.12,16.12,0,1,0-22.8-22.8Z" transform="translate(0 -63.27)"/><path class="cls-1" d="M307.47,209.68l-2.8,2.8a16,16,0,1,0,22.4,22.8l2.8-2.8a15.94,15.94,0,0,0,0-22.8A15.47,15.47,0,0,0,307.47,209.68Z" transform="translate(0 -63.27)"/><path class="cls-1" d="M351.07,167.28l-2.8,2.8a16,16,0,1,0,22.4,22.8l2.8-2.8a15.94,15.94,0,0,0,0-22.8A15.47,15.47,0,0,0,351.07,167.28Z" transform="translate(0 -63.27)"/><path class="cls-1" d="M422.67,144.48l-4.8-20v-.8c-12-36.4-45.6-60.8-83.6-60.4h-6.4a92.94,92.94,0,0,0-24.8,3.6l-43.2,12.8a90.77,90.77,0,0,1-26,3.6h-29.2a90.77,90.77,0,0,1-26-3.6l-43.2-12.8a108.18,108.18,0,0,0-24.8-3.2h-6a88.17,88.17,0,0,0-83.6,60.4v.8l-4.8,20a613,613,0,0,0-16,158l.8,30.4a44.22,44.22,0,0,0,15.2,31.6,43,43,0,0,0,28.8,10.8,16.41,16.41,0,0,0,4.4-.4l9.2-.8a68.12,68.12,0,0,0,53.6-36.4l14.8-28a71.35,71.35,0,0,1,63.6-38.8h64a72.21,72.21,0,0,1,64.8,40.8l11.6,24.4a67.37,67.37,0,0,0,54.4,38l4,.4a44.48,44.48,0,0,0,48.4-42.8l.8-30A601.41,601.41,0,0,0,422.67,144.48Zm0,157.6-.8,30a28.24,28.24,0,0,1-9.6,20.4,27.31,27.31,0,0,1-21.2,6.8l-4-.4c-18-1.6-33.6-12.8-41.6-29.2l-11.6-24.4c-14.4-30-45.6-49.6-79.2-49.6h-64a88,88,0,0,0-78,47.6l-14.8,28a52.34,52.34,0,0,1-40.8,27.6l-9.2.8a27.8,27.8,0,0,1-21.2-6.8,28.24,28.24,0,0,1-9.6-20.4l-.8-30.4a601.2,601.2,0,0,1,15.2-154l4.8-19.6a72,72,0,0,1,68.4-48.8h6a70.93,70.93,0,0,1,20,2.8l43.2,12.8a110.2,110.2,0,0,0,30.8,4.4h29.2a110.2,110.2,0,0,0,30.8-4.4l43.2-12.8a71.69,71.69,0,0,1,20.4-2.8h7.2c30,0,57.6,20,67.6,49.2l4.8,19.6A618,618,0,0,1,422.67,302.08Z" transform="translate(0 -63.27)"/></svg></span>
+								Gamepad</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="20" height="25" id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.05 512.03"><defs><style>.cls-1{fill:#fff;}</style></defs><title>washing-machine-w</title><path class="cls-1" d="M434.58,0H77.46a34,34,0,0,0-34,34V180H58.7V34A18.78,18.78,0,0,1,77.46,15.21H434.58A18.78,18.78,0,0,1,453.33,34v444.1a18.78,18.78,0,0,1-18.76,18.76H77.46A18.78,18.78,0,0,1,58.7,478.07V200.25H43.49V478.07a34,34,0,0,0,34,34H434.57a34,34,0,0,0,34-34V34A34,34,0,0,0,434.58,0Z" transform="translate(-43.49)"/><path class="cls-1" d="M109.55,308.25c0,80.76,65.7,146.47,146.47,146.47S402.48,389,402.48,308.25,336.78,161.78,256,161.78,109.55,227.49,109.55,308.25Zm277.72,0c0,72.38-58.88,131.26-131.26,131.26S124.76,380.62,124.76,308.25,183.64,177,256,177,387.27,235.87,387.27,308.25Z" transform="translate(-43.49)"/><path class="cls-1" d="M141,308.25a115,115,0,1,0,115-115A115.15,115.15,0,0,0,141,308.25Zm214.83,0A99.81,99.81,0,1,1,256,208.44,99.92,99.92,0,0,1,355.83,308.25Z" transform="translate(-43.49)"/><rect class="cls-1" x="201.46" y="256.9" width="95.34" height="15.21" transform="translate(-157.56 253.63) rotate(-45)"/><rect class="cls-1" x="173.17" y="314.44" width="36.83" height="15.21" transform="translate(-215.09 229.8) rotate(-45)"/><rect class="cls-1" x="207.62" y="325.96" width="147.44" height="15.21" transform="translate(-196.95 296.64) rotate(-45)"/><polygon class="cls-1" points="27.88 119.67 397.17 119.67 397.17 104.46 184.65 104.46 184.65 27.88 169.44 27.88 169.44 104.46 27.88 104.46 27.88 119.67"/><path class="cls-1" d="M258.39,42.6V89.25H362.16V42.6ZM347,74H273.6V57.81H347Z" transform="translate(-43.49)"/><rect class="cls-1" x="66.19" y="44.64" width="18.25" height="15.21"/><rect class="cls-1" x="97.28" y="44.64" width="18.25" height="15.21"/><rect class="cls-1" x="128.37" y="44.64" width="18.25" height="15.21"/><rect class="cls-1" x="66.19" y="72.01" width="18.25" height="15.21"/><rect class="cls-1" x="97.28" y="72.01" width="18.25" height="15.21"/><rect class="cls-1" x="128.37" y="72.01" width="18.25" height="15.21"/></svg></span>
+								Washing Machine</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+								<span><svg width="30" height="20" id="Layer_5" data-name="Layer 5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455 320.67"><defs><style>.cls-1{fill:#fff;}</style></defs><title>air-conditioner-w</title><path class="cls-1" d="M425.17,67.17H29.83A29.86,29.86,0,0,0,0,97V249.67a7.5,7.5,0,0,0,7.5,7.5h440a7.5,7.5,0,0,0,7.5-7.5V97a29.86,29.86,0,0,0-29.83-29.83ZM32.5,82.17h390v9.51a9,9,0,0,1-9,9h-372a9,9,0,0,1-9-9V82.17Zm390,122.5H32.5v-1a9,9,0,0,1,9-9h372a9,9,0,0,1,9,9v1Zm-390,10h390v10H32.5Zm0,20h390v7.5H32.5Zm407.5,7.5h-7.5V203.66a19,19,0,0,0-19-19h-372a19,19,0,0,0-19,19v38.51H15V97a14.83,14.83,0,0,1,7.5-12.87v7.56a19,19,0,0,0,19,19h372a19,19,0,0,0,19-19V84.12A14.83,14.83,0,0,1,440,97Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M250.5,164.67h-46a5,5,0,0,0,0,10h46a5,5,0,0,0,0-10Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M401.5,164.67a5,5,0,1,0,3.53,1.46A5,5,0,0,0,401.5,164.67Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M378.5,164.67a5,5,0,1,0,3.53,1.46A5,5,0,0,0,378.5,164.67Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M186.32,289.94A5,5,0,0,0,177.6,285a54.06,54.06,0,0,0,0,52.56,44,44,0,0,1,0,42.78,5,5,0,1,0,8.72,4.89,54.07,54.07,0,0,0,0-52.56,44,44,0,0,1,0-42.78Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M231.86,289.94a5,5,0,0,0-8.72-4.89,54.06,54.06,0,0,0,0,52.56,44,44,0,0,1,0,42.78,5,5,0,1,0,8.72,4.89,54.07,54.07,0,0,0,0-52.56,44,44,0,0,1,0-42.78Z" transform="translate(0 -67.17)"/><path class="cls-1" d="M277.41,289.94a5,5,0,0,0-8.72-4.89,54.06,54.06,0,0,0,0,52.56,44,44,0,0,1,0,42.78,5,5,0,1,0,8.72,4.89,54.06,54.06,0,0,0,0-52.56,44,44,0,0,1,0-42.78Z" transform="translate(0 -67.17)"/></svg></span>
+								Air Conditional</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+									<span class="plus-more">+</span>
+									More Items
+								</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <section class="slide v2">
+        <div class="single-item js-banner top-row">
+            <div class="slide-img">
+                <img src="img/slider/image-slider5.jpg" alt="images" class="img-reponsive">
+                <div class="slide-content-ver3 v2">
+                    <h3>WATCH SERIES 2<br><strong>20% off</strong></h3>
+                    <a href="#" class="slide-button-ver3 v2">shop now <i class="ion-ios-arrow-forward"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="sub-banner">
+                        <a href="#"><img src="img/banner/subbanner-1.jpg" alt="images" class="img-reponsive"></a>
+                        <div class="sub-banner-title">
+                            <h3>NIKON 8x</h3>
+                            <p>DEAL NOW</p>
+                        </div>
+                        <div class="sub-banner-btn">
+                            <a href="#" class="btn-getit">Get It <i class="ion-ios-arrow-forward icon-sub-banner orange"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="sub-banner">
+                        <a href="#"><img src="img/banner/subbanner-2.jpg" alt="images" class="img-reponsive"></a>
+                        <div class="sub-banner-title">
+                            <h3>BEAST SOLO</h3>
+                            <p>GOLD ROSE</p>
+                        </div>
+                        <div class="sub-banner-btn">
+                            <a href="#" class="btn-getit">Get It <i class="ion-ios-arrow-forward icon-sub-banner orange"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="best-seller">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="product-item ver2 v2 text-center">
+                        <div class="prod-item-img v2">
+                            <a href="#"><img src="img/products/sound.jpg" alt="images" class="img-responsive"></a>
+                            <div class="button v2">
+                                <a href="#" class="addcart">ADD TO CART</a>
+                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="ribbon">
+                                <span class="strong">#1</span>
+                                <br>SELLER
+                            </div>
+                        </div>
+                        <div class="prod-choose v2">
+                            <div class="prod-color v2">
+                                <span class="dot v2 blackc"></span>
+                                <span class="dot v2 greensd"></span>
+                                <span class="dot v2"></span>
+                            </div>
+                        </div>
+                        <div class="prod-info v2">
+                            <h3><a href="#">JBL Pulse 2 Portable Splashproof Bluetooth Speaker, Black</a></h3>
+                            <div class="prod-price">
+                                <span class="price-ver2 old">$299.6</span>
+                                <span class="price-ver2 v2">$199.69</span>
+                            </div>
+                        </div>
+                        <div class="countdown v2" data-countdown="countdownver2" data-date="08-31-2018-00-00-00">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="heading-v1 v2 top30 bs-left">
+                        <h3 class="title v2 pull-left">Best Sellers</h3>
+                        <ul class="otherr-link v2 pull-right">
+                            <li class="active"><a data-toggle="pill" href="#day">Day</a></li>
+                            <li><a data-toggle="pill" href="#week">Week</a></li>
+                            <li><a data-toggle="pill" href="#month">Month</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="day" class="tab-pane fade in active">
+                            <div class="row top30">
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item  pd20 ver5">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/sound2.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 orange v2">-57.8%</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Bose Virtually Inv v2isible 791 In-ceiling Speakers</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/ear.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 blue v2">NEW</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Beats EP Wired On-Ear Headphone - Gold Rose</a></h3>
+                                            <div class="ratingstar sm">
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <span class="number">(12)</span>
+                                            </div>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row2 -->
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV 2017</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/macmini.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 red v2">HOT</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Apple TV Full Body Skin (3rd Gen), Skinomi TechSkin Full Coverage Skin...</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="week" class="tab-pane fade in">
+                            <div class="row top30">
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item  pd20 ver5">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/sound2.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 orange v2">-57.8%</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Bose Virtually Inv v2isible 791 In-ceiling Speakers</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/ear.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 blue v2">NEW</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Beats EP Wired On-Ear Headphone - Gold Rose</a></h3>
+                                            <div class="ratingstar sm">
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <span class="number">(12)</span>
+                                            </div>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row2 -->
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV 2017</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/macmini.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 red v2">HOT</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Apple TV Full Body Skin (3rd Gen), Skinomi TechSkin Full Coverage Skin...</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="month" class="tab-pane fade in">
+                            <div class="row top30">
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item  pd20 ver5">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/sound2.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 orange v2">-57.8%</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Bose Virtually Inv v2isible 791 In-ceiling Speakers</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/ear.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 blue v2">NEW</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Beats EP Wired On-Ear Headphone - Gold Rose</a></h3>
+                                            <div class="ratingstar sm">
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                                <span class="number">(12)</span>
+                                            </div>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row2 -->
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV 2017</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price black">$199.69</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 bs-item">
+                                    <div class="product-item ver5 pd20">
+                                        <div class="prod-item-img text-center">
+                                            <a href="#"><img src="img/products/macmini.jpg" alt="images" class="img-responsive"></a>
+                                            <div class="label label-2 red v2">HOT</div>
+                                            <div class="button">
+                                                <a href="#" class="addcart">ADD TO CART</a>
+                                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-info top20">
+                                            <h3><a href="#">Apple TV Full Body Skin (3rd Gen), Skinomi TechSkin Full Coverage Skin...</a></h3>
+                                            <div class="prod-price">
+                                                <span class="price old">$299.6</span>
+                                                <span class="price v2">$210.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-product">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <h3 class="title v2 pull-left">featured products</h3>
+                <ul class="otherr-link v2 pull-right">
+                    <li class="active"><a data-toggle="pill" href="#all">all</a></li>
+                    <li><a data-toggle="pill" href="#elec">Electronic</a></li>
+                    <li><a data-toggle="pill" href="#fashion">Fashion        </a></li>
+                    <li><a data-toggle="pill" href="#it">IT        </a></li>
+                    <li><a data-toggle="pill" href="#food">Food & Drink</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="tab-content">
+                <div id="all" class="tab-pane fade in active">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/smarphone.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sony.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/macbook.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/camera.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/lens.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/watch.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/canonpixma.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound4.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="elec" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/smarphone.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sony.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/macbook.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/camera.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/lens.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/watch.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/canonpixma.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound4.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fashion" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/smarphone.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sony.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/macbook.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/camera.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/lens.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/watch.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/canonpixma.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound4.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="it" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/smarphone.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sony.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/macbook.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/camera.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/lens.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/watch.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/canonpixma.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound4.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="food" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/smarphone.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/tivi.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sony.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/macbook.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/camera.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/lens.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/watch.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/canonpixma.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-6 col-xs-12">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="img/products/sound4.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span></div>
+                                        <div class="p-price">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price v2">$210.25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner_1">
+        <div class="container">
+            <a href="#"><img src="img/banner/ad2.jpg" alt="images" class="img-responsive"></a>
+        </div>
+    </div>
+    <section class="brand-corner brand-v1">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <h3 class="title v2 pull-left">Brand Corner</h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row brand-list-v1 top-row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/canon_pixma.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Canon MX492 Wireless All-IN-One Small...</a></h3>
+                            <div class="p-price">
+                                <span class="price black">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/imac.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple iMac MK462LL/A 27-Inch Ret...</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$299.6</span>
+                                <span class="price v2">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/imac.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple iMac MK462LL/A 27-Inch Ret...</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$299.6</span>
+                                <span class="price v2">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/canon.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Canon EOS 6D Digital SLR Camera...</a></h3>
+                            <div class="p-price">
+                                <span class="price black">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/iwatch.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple Watch Series 1 38mm Smart...</a></h3>
+                            <div class="p-price">
+                                <span class="price black">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/iwatch.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple Watch Series 1 38mm Smart...</a></h3>
+                            <div class="p-price">
+                                <span class="price black">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/canon2.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Canon 0111C001 PowerShot SX610...</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$299.6</span>
+                                <span class="price v2">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/macmini2.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple Mac Mini MC936LL/A with Lion</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$299.6</span>
+                                <span class="price v2">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-item ver1 bd-style-2">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/products/macmini2.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="prod-info">
+                            <h3><a href="#">Apple Mac Mini MC936LL/A with Lion</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$299.6</span>
+                                <span class="price v2">$199.69</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner_2">
+        <div class="container">
+            <a href="#"><img src="img/ad.jpg" alt="images" class="img-responsive"></a>
+        </div>
+    </div>
+    <section class="our-blog">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <h3 class="title v2 pull-left">From Our Blog</h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-item-img">
+                            <a href="#"><img src="img/blog-1.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="blog-item-detail">
+                            <h3><a href="#" title="">WELCOME TO OUR ONLINE STORE</a></h3>
+                            <p>In scelerisque fermentum ipsum id lobortis. Phasellus feugiat nulla sit amet massa interdum finibus. Curabitur accumsan nibh metus sodales tristique volutpat.</p>
+                            <a href="#" class="readmore">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-item-img">
+                            <a href="#"><img src="img/blog-2.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="blog-item-detail">
+                            <h3><a href="#" title="">Reading Our Blog & Vote 5 Stars!</a></h3>
+                            <p>In scelerisque fermentum ipsum id lobortis. Phasellus feugiat nulla sit amet massa interdum finibus. Curabitur accumsan nibh metus sodales tristique volutpat.</p>
+                            <a href="#" class="readmore">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="brand">
+        <div class="container">
+            <div class="owl-carousel owl-theme js-owl-brand">
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/shepad.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/target.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/netsuite.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/yourclothes.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="features v2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/gift.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Deal of the day<br></span> check out today's deal
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/fly.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Free Shipping<br></span> on thousands of products
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/return.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Easy Returns<br></span> on all purchases made
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/secu.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Best Services Medal<br></span> we are proud of best service
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="photo">
+                            <a href="#"><img src="img/logo.png" alt="images" class="img-responsive"></a>
+                        </div>
+                        <p class="info-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant...</p>
+                        <div class="widget-info">
+                            <ul>
+                                <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>One World Trade Center Suite 8500 New York, NY 1006</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-ios-telephone fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain">(800) 8001-8588</p>
+                                </li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain">ClickShop@support.com</p>
+                                </li>
+                                <li class="clearfix"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h3>let us help you</h3>
+                                <ul class="fmenu">
+                                    <li><a href="#">your account</a></li>
+                                    <li><a href="#">your orders</a></li>
+                                    <li><a href="#">shipping rates & policies</a></li>
+                                    <li><a href="#">clickShop prime</a></li>
+                                    <li><a href="#">return & Replacements</a></li>
+                                    <li><a href="#">Manage Your Content and Devices</a></li>
+                                    <li><a href="#">ClickShop Assistant</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12 pd-left">
+                                <h3>useful links</h3>
+                                <ul class="fmenu">
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">About ClickShop</a></li>
+                                    <li><a href="#">Investor Relations</a></li>
+                                    <li><a href="#">Our Devices</a></li>
+                                    <li><a href="#">Apps & Download</a></li>
+                                    <li><a href="#">Thinking</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <h3>Newsletter</h3>
+                        <p class="news-desc">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.</p>
+                        <form action="#" class="news-letter-form">
+                            <input type="text" name="e" class="form-control" placeholder="Enter your e-mail">
+                            <button type="submit" class="btnsub">Subscribe</button>
+                        </form>
+                        <h3 class="titles">FIND US ON:</h3>
+                        <ul class="social">
+                            <li><a href="#"><i class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-youtube fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-linkedin fa-3" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-footer v2">
+            <div class="container">
+                <h1 class="heading-default v2">Top Categories & Brands</h1>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 block-left">
+                        <div class="block-footer">
+                            <h2 class="heading-primary v2 v2">WHAT'S NEW</h2>
+                            <p class="description-primary">
+                                <a title="smartphone" href="#" >Huawei P9</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung S7</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung S7 Edge</a>,&nbsp;
+                                <a title="smartphone" href="#" >Electric Unicycle</a>,&nbsp;
+                                <a title="smartphone" href="#" >Electric Scooter</a>,&nbsp;
+                                <a title="smartphone" href="#" >Foldable Bicycle</a>,&nbsp;
+                                <a title="smartphone" href="#" >OnePlus X</a>,&nbsp;
+                                <a title="smartphone" href="#" >Ninebot Mini Pro</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung Note 5</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung Edge</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung S6</a>,&nbsp;
+                                <a title="smartphone" href="#" >Phone 6S</a>,&nbsp;
+                                <a title="smartphone" href="#" >iPhone 6</a>,&nbsp;
+                                <a title="smartphone" href="#" >Oneplus-2</a>,&nbsp;
+                                <a title="smartphone" href="#" >Apple Watch</a>,&nbsp;
+                                <a title="smartphone" href="#" >Amazon Kindle</a>
+                            </p>
+                        </div>
+                        <div class="block-footer">
+                            <h2 class="heading-primary v2 v2">MOBILES & TABLETS</h2>
+                            <p class="description-primary">
+                                <a title="smartphone" href="#" >Apple</a>,&nbsp;
+                                <a title="smartphone" href="#" >Asus</a>,&nbsp;
+                                <a title="smartphone" href="#" >HTC</a>,&nbsp;
+                                <a title="smartphone" href="#" >Huawei</a>,&nbsp;
+                                <a title="smartphone" href="#" >Lenovo</a>,&nbsp;
+                                <a title="smartphone" href="#" >LG</a>,&nbsp;
+                                <a title="smartphone" href="#" >Nokia X</a>,&nbsp;
+                                <a title="smartphone" href="#" >Oppo</a>,&nbsp;
+                                <a title="smartphone" href="#" >One Plus</a>,&nbsp;
+                                <a title="smartphone" href="#" >Kindle</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsung</a>,&nbsp;
+                                <a title="smartphone" href="#" >Sony</a>,&nbsp;
+                                <a title="smartphone" href="#" >Xiaomi</a>
+                            </p>
+                        </div>
+                        <div class="block-footer no-padding-bottom">
+                            <h2 class="heading-primary v2">COMPUTERS & LAPTOPS</h2>
+                            <p class="description-primary">
+                                <a title="smartphone" href="#" >Acer</a>,&nbsp;
+                                <a title="smartphone" href="#" >Alienware</a>,&nbsp;
+                                <a title="smartphone" href="#" >Asus</a>,&nbsp;
+                                <a title="smartphone" href="#" >Corsair</a>,&nbsp;
+                                <a title="smartphone" href="#" >Dell</a>,&nbsp;
+                                <a title="smartphone" href="#" >Lenovo</a>,&nbsp;
+                                <a title="smartphone" href="#" >Logitech </a>,&nbsp;
+                                <a title="smartphone" href="#" >MSI</a>
+                                <a title="smartphone" href="#" >Altec Lansing</a>,&nbsp;
+                                <a title="smartphone" href="#" >Armaggeddon</a>,&nbsp;
+                                <a title="smartphone" href="#" >Audio Technica</a>,&nbsp;
+                                <a title="smartphone" href="#" >Beats</a>,&nbsp;
+                                <a title="smartphone" href="#" >Belkin</a>,&nbsp;
+                                <a title="smartphone" href="#" >Bose</a>,&nbsp;
+                                <a title="smartphone" href="#" >Fitbit</a>,&nbsp;
+                                <a title="smartphone" href="#" >Ninteno</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 block-right">
+                        <div class="block-footer">
+                            <h2 class="heading-primary v2">CONSUMER ELECTRONIC</h2>
+                            <p class="description-primary">
+                                <a title="smartphone" href="#" >Altec Lansing</a>,&nbsp;
+                                <a title="smartphone" href="#" >Armaggeddon</a>,&nbsp;
+                                <a title="smartphone" href="#" >Audio Technica</a>,&nbsp;
+                                <a title="smartphone" href="#" >Beats</a>,&nbsp;
+                                <a title="smartphone" href="#" >Belkin</a>,&nbsp;
+                                <a title="smartphone" href="#" >Bose</a>,&nbsp;
+                                <a title="smartphone" href="#" >Fitbit</a>,&nbsp;
+                                <a title="smartphone" href="#" >Nintendo</a>,&nbsp;
+                                <a title="smartphone" href="#" >Panasonic</a>,&nbsp;
+                                <a title="smartphone" href="#" >PS4</a>,&nbsp;
+                                <a title="smartphone" href="#" >Sennheiser</a>
+                            </p>
+                        </div>
+                        <div class="block-footer">
+                            <h2 class="heading-primary v2">FASHION</h2>
+                            <p class="description-primary"><a title="smartphone" href="#" >Birkenstock</a>,&nbsp;
+                                <a title="smartphone" href="#" >Coach</a>,&nbsp;
+                                <a title="smartphone" href="#" >Herschel</a>,&nbsp;
+                                <a title="smartphone" href="#" >Kate Spade</a>,&nbsp;
+                                <a title="smartphone" href="#" >Longchamp</a>,&nbsp;
+                                <a title="smartphone" href="#" >MCM</a>,&nbsp;
+                                <a title="smartphone" href="#" >Rayban</a>,&nbsp;
+                                <a title="smartphone" href="#" >Tory Burch</a>
+                                <a title="smartphone" href="#" >Canon</a>,&nbsp;
+                                <a title="smartphone" href="#" >Casio</a>,&nbsp;
+                                <a title="smartphone" href="#" >Fujifilm</a>,&nbsp;
+                                <a title="smartphone" href="#" >GoPro</a>,&nbsp;
+                                <a title="smartphone" href="#" >Instax</a>,&nbsp;
+                                <a title="smartphone" href="#" >Leica</a>,&nbsp;
+                                <a title="smartphone" href="#" >Nikon</a>,&nbsp;
+                                <a title="smartphone" href="#" >Olympus</a>,&nbsp;
+                                <a title="smartphone" href="#" >Panasonic</a>
+                            </p>
+                        </div>
+                        <div class="block-footer no-padding-bottom">
+                            <h2 class="heading-primary v2">HEALTH & BEAUTY</h2>
+                            <p class="description-primary">
+                                <a title="smartphone" href="#" >Biotherm</a>,&nbsp;
+                                <a title="smartphone" href="#" >Clarins</a>,&nbsp;
+                                <a title="smartphone" href="#" >Dior</a>,&nbsp;
+                                <a title="smartphone" href="#" >Estee Lauder</a>,&nbsp;
+                                <a title="smartphone" href="#" >Etude House</a>,&nbsp;
+                                <a title="smartphone" href="#" >GNC</a>,&nbsp;
+                                <a title="smartphone" href="#" >Laneige</a>,&nbsp;
+                                <a title="smartphone" href="#" >Lancome</a>
+                                <a title="smartphone" href="#" >L-occitane</a>,&nbsp;
+                                <a title="smartphone" href="#" >Shiseido</a>,&nbsp;
+                                <a title="smartphone" href="#" >Shu Uemura</a>,&nbsp;
+                                <a title="smartphone" href="#" >Skin Food</a>,&nbsp;
+                                <a title="smartphone" href="#" >Herschel</a>,&nbsp;
+                                <a title="smartphone" href="#" >Jansport</a>,&nbsp;
+                                <a title="smartphone" href="#" >Samsonite</a>,&nbsp;
+                                <a title="smartphone" href="#" >Adidas</a>,&nbsp;
+                                <a title="smartphone" href="#" >Aeroline</a>,&nbsp;
+                                <a title="smartphone" href="#" >AIBI</a>,&nbsp;
+                                <a title="smartphone" href="#" >Aleoca</a>,&nbsp;
+                                <a title="smartphone" href="#" >Billabong</a>,&nbsp;
+                                <a title="smartphone" href="#" >Columbia</a>,&nbsp;
+                                <a title="smartphone" href="#" >Converse</a>,&nbsp;
+                                <a title="smartphone" href="#" >Garmin</a>,&nbsp;
+                                <a title="smartphone" href="#" >Nike</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <span>© <a href="#" title="">ClickBuy</a> - All Rights Reserved.</span>
+                <ul class="payment">
+                    <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+/*
+
+        .3 Navigation bar
+ */
+
+.menu {
+    background: #333;
+}
+
+.deal {
+    float: right;
+    padding: 11px 0;
+    margin-left: 25px;
+}
+
+.menubar {
+    text-align: right;
+    @media (min-width: $screen-md) and (max-width:1024px) {
+        text-align:unset;
+    }
+    >li {
+        display: inline-block;
+        >a {
+            color: $primary-color;
+            text-transform: uppercase;
+            line-height: 55px;
+            padding: 16px 18px;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: $base-font-family;
+            &:hover {
+                color: #8ee830;
+            }
+        }
+    }
+}
+
+// ============ HOME PAGE 4===============//
+.menubar.v4 {
+    text-align: initial;
+}
+
+.deal.v4 {
+    margin-right: 40px;
+}
+
+//HOME PAGE 2
+@media (max-width:$screen-md-max) {
+    .menubar.v2 {
+        text-align: unset;
+    }
+}

@@ -1,0 +1,143 @@
+/*
+        2.2 Button
+
+ */
+
+.btn {
+    @include border-radius(0);
+
+    border: 0;
+    font-weight: bold;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: $dark-color;
+    border-color: $dark-color;
+}
+
+.btn-info {
+    background-color: $border-main-color;
+    border-color: $border-main-color;
+    &:before {
+        content: "\f394";
+        font-family: ionicons;
+        font-size: 20px;
+        margin-right: 15px;
+    }
+}
+
+.btn-info.focus,
+.btn-info:focus {
+    color: #fff;
+    background-color: $dark-color;
+    border-color: $dark-color;
+}
+
+//BTN SUB MENU
+.btn-sub {
+    background: transparent;
+    padding: 0;
+    color: $color-hover;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-family: $font-custom;
+}
+
+.btn-deal {
+    line-height: 30px;
+    padding: 5px 20px;
+    color: $border-main-color;
+    border: $border-main;
+    @include border-radius(15px);
+    font-size: $base-font-size;
+    font-family: $font_custom;
+    @include transition;
+    &:hover {
+        background: $color-hover;
+        color: $primary-color;
+    }
+    &:before {
+        content: "\f48c";
+        font-family: Ionicons;
+        margin-right: 9px;
+    }
+}
+
+.slide-button {
+    color: #fff;
+    position: absolute;
+    bottom: 26%;
+    left: 7%;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 33px;
+    padding: 0 17px;
+    background: #7ad021;
+    text-transform: uppercase;
+    font-family: $font-custom;
+    @include border-radius(30px);
+    &:hover {
+        background: #333;
+    }
+    @media(max-width: $screen-xs) {
+        font-size: 8px;
+        line-height: 25px;
+        padding: 0 10px;
+    }
+}
+
+//==================SLIDE BUTTON HOME 2==================/
+.slide-button.v2 {
+    left: unset;
+    right: 45%;
+    text-transform: capitalize;
+    background: #ff6600;
+    @include border-radius(0);
+    @media (min-width: 1920px) {
+        right: 41%;
+        text-transform: capitalize;
+        background: #ff6600;
+        padding: 8px 50px;
+        font-size: 16px;
+    }
+}
+
+//PRODUCT BUTTON HOVER
+.addcart {
+    display: inline-block;
+    color: #fff;
+    background: #6bce04;
+    padding: 2px 24px;
+    font: 700 14px/36px $base-font-family;
+    &:hover {
+        background: #333;
+    }
+    @media (min-width: $screen-sm-max) {
+        padding: 2px 10px;
+        font: 700 12px/36px "Poppins", sans-serif;
+    }
+    @media (min-width: 1200px) {
+        padding: 2px 31px;
+    }
+}
+
+.view {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 19px;
+    border: $border-line;
+    background: #f9f9f9;
+    vertical-align: bottom;
+
+    @media (max-width: $screen-md-max) {
+        padding: 5px 10px;
+    }
+}
+
+.addcart-v2 {
+    padding: 2px 28px;
+    @media(max-width: $screen-sm) {
+        padding: 2px 25px;
+    }
+}

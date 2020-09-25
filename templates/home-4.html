@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ClickBuy</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">SEARCH HERE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <form method="get" class="searchform" action="/search" role="search">
+                                <input type="hidden" name="type" value="product">
+                                <input type="text" name="q" class="form-control control-search">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown" class="ion-ios-search"></i></button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="topbar-mobile hidden-lg hidden-md">
+            <div class="active-mobile">
+                <div class="language-popup dropdown">
+                    <a id="label" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="icon"><i class="ion-ios-world-outline" aria-hidden="true"></i></span>
+                  <span>English</span>
+                  <span class="ion-chevron-down"></span>
+                </a>
+                    <ul class="dropdown-menu" aria-labelledby="label">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Vietnamese</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-nav">
+                <div class="active-mobile">
+                    <div class="header_user_info popup-over e-scale hidden-lg hidden-md dropdown">
+                        <div data-toggle="dropdown" class="popup-title dropdown-toggle" title="Account">
+                            <i class="ion-android-person"></i><span> Account</span>
+                        </div>
+                        <ul class="links dropdown-menu list-unstyled">
+                            <li>
+                                <a id="customer_login_link" href="#" title="Sign in"><i class="ion-log-in"></i> Login</a>
+                            </li>
+                            <li>
+                                <a id="customer_register_link" href="#" title="Register"><i class="ion-ios-personadd"></i> Register</a>
+                            </li>
+                            <li>
+                                <a class="account" rel="nofollow" href="#" title="My account"><i class="ion-ios-person"></i> My account</a>
+                            </li>
+                            <li>
+                                <a id="wishlist-total" title="Wishlist" href="#"><i class="ion-ios-heart"></i> Wishlist</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Check out"><i class="ion-ios-cart"></i> Check out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="active-mobile search-popup pull-right">
+                    <div class="search-popup dropdown" data-toggle="modal" data-target="#myModal">
+                        <i class="ion-search fa-3a"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="top-nav hidden-xs hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="left-nav">
+                            <div class="location dropdown">
+                                <a id="label1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="icon"><i class="ion-ios-location" aria-hidden="true"></i></span>
+                                  <span>Our Store</span>
+                                  <span class="ion-chevron-down"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="label1">
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">California</a></li>
+                                </ul>
+                            </div>
+                            <div class="language dropdown">
+                                <a id="label2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="icon"><i class="ion-ios-world-outline" aria-hidden="true"></i></span>
+                                  <span>English</span>
+                                  <span class="ion-chevron-down"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="label2">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Vietnamese</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="right-nav">
+                            <ul>
+                                <li><a href="#"><i class="ion-ios-heart fa-1a" aria-hidden="true"></i>whishlist</a></li>
+                                <li><a href="#"><i class="ion-arrow-swap fa-1a" aria-hidden="true"></i>compare</a></li>
+                                <li><a href="#"><i class="ion-ios-personadd fa-1a" aria-hidden="true"></i>create account</a></li>
+                                <li><a href="#"><i class="ion-log-in fa-1a" aria-hidden="true"></i>login</a></li>
+                            </ul>
+                            <span class="phone">800-123-6789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-8 col-xs-7 logo">
+                        <a href="#"><img src="img/logo.png" alt="images" class="img-reponsive"></a>
+                    </div>
+                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
+                        <div class="block block-2 v4">
+                            <div class="cart">
+                                <a href="#" title="" id="cart" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="photo photo-cart">
+                                        <img src="img/cart.png" alt="images" class="img-reponsive">
+                                        <span class="lbl v2">05</span>
+                                    </div>
+                                    <p class="inform inform-cart">
+                                        <span class="strong">CART<br></span>
+                                        <span class="price-cart">$1150.69</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-cart" aria-labelledby="label2">
+                                    <ul>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                    </ul>
+                                    <div class="content-1">
+                                        <span class="total">Total: <strong class="price black">$399.00</strong></span>
+                                        <span class="quantity"><strong class="number">02</strong> products</span>
+                                    </div>
+                                    <div class="content-2">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="viewcart">View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <form action="#" class="search-form v4" id="search-form">
+                                <select id="categlory" class="select-option" name="searchlist" form="search-form">
+                                    <option value="----">Choose an option</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <input type="text" name="s" class="form-control v4" placeholder="Search an items">
+                                <button type="submit" class="search-icon"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu v4">
+            <div class="container">
+                <div class="deal v4">
+                    <a href="#" class="btn-deal v4 orange">Hot Deal</a>
+                </div>
+                <button type="button" class="navbar-toggle v4" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="menu-title v4">MENU</span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="menubar v4 js-menubar">
+                        <li class=" menu-homepage menu-item-has-child dropdown">
+                            <a href="#" title="Home">Clothing</a>
+                            <span class="plus js-plus-icon"></span>
+                            <span class="lable orange">NEW</span>
+                            <ul class="dropdown-menu menu-level">
+                                <li><a href="index.html" title="home 1">Home 1</a></li>
+                                <li><a href="home-2.html" title="home 2">Home 2</a></li>
+                                <li><a href="home-3.html" title="home 3">Home 3</a></li>
+                                <li><a href="home-4.html" title="home 4">Home 4</a></li>
+                                <li><a href="home-5.html" title="home 5">Home 5</a></li>
+                                <li><a href="home-6.html" title="home 6">Home 6</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Parts</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tires & Tubes</a></li>
+                        <li><a href="#">Bikes & Frames</a></li>
+                        <li><a href="#">Nutrition</a></li>
+                        <li><a href="#">Buyer Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <div class="slide v3">
+        <div class="single-item js-banner">
+            <div class="slide-img">
+                <img src="img/slide_4_1.jpg" alt="images" class="img-reponsive">
+                <div class="slide-content-ver2 v4">
+                    <h5>NUA Ti-CORE - THE HEART OF YOUR PHONE</h5>
+                    <h3>Titanium Pro<br></h3>
+                    <a href="#" class="slide-button-ver2 v4">Buying Option</a>
+                    <i class="ion-android-arrow-dropright icon-sub-banner orange"></i>
+                </div>
+                <div class="slide-ribbon v4 orange">
+                    only now
+                    <br> <strong>$200</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subbanner v4">
+        <div class="container">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-sm">
+                    <a href="#"><img src="img/subbanner_4_1.jpg" alt="images" class="img-reponsive"></a>
+                    <div class="sub-banner-btn v4">
+                        <a href="#" class="btn btn-adventure">Adventure</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-sm">
+                    <a href="#"><img src="img/subbanner_4_2.jpg" alt="images" class="img-reponsive"></a>
+                    <div class="sub-banner-btn v4">
+                        <a href="#" class="btn btn-adventure">s-work</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="sub-banner-sm">
+                    <a href="#"><img src="img/subbanner_4_3.jpg" alt="images" class="img-reponsive"></a>
+                    <div class="sub-banner-btn v4">
+                        <a href="#" class="btn btn-adventure">women</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="best-sellers v4">
+        <div class="container">
+            <div class="heading-v1  top30">
+                <h3 class="title v2 center v4 text-center">Best Sellers</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                    <div class="product-item ver2">
+                        <div class="prod-item-img">
+                            <a class="hover-images" href="#"><img src="img/products/cyclebs_4_1.jpg" alt="images" class="img-responsive"></a>
+                            <div class="button v4">
+                                <a href="#" class="addcart">ADD TO CART</a>
+                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="prod-info ver2">
+                            <h3><a href="#">GT Zaskar Sport (2016)</a></h3>
+                            <div class="prod-price">
+                                <span class="price old">$1080.00</span>
+                                <span class="price v2">$598.39</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                    <div class="product-item ver2">
+                        <div class="prod-item-img">
+                            <a class="hover-images" href="#"><img src="img/products/cyclebs_4_2.jpg" alt="images" class="img-responsive"></a>
+                            <div class="button v4">
+                                <a href="#" class="addcart">ADD TO CART</a>
+                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="prod-info ver2">
+                            <h3><a href="#">Powerfly Plus 5 Womens</a></h3>
+                            <div class="prod-price">
+                                <span class="price black">$598.39</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                    <div class="product-item ver2">
+                        <div class="prod-item-img">
+                            <a class="hover-images" href="#"><img src="img/products/cyclebs_4_3.jpg" alt="images" class="img-responsive"></a>
+                            <div class="button v4">
+                                <a href="#" class="addcart">ADD TO CART</a>
+                                <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="prod-info ver2">
+                            <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                            <div class="prod-price">
+                                <span class="price black">$598.39</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="onsale">
+        <div class="container">
+            <div class="row row-no-padding">
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <div class="product-item v4">
+                        <div class="prod-item-img">
+                            <a href="#"><img src="img/onsale_4_1.jpg" alt="images" class="img-responsive"></a>
+                            <div class="ribbon v4">
+                                <span class="strong">-57.8%</span>
+                            </div>
+                        </div>
+                        <div class="countdown v2 v3" data-countdown="countdownver2" data-date="08-31-2018-00-00-00">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-12 ">
+                    <div class="product-item-info v4">
+                        <div class="prod-info v2 v3 v4">
+                            <h3><a href="#">GT Zaskar Mountain (2016)</a></h3>
+                            <div class="ratingstar">
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <span class="number">(12)</span>
+                            </div>
+                            <div class="prod-price v3">
+                                <span class="price old v4">$598.39</span>
+                                <span class="price-ver2 v2 v4">$369.96</span>
+                            </div>
+                            <p>The Turbo Levo Comp Fat bike was built to go anywhere, ride anything, and to do it all with ease. It provides all of the trail manners that our fat bikes...</p>
+                            <div class="button v3">
+                                <a href="#" class="addcart-ver2 v4"><span class="icon"></span>Get It</a>
+                                <a href="#" class="view v3 v4">View Parts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-product v4">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <h3 class="title v2 v4 pull-left">Widget Products</h3>
+                <ul class="otherr-link v2 pull-right">
+                    <li class="active"><a data-toggle="pill" href="#all">all</a></li>
+                    <li><a data-toggle="pill" href="#bike">Bike</a></li>
+                    <li><a data-toggle="pill" href="#frame">Frame        </a></li>
+                    <li><a data-toggle="pill" href="#acess">Accessories        </a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="tab-content">
+                <div id="all" class="tab-pane fade in active">
+                    <div class="prod-fea-list">
+                        <div class="row top-row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_1.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_2.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/insport-bag.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/sunglasses.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_6.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/garmin.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/lock.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/tacx.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/hat.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info ver2">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bike" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row top-row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_1.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_3.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="frame" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row top-row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/cycle_4_6.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/lock.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/tacx.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="acess" class="tab-pane fade">
+                    <div class="prod-fea-list">
+                        <div class="row top-row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/insport-bag.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/sunglasses.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/garmin.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img">
+                                        <a href="#"><img src="img/products/hat.jpg" alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Turbo Levo Hardtail Comp</a></h3>
+                                        <div class="prod-price">
+                                            <span class="price black">$598.39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner_2">
+        <div class="container">
+            <a href="#"><img src="img/banner_4_2.jpg" alt="images" class="img-responsive"></a>
+        </div>
+    </div>
+    <section class="our-blog">
+        <div class="container">
+            <div class="heading-v1 v2 top30">
+                <h3 class="title v2 pull-left">From Our Blog</h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-item-img">
+                            <a href="#"><img src="img/blog-1.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="blog-item-detail">
+                            <h3><a href="#" title="">WELCOME TO OUR ONLINE STORE</a></h3>
+                            <p>In scelerisque fermentum ipsum id lobortis. Phasellus feugiat nulla sit amet massa interdum finibus. Curabitur accumsan nibh metus sodales tristique volutpat.</p>
+                            <a href="#" class="readmore">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-item-img">
+                            <a href="#"><img src="img/blog-2.jpg" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="blog-item-detail">
+                            <h3><a href="#" title="">Reading Our Blog & Vote 5 Stars!</a></h3>
+                            <p>In scelerisque fermentum ipsum id lobortis. Phasellus feugiat nulla sit amet massa interdum finibus. Curabitur accumsan nibh metus sodales tristique volutpat.</p>
+                            <a href="#" class="readmore">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="brand">
+        <div class="container">
+            <div class="owl-carousel owl-theme js-owl-brand">
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/shepad.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/target.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/netsuite.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/yourclothes.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="img/brand/midnight.jpg" alt="images" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="features v2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/gift.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Deal of the day<br></span> check out today's deal
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/fly.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Free Shipping<br></span> on thousands of products
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/return.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Easy Returns<br></span> on all purchases made
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/secu.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Best Services Medal<br></span> we are proud of best service
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="info v4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3  col-xs-12">
+                        <div class="photo">
+                            <a href="#"><img src="img/logo_footer_4_1.png" alt="images" class="img-responsive"></a>
+                        </div>
+                        <p class="info-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant...</p>
+                        <div class="widget-info v4">
+                            <ul>
+                                <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>One World Trade Center Suite 8500 New York, NY 1006</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-ios-telephone fa-4" aria-hidden="true"></i>(800) 8001-8588</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>ClickShop@support.com</li>
+                                <li class="clearfix"></li>
+                            </ul>
+                        </div>
+                        <ul class="social v4">
+                            <li><a href="#"><i class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-youtube fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-linkedin fa-3" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h3>let us help you</h3>
+                                <ul class="fmenu">
+                                    <li><a href="#">your account</a></li>
+                                    <li><a href="#">your orders</a></li>
+                                    <li><a href="#">shipping rates & policies</a></li>
+                                    <li><a href="#">clickShop prime</a></li>
+                                    <li><a href="#">return & Replacements</a></li>
+                                    <li><a href="#">Manage Your Content and Devices</a></li>
+                                    <li><a href="#">ClickShop Assistant</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <h3>Get to Know Us</h3>
+                                <ul class="fmenu">
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">About ClickShop</a></li>
+                                    <li><a href="#">Investor Relations</a></li>
+                                    <li><a href="#">Our Devices</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <h3>Newsletter</h3>
+                        <p class="news-desc">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.</p>
+                        <form action="#" class="news-letter-form v4">
+                            <div class="form-group">
+                                <input type="text" name="e" class="form-control" placeholder="Enter your e-mail">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class=" btn btnsub v4">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-footer  v4 text-center">
+            <div class="container">
+                <h1 class="heading-default v2 v4">Top Categories & Brands</h1>
+                <p>
+                    <a title="smartphone" href="#" >Huawei P9</a>,&nbsp;
+                    <a title="smartphone" href="#" >Samsung S7</a>,&nbsp;
+                    <a title="smartphone" href="#" >Samsung S7 Edge</a>,&nbsp;
+                    <a title="smartphone" href="#" >Electric Unicycle</a>,&nbsp;
+                    <a title="smartphone" href="#" >Electric Scooter</a>,&nbsp;
+                    <a title="smartphone" href="#" >Foldable Bicycle</a>,&nbsp;
+                    <a title="smartphone" href="#" >OnePlus X</a>,&nbsp;
+                    <a title="smartphone" href="#" >Ninebot Mini Pro</a>,&nbsp;
+                    <a title="smartphone" href="#" >Samsung Note 5</a>,&nbsp;
+                    <a title="smartphone" href="#" >Samsung Edge</a>,&nbsp;
+                    <a title="smartphone" href="#" >Samsung S6</a>,&nbsp;
+                    <a title="smartphone" href="#" >Phone 6S</a>,&nbsp;
+                    <a title="smartphone" href="#" >iPhone 6</a>,&nbsp;
+                    <a title="smartphone" href="#" >Oneplus-2</a>,&nbsp;
+                    <a title="smartphone" href="#" >Apple Watch</a>,&nbsp;
+                    <a title="smartphone" href="#" >Amazon Kindle</a>,...
+                </p>
+            </div>
+        </div>
+        <div class="copyright v4">
+            <div class="container">
+                <span>© <a href="#" title="">ClickBuy</a> - All Rights Reserved.</span>
+                <ul class="payment">
+                    <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

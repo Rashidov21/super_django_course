@@ -1,0 +1,103 @@
+/**
+	Theme Name: ClickBuy
+	Theme URI: http://engotheme.com/
+	Author: Engo Team
+	Author URI: http://engotheme.com/
+	Description: Engo ABC HTML Template
+	Version: 1.0
+	Last change:	2017/02/09 [Initial Release]
+	License: GNU General Public License v2 or later
+	Text Domain: Engotheme
+ **/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+	1.Base
+		1.1 Variable
+		1.2 Mixin
+		1.3 Base
+		1.4 Normalize
+	2.Modules
+		2.1 Block
+		2.2 Button
+		2.3 Component
+			2.3.1 Owl Carousel
+		2.4 Section
+			2.4.1 Slide
+			2.4.2 Banner
+		2.5 Typography
+		2.6 Form
+		2.7 Ribbon
+		2.8 Megamenu
+	3.Layout
+		3.1 Header
+			3.1.1 Header version 1
+			3.1.2 Header version 2
+			3.1.3 Header version 3
+			3.1.4 Header version 4
+			3.1.5 Header version 5
+			3.1.6 Header version 6
+		3.2 Footer
+			3.2.1 Footer version 1
+			3.2.2 Footer version 2
+			3.2.3 Footer version 3
+			3.2.4 Footer version 4
+			3.2.5 Footer version 5
+			3.2.6 Footer version 6
+		3.3 Navigation bar
+		3.4 Blog
+			3.4.1 Blog Single
+			3.4.2 Blog list
+		3.5 About us
+			3.5.1 About us
+			3.5.2 Contact Us
+		3.6 Checkout Shopping Cart
+			3.6.1 Shop cart
+			3.6.2 Checkout
+			3.6.3 Order
+		3.7 Shop Grid + List	
+		3.8 Product Collection page
+		3.9 Product list
+		3.10 Grid 
+	4. Reponsive
+		4.1 Desktop
+		4.2 Table
+		4.3 Mobile
+			
+		
+-------------------------------------------------------------------*/
+
+
+//BASE - style, variable, mixins
+@import 'base/variable';
+@import 'base/mixin';
+@import 'base/base';
+@import 'base/normalize';
+//MODULE - Individual site components
+@import 'modules/block';
+@import 'modules/button';
+@import 'modules/component';
+@import 'modules/section';
+@import 'modules/typography';
+@import 'modules/form';
+@import 'modules/ribbon';
+@import 'modules/megamenu';
+//LAYOUT - layout style
+@import 'layouts/header';
+@import 'layouts/nav';
+@import 'layouts/grid';
+@import 'layouts/product_list';
+@import 'layouts/product-collection';
+@import 'layouts/shop-list';
+@import 'layouts/checkout';
+@import 'layouts/about-us';
+@import 'layouts/blog';
+@import 'layouts/footer';
+//RESPONSIVE - 
+@import 'reponsive/desktop';
+@import 'reponsive/table';
+@import 'reponsive/mobile';
+
+
+

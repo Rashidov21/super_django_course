@@ -1,0 +1,725 @@
+/*
+        2.5 Typography
+        
+ */
+
+
+/* Icons */
+
+.fa-1 {
+    font-size: 10px;
+}
+
+.fa-1a {
+    font-size: 13px;
+}
+
+.fa-2 {
+    font-size: 15px;
+}
+
+.fa-3 {
+    font-size: 16px;
+}
+
+.fa-3a {
+    font-size: 18px;
+}
+
+.fa-4 {
+    font-size: 20px;
+}
+
+.fa-5 {
+    font-size: 30px;
+}
+
+.fa-5a {
+    font-size: 32px;
+}
+
+.fa-5b {
+    font-size: 36px;
+}
+
+//social
+.social {
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        a {
+            margin: 0px;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            border: $border-line;
+            @include border-radius(50%);
+            background: #eeeeee;
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 36px;
+        }
+        .fa {
+
+            line-height: 36px;
+            color: #6c6c6c;
+            display: inline-block;
+        }
+    }
+}
+
+//adress
+.widget-info {
+    ul {
+        li {
+            margin-bottom: 15px;
+            @media(max-width: $screen-xs) {
+                font-size:12px;
+            }
+            i {
+                float: left;
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                text-align: center;
+                border: 1px solid #dddddd;
+                line-height: 36px;
+                margin-right: 25px;
+                @include border-radius(4px);
+
+                @media (min-width: $screen-sm) and (max-width: 1024px) {
+                    display:none;
+                }
+            }
+        }
+    }
+}
+
+//payment
+.payment {
+    float: right;
+    li {
+        display: inline-block;
+        margin-left: 25px;
+    }
+}
+
+//Heading
+.menu-title {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    padding: 2px 15px 0 44px;
+    &:before {
+        content: "\f394";
+        font-family: Ionicons;
+        font-size: 20px;
+        left: 15px;
+        position: absolute;
+        top: -1px;
+    }
+}
+
+.heading-default {
+    color: $primary-color;
+    font: 600 18px $base-font-family;
+    margin-bottom: 38px;
+    text-transform: uppercase;
+    @media(max-width: $screen-xs) {
+        font-size:16px;
+    }
+}
+
+.heading-primary {
+    color: #aaa;
+    font: 600 14px/10px $font-custom;
+    margin-bottom: 20px;
+}
+
+.description-primary {
+    font: 13px/20px $font-custom;
+    @media(max-width: $screen-xs) {
+        font-size:12px;
+    }
+}
+
+.heading-v1 {
+    h3 {
+        color: #333;
+        font: bold 24px/48px $base-font-family;
+        text-transform: uppercase;
+        padding-bottom: 7px;
+        &.pull-left {
+            @media(max-width: $screen-xs-max) {
+                float: none ;
+            }
+        }
+        @media(max-width: $screen-xs-max) {
+            text-align: center;
+            font-size: 20px;
+        }
+        @media(max-width: $screen-xs) {
+            font-size: 16px;
+        }
+    }
+}
+
+.otherr-link {
+    &.pull-right {
+        @media(max-width: $screen-xs-max) {
+            float: none;
+        }
+    }
+    li {
+        display: inline-block;
+        margin-left: 31px;
+        a {
+            font: 14px/48px $base-font-family;
+            text-transform: capitalize;
+            @media(max-width: $screen-xs) {
+                font-size:12px;
+            }
+        }
+    }
+    .active {
+        a {
+            color: #6bce04;
+            text-decoration: underline;
+        }
+    }
+
+    @media(max-width: $screen-xs-max) {
+        text-align: center;
+    }
+    &.v5 {
+        li {
+            a {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.heading-v2 {
+    .breadcrumb-ver1 {
+        background-color: transparent;
+        @include border-radius(0);
+        margin-bottom: 0px;
+        padding: 0;
+        li.active {
+            a {
+                color: $title-color;
+            }
+        }
+        li {
+            display: inline-block;
+            a {
+                font: bold 24px/48px $base-font-family;
+                text-transform: uppercase;
+                color: #999999;
+
+                @media (max-width: $screen-xs) {
+                    font:bold 14px/24px $base-font-family;
+                }
+            }
+            &:first-child {}
+            &:after {
+                content: "/";
+                font-size: 24px;
+                margin-right: 14px;
+                margin-left: 25px;
+                color: #999999;
+                @media (max-width: $screen-xs) {
+                    font-size: 14px;
+                    margin-right: 10px;
+                    margin-left: 15px;
+                }
+            }
+            &:last-child:after {
+                content: none;
+            }
+        }
+        li.active:after {
+            color: #333;
+        }
+    }
+}
+
+.prod-info {
+    h3 {
+        margin-bottom: 10px;
+        font: 13px/20px $base-font-family;
+        @media(min-width: $screen-md) {
+            margin-bottom:0;
+        }
+        a {}
+    }
+}
+
+//PRICE
+.p-price {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.prod-price {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 15px;
+    color: $price-color;
+}
+
+.old {
+    font-size: 12px;
+    text-decoration: line-through;
+    font-weight: normal;
+    color: $base-font-color;
+}
+
+.black {
+    color: $price-dark-color;
+}
+
+.number {
+    font-family: $font-custom2;
+    margin-left: 10px;
+    color: #aaaaaa;
+}
+
+.price-ver2 {
+    @extend .price;
+    font-size: 15px;
+}
+
+.price-ver2.price-lg {
+    font-size: 18px;
+}
+
+.price-cart {
+    @extend .price;
+    color: #aaaaaa;
+    font-weight: normal;
+}
+
+.price.ver3 {
+    font-size: 12px;
+}
+
+.heading-v3 {
+    color: $title-color;
+    font-family: $base-font-family;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    * {
+        display: inline-block;
+
+        margin-right: 15px;
+    }
+    span {
+        padding-top: 15px;
+        @media (max-width: $screen-xs-max) {
+            padding-top:20px;
+        }
+    }
+    @media(max-width:$screen-xs) {
+        font-size: 14px;
+    }
+}
+
+.heading-v3.dif {
+    margin-bottom: 5px;
+}
+
+.product-item.ver3>ul {
+    margin-top: -8px;
+}
+
+.price.v2 {
+    color: $pricev2-color;
+}
+
+.price-ver2.v2 {
+    font-size: 24px;
+    color: $pricev2-color;
+}
+
+.price-ver2.v4 {
+    font-size: 18px;
+}
+
+.price.old.v4 {
+    color: #fff;
+}
+
+.ver3 {
+    //icon
+    ul {
+        li {
+            a {
+                font: 13px/30px $font-custom;
+                text-transform: capitalize;
+                @media(max-width: $screen-xs) {
+                    font-size:11px;
+                }
+            }
+            &:before {
+                content: "\f125";
+                font-family: Ionicons;
+                font-size: 12px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.ver4 {
+    .prod-info {
+
+        h3 {
+            font: 600 24px $base-font-family;
+            margin-bottom: 0;
+            a {
+
+                color: $title-color;
+                &:hover {
+                    color: $color-hover;
+                }
+            }
+        }
+        p.brand {
+            color: #aaaaaa;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+    }
+    .prod-description {
+        padding-top: 38px;
+        padding-bottom: 60px;
+        border-top: $border-line;
+        border-top-style: dotted;
+
+        ul {
+            li {
+                font: 13px/26px $font-custom;
+                &:before {
+                    content: "\f121";
+                    font-family: ionicons;
+                    margin-right: 10px;
+                }
+            }
+        }
+        @media(max-width: $screen-sm) {
+            display: none;
+        }
+    }
+
+    .prod-choose {
+        .prod-price {
+            span.productPriceDiscount {
+                padding: 2px 27px;
+                background: #ff6600;
+                border-radius: 30px;
+                font-size: 16px;
+                color: #fff;
+                font-family: $font_custom2;
+                line-height: 25px;
+
+                .strong {
+                    font-weight: 600;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+.countdown {
+    ul {
+        li {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #e8e8e8;
+            margin: 0 5px;
+            width: 64px;
+            height: 64px;
+            font-size: 12px;
+            color: #aaaaaa;
+            font-family: $font-custom;
+            @include border-radius(10px);
+            line-height: 0;
+            text-align: center;
+
+            span {
+                font: 600 24px/36px $base-font-family;
+                color: $title-color;
+                display: block;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+//dot choose color
+.dot {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #eeeeee;
+    cursor: pointer;
+}
+
+.dot.v2 {
+    width: 18px;
+    height: 8px;
+    line-height: 8px;
+    display: inline-block;
+    border: 1 solid #eeeeee;
+    cursor: pointer;
+    @include border-radius(0);
+}
+
+//===================	HEADING SUB =================//
+.heading-sub {
+    padding: 21px 0;
+    margin-bottom: 0;
+    h3 {
+        color: #333;
+        font: bold 24px/48px "Poppins", sans-serif;
+        text-transform: uppercase;
+    }
+    @media(max-width: $screen-md-max) {
+        margin-bottom: 0;
+    }
+    @media (max-width: $screen-xs-max) {
+        padding: 0;
+    }
+}
+
+.heading-sub.ver2 {
+    padding: 0px;
+    h3 {
+        color: #333;
+        font: bold 22px/48px "Poppins", sans-serif;
+        text-transform: uppercase;
+    }
+}
+
+.other-link-sub {
+    li {
+        display: inline-block;
+        a {
+            font: 14px/36px "Open Sans", sans-serif;
+            text-transform: capitalize;
+        }
+        +li:before {
+            content: "\f125";
+            font-family: ionicons;
+            font-size: 10px;
+            margin: 0;
+            padding: 0 15px;
+        }
+    }
+}
+
+.other-link-sub {
+    li {
+        a.active {
+            color: #333;
+            font-weight: bold;
+        }
+    }
+}
+
+.content-text {
+    margin-bottom: 70px;
+    @media (max-width: $screen-md-max) {
+        margin-bottom:30px;
+    }
+    h2 {
+        font: 700 55px $base-font-family;
+        color: $title-color;
+    }
+    p {
+        font: 16px/30px $font-custom;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+}
+
+.content-social {
+    h3 {
+        font: 700 18px/24px $base-font-family;
+        color: $title-color;
+        margin-bottom: 10px;
+    }
+}
+
+.content-coundown {
+    padding: 20px;
+    margin-bottom: 70px;
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    -webkit-background-size: 3px 3px;
+    -moz-background-size: 3px 3px;
+    background-size: 3px 3px;
+    @media (max-width: $screen-md-max) {
+        margin-bottom:30px;
+    }
+}
+
+
+.content-coundown {
+    @extend .countdown;
+    ul {
+        li {
+            @include border-radius(50%);
+            width: 130px;
+            height: 130px;
+            padding: 38px 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: #fff;
+            border: 0;
+            span {
+                font-size: 36px;
+                @media (min-width: $screen-xs-max)and (max-width: $screen-md-max) {
+                    font-size:18px;
+                }
+                @media(max-width: $screen-sm) {
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+            @media (min-width: $screen-xs-max)and (max-width: $screen-md-max) {
+                font-size: 12px;
+                line-height: 5px;
+                width: 100px;
+                height: 100px;
+                padding: 24px 15px;
+            }
+            @media(max-width: $screen-sm) {
+                width: 60px;
+                height: 60px;
+                padding: 15px 15px;
+            }
+            @media (max-width: $screen-xs-max) {
+                font-size: 10px;
+            }
+            @media(max-width: $screen-xs) {
+                width: 45px;
+                height: 45px;
+                padding: 10px 0px;
+            }
+        }
+    }
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+    }
+}
+
+.content {
+    padding-top: 160px;
+    @media (max-width: $screen-md-max) {
+        padding-top:30px;
+    }
+}
+
+//========== heading home page 2========//
+//Heading
+.heading-default.v2 {
+    color: $title-color;
+}
+
+.heading-primary.v2 {
+    color: $title-color;
+}
+
+//========== HOME PAGE 3=========/
+.price-ver2.v3 {
+
+    color: $color-hover;
+}
+
+//========== HOME PAGE 4=========/
+.info.v4 h3 {
+    color: #fff;
+}
+
+.info.v4 {
+    a {
+        color: #999;
+        &:hover {
+            color: $colorv2-hover;
+        }
+    }
+    p {
+        color: #999;
+    }
+}
+
+.widget-info.v4 {
+    li {
+        color: #ccc;
+        &:hover {
+            color: $colorv2-hover;
+        }
+    }
+}
+
+.social.v4 {
+    padding-top: 30px;
+    position: relative;
+    li {
+        a {
+            background: #434343;
+            border-color: #434343;
+        }
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        top: 0;
+        left: 0;
+        border-bottom: 1px dotted #434343;
+    }
+}
+
+.heading-default.v4 {
+    text-transform: uppercase;
+    padding-top: 51px;
+    border-top: 1px dotted #434343;
+    margin-bottom: 21px;
+    color: #999999;
+}
+
+//========================HOME PAGE 5========================//
+.otherr-link.v5 li.active a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: $title-color;
+}
+
+.info.v5>a {
+    font: lighter 13px/32px $base-font-family;
+    color: #777;
+}

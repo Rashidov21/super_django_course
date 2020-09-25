@@ -1,0 +1,68 @@
+/*
+        2.7 Ribbon
+    
+ */
+
+//ribbon
+.label-1 {
+    display: inline-block;
+    @include border-radius(0);
+    padding: 13px 43px;
+    background: #6bce04;
+    font-size: 24px;
+    @media(max-width: $screen-xs) {
+        font-size:12px;
+    }
+}
+
+.label-2 {
+    display: inline-block;
+    @include border-radius(0);
+    font-size: 11px;
+    padding: 4px 11px 3px;
+    font-weight: normal;
+    font-family: $font-custom;
+    position: absolute;
+    text-transform: uppercase;
+    top: 12px;
+}
+
+.blue {
+    background: #46d2ca;
+}
+
+.red {
+    background: #ec383f;
+}
+
+.black-d {
+    background: #333;
+}
+
+.blue-sky {
+    background: #00aeef;
+}
+
+.brown {
+    background: #754c24;
+}
+
+.pink {
+    background: #e12ab0;
+}
+
+.orange {
+    background: #ff6600;
+}
+
+.green {
+    background: #6bce04;
+}
+
+//========== HOMEPAGE 2=========/
+.label-2.v2 {
+    left: 0;
+    top: 0;
+}
+
+//========== HOMEPAGE 4=========/

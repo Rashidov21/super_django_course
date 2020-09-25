@@ -1,0 +1,101 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+$base-font-family:"Poppins", sans-serif;
+$black:#333;
+$grey:#f1f1f1;
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.breadcrumb li { 
+    display:block;
+}
+.breadcrumb li a {
+    color: #999999;
+    text-decoration: none; 
+    padding: 26px 92px 25px 10px;
+    background: #f1f1f1;                   /* fallback color */
+    position: relative; 
+    display: block;
+    @media(max-width:767px){
+      padding: 10px 111px 10px 10px;
+    }
+    @media (max-width: $screen-md-max){
+      padding: 26px 56px 25px 10px;
+    }
+}
+.breadcrumb li a:after { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 40px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    left: 100%;
+    z-index: 2; 
+}   
+.breadcrumb li a:before { 
+    content: " "; 
+    display: block;
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 40px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    margin-left: 10px;
+    left: 100%;
+    z-index: 1; 
+}   
+.breadcrumb li:first-child a {
+    padding-left: 110px;
+    @media (max-width: $screen-md-max){
+      padding-left: 60px;
+    }
+    @media(max-width:767px){
+      padding-left:10px;
+    }
+}
+
+.breadcrumb li a.active{
+  background:#333;
+  color:#fff;
+  &:after{
+    border-left: 40px solid #333;
+  }
+}
+
+@media (min-width: $screen-sm) and (max-width: 1024px) {
+  .breadcrumb li a{
+    padding: 10px 35px 10px 10px;
+  }
+  .breadcrumb li:first-child a {
+    padding-left: 35px;
+  }
+
+}
+
+@media(min-width:$screen-md){
+    
+.breadcrumb { 
+    display:table;
+}
+
+.breadcrumb li { 
+    display:table-cell;
+}
+.breadcrumb li a {
+  padding-left: 154px;
+}
+}
+

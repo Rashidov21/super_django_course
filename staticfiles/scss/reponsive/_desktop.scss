@@ -1,0 +1,54 @@
+// 4.1 Desktop
+
+
+@media(max-width: $screen-lg) {
+    .block-1 {
+        display: none;
+    }
+    .menubar>li>a {
+        padding: 16px 8px;
+    }
+    .ver4 .prod-choose .prod-price .productPriceDiscount {
+        bottom: 44%;
+    }
+    .coundown ul li {
+        width: 50px;
+        height: 50px;
+        padding: 0 8px;
+        margin: 0;
+    }
+    .fea-box .photo {
+        padding: 0 10px;
+    }
+    .inform-ver2 {
+        font-size: 12px;
+        .strong {
+            font-size: 16px;
+        }
+    } //menubar
+    .sub-banner-btn {
+        bottom: 15px;
+    }
+    .sub-banner-title {
+        top: 20px;
+    }
+    .slide-content-ver3.v2 h3 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        strong {
+            font-size: 40px;
+        }
+    }
+    .slide-button-ver3.v2 {
+        line-height: 0;
+    } //home page 3
+    .slide-content-ver2 h5 {
+        font: 14px/20px "Open Sans", sans-serif;
+    }
+    .slide-content-ver2 h3 {
+        font-size: 36px;
+    } //homepage 4
+    .product-item-info.v4 {
+        padding: 8px 0;
+    }
+}

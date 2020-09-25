@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ClickBuy</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+				              <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown" class="ion-ios-search"></i></button>
+				            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page" class="site">
+        <div class="page-fullwidth">
+            <div class="page-left-sidebar">
+                <div class="navbar-wrapper js-navbar-wrapper">
+                    <div class="navbar-control js-navbar-control">
+                        <div class="navbar-header">
+                            <a href="#"><img src="img/logo_6_1.png" alt="images" class="img-responsive"></a>
+                        </div>
+                        <div class="navbar-button js-navbar-button">
+                            <div class="bars js-bars">
+                                <a href="#">
+										<i class="ion-android-menu icon-mobile"></i>
+									</a>
+                            </div>
+                        </div>
+                        <div class="navbar-meta js-navbar-meta">
+                            <div class="search-ver6 dropdown" data-toggle="modal" data-target="#myModal">
+                                <i class="ion-ios-search"></i>
+                            </div>
+                            <div class="cart v6 js-cart">
+                                <a href="#">
+                                    <div class="photo">
+                                        <img src="img/cart_6_1.png" alt="images" class="img-reponsive">
+                                        <span class="lbl v6">0</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar__content">
+                        <div id="bars" class="navbar__container js-container">
+                            <div class="navbar__wrap">
+                                <ul class="level">
+                                    <li><a href="#">Men</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Kid</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="cart" class="navbar__container js-container">
+                            <div class="navbar__wrap">
+                                <div class="dropdown-cart">
+                                    <ul>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
+                                        </li>
+                                    </ul>
+                                    <div class="content-1">
+                                        <span class="total">Total: <strong class="price black">$399.00</strong></span>
+                                        <span class="quantity"><strong class="number">02</strong> products</span>
+                                    </div>
+                                    <div class="content-2">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="viewcart">View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-right-content">
+                <div class="slide-wrapper js-banner">
+                    <div class="slide-img">
+                        <img src="img/slide_6_1.jpg" alt="images" class="img-reponsive">
+                        <div class="slide-content-ver6">
+                            <h3>Autumn Collection 2017</h3>
+                            <a href="#" class="btn-shop-now">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="slide-img">
+                        <div class="pattern ver3"></div>
+                        <img src="img/slide_6_2.jpg" alt="images" class="img-reponsive">
+                        <div class="slide-content-ver6">
+                            <h3>Autumn Sale 2017</h3>
+                            <a href="#" class="btn-shop-now">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-collection">
+                        <div class="pattern"></div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/test_1.png" alt="images" class="img-responsive"></a>
+                                        <div class="button-hover">
+                                            <a href="#" class="btn btn-view v6">View Collection <i class="ion-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-item-ds-ver1">
+                                        <h3 class="product-title">
+												<a href="#" title="">WOMEN</a>
+											</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/test_2.png" alt="images" class="img-responsive"></a>
+                                        <div class="button-hover">
+                                            <a href="#" class="btn btn-view v6">View Collection <i class="ion-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-item-ds-ver1">
+                                        <h3 class="product-title">
+												<a href="#" title="">MEN</a>
+											</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/test_3.png" alt="images" class="img-responsive"></a>
+                                        <div class="button-hover">
+                                            <a href="#" class="btn btn-view v6">View Collection <i class="ion-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-item-ds-ver1">
+                                        <h3 class="product-title">
+												<a href="#" title="">KIDS</a>
+											</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="product-item product-content">
+                                    <div class="row">
+                                        <div class="col-md-12 access-item">
+                                            <div class="product-item-img-ver6">
+                                                <a href="#"><img src="img/test_4.png" alt="images" class="img-responsive"></a>
+                                                <div class="button-hover">
+                                                    <a href="#" class="btn btn-view v6">View Collection <i class="ion-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 access-item">
+                                            <div class="product-item-img-ver6">
+                                                <a href="#"><img src="img/test_5.png" alt="images" class="img-responsive"></a>
+                                                <div class="button-hover">
+                                                    <a href="#" class="btn btn-view v6">View Collection <i class="ion-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item-ds-ver1">
+                                        <h3 class="product-title">
+												<a href="#" title="">ACCESSORIES</a>
+											</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-bestselling text-center">
+                        <div class="product-header">
+                            <h2>Best Selling Products</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_1.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_2.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_3.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_4.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_5.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row-2 -->
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_6.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_7.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_8.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_9.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_10.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row-3 -->
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_11.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_12.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_13.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_14.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item product-content">
+                                    <div class="product-item-img-ver6">
+                                        <a href="#"><img src="img/bs_6_15.jpg" alt="images" class="img-responsive"></a>
+                                    </div>
+                                    <div class="product-item-ds">
+                                        <h3 class="product-title">
+												<a href="#" title="">BATWING SLEEVE SWEATSHIRT</a>
+											</h3>
+                                        <div class="product-price">$332.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-load-more">LOAD MORE <i class="ion-ios-arrow-thin-down"></i></a>
+                    </div>
+                </div>
+                <div class="product-banner">
+                    <div class="pattern ver2"></div>
+                    <div class="row">
+                        <div class="col-lg-3-5 col-md-3-5 col-xs-12 ">
+                            <a href="#" class="image-banner"><img src="img/banner6.jpg" alt="images" class="img-reponsive"></a>
+                        </div>
+                        <div class="col-lg-2-5 col-md-2-5 col-xs-12 text-center product-content-6">
+                            <h3>NEW YEAR COLLECTION</h3>
+                            <h2>Happy  Kids</h2>
+                            <a href="#" class="btn btn-get-free">Get free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-sesletter text-center">
+                    <h3>Join Our Newsletter</h3>
+                    <form action="#" class="newsletter-form">
+                        <input type="text" name="s" placeholder="ENTER YOUR E-MAIL">
+                        <input type="submit" style="visibility: hidden;" />
+                    </form>
+                </div>
+                <div class="footer text-center">
+                    <h1><a href="#"><img src="img/logo_6_1.png" alt="images" class="img-responsive"></a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

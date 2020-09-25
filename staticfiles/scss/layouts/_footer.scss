@@ -1,0 +1,170 @@
+/*
+    3.2 Footer
+        3.2.1 Footer version 1
+        3.2.2 Footer version 2
+        3.2.3 Footer version 3
+        3.2.4 Footer version 4
+        3.2.5 Footer version 5
+        3.2.6 Footer version 6
+ */
+
+//footer
+.info .photo {
+    a {
+
+        display: block;
+        width: 180px;
+    }
+}
+
+.info {
+    padding: 60px 0;
+    h3 {
+        color: #333333;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $base-font-family;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        margin-top: 40px;
+        @media(max-width: $screen-xs) {
+            font-size:16px;
+        }
+    }
+    a {
+        font: 13px/32px $font-custom;
+        text-transform: capitalize;
+        @media(max-width: $screen-xs) {
+            font-size:12px;
+        }
+    }
+    .info-desc {
+        padding-bottom: 30px;
+        padding-top: 20px;
+        position: relative;
+        display: inline-block;
+        @media(max-width: $screen-xs) {
+            font-size:12px;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 80px;
+            border: 1px solid #dddddd;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .news-desc {
+        margin-bottom: 30px;
+    }
+    .title-contain {
+        padding-top: 10px;
+    }
+
+
+    .widget-info {
+        margin-top: 30px;
+    }
+}
+
+.top-footer {
+    background: #282828;
+    padding-top: 73px;
+    padding-bottom: 40px;
+}
+
+.copyright {
+    padding: 22px 0;
+    background: #222222;
+    span {
+        font: 14px/24px $font-custom;
+        color: #999;
+        @media(max-width: $screen-xs) {
+            font-size:12px;
+        }
+        a {
+            color: #999;
+            font-weight: bold;
+            &:hover {
+                color: $color-hover;
+            }
+        }
+    }
+} //================ HOME PAGE 2================//
+.top-footer.v2 {
+    background: $topfooterv2-bg;
+} //================ HOME PAGE 4================//
+.info.v4 {
+    background: #222222;
+    padding-bottom: 96px;
+    @media(max-width: $screen-xs-max) {
+        padding-bottom: 30px;
+    }
+}
+
+.top-footer.v4 {
+    background: #222222;
+    padding-top: 0;
+    padding-bottom: 51px;
+}
+
+.copyright.v4 {
+    background: #181818;
+}
+
+//================ HOME PAGE 5================//
+footer.v5 {
+    background: #222;
+    margin-bottom: 45px;
+    @media(max-width: $screen-xs-max) {
+        margin-bottom:0;
+    }
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.info.v5 {
+    padding-top: 28px;
+    border-bottom: 1px solid #434343;
+    background: #222;
+}
+
+.info.v5 {
+    h3 {
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+.fmenu.v5 {
+    a {
+        color: #777;
+        font: Lighter 13px/32px $base-font-family;
+    }
+}
+
+.social.v5 {
+    @extend .social.v4;
+    padding-top: 0;
+    &:before {
+        border: 0;
+    }
+}
+
+.copyright.v5 {
+    padding: 37px 0;
+    span {
+        color: #777;
+        font: lighter 13px $base-font-family;
+        a {
+            font-weight: lighter;
+        }
+        .author {
+            color: #fff;
+        }
+    }
+}

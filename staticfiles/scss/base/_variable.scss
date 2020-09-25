@@ -1,0 +1,75 @@
+/** 1.1 Variable **/
+
+//Font color
+$base-font-size:13px;
+$base-font-family:"Poppins", sans-serif;
+$base-font-color:#6c6c6c;
+$font-custom:"Open Sans", sans-serif;
+$font-custom2:"Arial", sans-serif;
+$font-custom3:"Ubuntu", sans-serif;
+$font-custom-size:12px;
+//background color
+$primary-color:#fff;
+$second-color:#f2f2f2;
+$title-color:#333;
+$dark-color:#222;
+$color-hover:#6bce04;
+$price-color:#6bce04;
+$price-dark-color:#333;
+$bg-color2:#6bce04;
+//============ HOME-2 PAGE =================//
+//Font-color
+$topnavv2-bg:#232323;
+$bottomv2-bg:#282828;
+$menu-bg:#ff6600;
+$bgv2-color:#ff6600;
+$menu-button-bg:#d05300;
+$topnavv2-font:#888888;
+$colorv2-hover:#ff6600;
+$pricev2-color:#ff6600;
+$topfooterv2-bg:#f4f4f4;
+//border
+$border:					 	1px solid #6bce04;
+$border-main-color:				#6bce04;//xanh
+$border-main:					1px solid #6bce04;
+$border-line: 1px solid #eeeeee;
+$bgslide:#f2f2f2;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$break-small: 375px;
