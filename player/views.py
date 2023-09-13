@@ -2,8 +2,11 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic.base import View
+from django.views.generic import ListView,DetailView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Players
+from .forms import AdPlayerForm
 
 # Create your views here.
 
@@ -39,4 +42,9 @@ class PlayerListView(ListView):
         # in_bulk
         # context["test_obj"] = Players.objects.in_bulk() # dict objects
         return context
-    
+
+class PlayerAdView(CreateView):
+    model = Players
+    form_class = AdPlayerForm 
+    # template_name = ''
+    success_url = '/'

@@ -18,6 +18,10 @@ class Players(models.Model):
 
 
 # class TestModel(models.Model):
+#     COUNTRIES = (
+#         ("USA", 'usa'),
+#         ("China", 'china'),
+#     )
 #     binf = models.BinaryField() # 0 1
 #     boolf = models.BooleanField(default=False, null=True) # checkbox
 #     # boolf = models.NullBooleanField(default=False) # checkbox
@@ -33,7 +37,13 @@ class Players(models.Model):
 #     postintf = models.PositiveIntegerField() # 0 - 2147483647
 #     postintf = models.PositiveBigIntegerField() # 0 - 32767
 #     smalinf = models.SmallIntegerField() # -32767 - 32767
-#     charf = models.CharField(max_length=100) # input
+#     charf = models.CharField(max_length=100,
+#                              verbose_name="Enter your name", 
+#                              help_text="Only alphabet chars.",
+#                              default="John Doe",
+#                              null=True,
+#                              blank=True,
+#                              choices=COUNTRIES) # input
 #     textf = models.TextField() # textarea
 #     emailf = models.EmailField() #@gmail.com
 #     filef = models.FileField() # file path str
@@ -42,3 +52,8 @@ class Players(models.Model):
 #     slugf = models.SlugField(max_length=100) # unique str
 #     urlf = models.URLField() # url
 #     uuidf = models.UUIDField() # 34sddihah24
+
+#     class Meta:
+#         verbose_name = "My test model"
+#         verbose_name_plural = "MyTestModels"
+#         ordering = ["title" ,"-published_date"]
