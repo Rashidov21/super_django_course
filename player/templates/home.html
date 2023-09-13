@@ -1,1 +1,39 @@
-<h3>home</h3>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <main>
+        <section>
+            <div class="container">
+                <h1>Home</h1>
+                <br>
+                <h4>TEST OBJs</h4>
+                {% for p in test_obj %}
+                <p>{{p.player}}</p>
+                {% endfor %}
+                <br>
+                <div class="row">
+                    {% for player in object_list %}
+                    <div class="col-3">
+                        <div class="card w-75 mb-3">
+                            <div class="card-body">
+                              <h5 class="card-title">{{player.player}}</h5>
+                              <ul class="list-group">
+                                <li class="list-group-item">{{player.role}}</li>
+                                <li class="list-group-item">{{player.dr}}</li>
+                                <li class="list-group-item">{{player.height}}</li>
+                                <li class="list-group-item">{{player.width}}</li>
+                                <li class="list-group-item">{{player.age}}</li>
+                                <li class="list-group-item">{{player.price}}</li>
+                              </ul>
+                              <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </div>
+                    {% empty %}
+                        <h4>404</h4>
+                    {% endfor %}
+                </div> 
+            </div>
+        </section>
+    </main>
+{% endblock content %}
