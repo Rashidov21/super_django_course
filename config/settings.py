@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'player'
+    'player',
+    'blog',
+    'django_quill',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +117,25 @@ USE_I18N = True
 USE_TZ = True
 
 
+QUILL_CONFIGS = {
+    'default':{
+        'theme': 'snow',
+        'modules': {
+            'syntax': True,
+            'toolbar': 
+                [
+                ['bold', 'italic', 'underline', 'strike'],       
+                ['blockquote', 'code-block','link', 'image'],
+            
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],    
+                [{ 'indent': '-1'}, { 'indent': '+1' }],         
+                        
+                [{ 'header': [1, 2, 3, 4, 5, 6, False] }],
+                [{ 'align': [] }],                                    
+                ]
+        }
+    }
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 

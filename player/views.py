@@ -48,3 +48,5 @@ class PlayerAdView(CreateView):
     form_class = AdPlayerForm 
     # template_name = ''
     success_url = '/'
+    
+  
