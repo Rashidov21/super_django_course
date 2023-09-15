@@ -1,7 +1,6 @@
 import random
 from faker import Faker
 from blog.models import Category, Tag
-
 def generate_data():
     fake = Faker()
     # fake.text(100) title 
