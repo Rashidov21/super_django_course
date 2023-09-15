@@ -1,19 +1,10 @@
-<<<<<<< Updated upstream
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render , HttpResponse
 from django.views.generic import ListView
 from faker import Faker
-=======
-from typing import Any
-from django.shortcuts import render, HttpResponse
-import json
-from django.utils.text import slugify
-from django.views.generic import ListView
-from .models import Post, Category, Tag
-import random
-from faker import Faker
-from django.contrib.auth.models import User
->>>>>>> Stashed changes
 
+from .models import Post
 
 # def generate_posts():
 #     fake = Faker()
@@ -46,7 +37,12 @@ fake = Faker()
 # Create your views here.
 class PostListView(ListView):
     model = Post
-<<<<<<< Updated upstream
+    paginate_by = 20
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        qs = super().get_queryset()
+        qs = Post.objects.filter(active=True).select_related("category","author").prefetch_related("tag")
+        return qs
 
 
 def generate_data(request):
@@ -54,24 +50,3 @@ def generate_data(request):
     # for i in range(10):
         # Post.objects.create()
     return HttpResponse("<span>done</span>")
-=======
-    
-    def get_context_data(self):
-        context = super().get_context_data()
-
-        return context
-    
-list_icons = [
-    'fab fa-js','fab fa-python','fab fa-google', 'fas fa-mug-hot', 'fas fa-cat', 'fas fa-cloud', 
-    'fas fa-heart', 'fas fa-check', 'fas fa-bomb', 'fab fa-facebook'
-]
-def test(request):
-    posts = Post.objects.all()
-    for i in posts:
-        # i.title = fake.text(100)
-        # i.author = User.objects.last()
-        # i.body = fake.text(600)
-        i.icon = random.choice(list_icons)
-        i.save()
-    return HttpResponse("salom")
->>>>>>> Stashed changes

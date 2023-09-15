@@ -1,3 +1,4 @@
+
 import random
 from faker import Faker
 from blog.models import Category, Tag
@@ -16,3 +17,4 @@ def generate_data():
     # print(fake.random.randint(1,600))
     # for i in range(10):
 generate_data()
+
