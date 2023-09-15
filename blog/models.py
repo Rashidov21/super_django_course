@@ -39,9 +39,9 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField("*",max_length=200, unique=True)
-    body = QuillField()
+    body = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='posters/%Y-%m-%d')
+    image = models.ImageField(upload_to='posters/%Y-%m-%d', blank=True)
     icon = models.CharField('Font Awesome icon name *',max_length=50, blank=True, null=True)
     up = models.PositiveIntegerField(default=0)
     down = models.PositiveIntegerField(default=0)

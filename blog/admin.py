@@ -28,13 +28,13 @@ class TagAdmin(admin.ModelAdmin):
     
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('get_obj_image','title','author','views')
-    list_display_links = ['get_obj_image','title']
+    list_display = ('title','author','views')
+    list_display_links = ['title']
     list_filter = ['author','views', 'category']
     list_per_page = 10
     # list_editable = ['title']
     
     prepopulated_fields = {"slug":('title',)}
     
-    def get_obj_image(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" width="50" />')
+    # def get_obj_image(self, obj):
+        # return mark_safe(f'<img src="{obj.image.url}" width="50" />')
