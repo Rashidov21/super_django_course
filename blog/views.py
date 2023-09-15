@@ -37,7 +37,7 @@ fake = Faker()
 # Create your views here.
 class PostListView(ListView):
     model = Post
-    paginate_by = 20
+    paginate_by = 10
     
     def get_queryset(self) -> QuerySet[Any]:
         qs = super().get_queryset()
