@@ -23,7 +23,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("v1/", include('player.urls')),
-    path("", include('blog.urls'))
+    path("", include('blog.urls')),
+    
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 

@@ -1,6 +1,6 @@
 import random
 from faker import Faker
-from blog.models import Category, Tag
+from blog.models import Category, Tag, Post
 
 def generate_data():
     fake = Faker()
