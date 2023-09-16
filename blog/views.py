@@ -50,3 +50,4 @@ def generate_data(request):
     # for i in range(10):
         # Post.objects.create()
     return HttpResponse("<span>done</span>")
+
