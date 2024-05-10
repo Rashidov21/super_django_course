@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect,H
+from django.views.generic import ListView
 # Create your views here.
 
+
+class TestListView(ListView):
+    pass
 
 def home_page_view(request):
     return HttpResponse("<h2>Home Page</h2>")
