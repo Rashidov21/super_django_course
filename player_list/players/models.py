@@ -17,7 +17,7 @@ class Tournament(models.Model):
 
 
 class Club(models.Model):
-    name = models.CharField(verbose_name="Tur nomini kirit",max_length=250)
+    name = models.CharField(verbose_name="Klub nomini kirit",max_length=250)
     logo = models.ImageField(upload_to="logos/tournament/", blank=True)
     country = CountryField()
     coach = models.CharField(max_length=250, blank=True)
@@ -35,9 +35,9 @@ POS = (
 )
 
 class Player(models.Model):
-    name = models.CharField(verbose_name="Tur nomini kirit",max_length=250)
+    name = models.CharField(verbose_name="Player name",max_length=250)
     image = models.ImageField(upload_to="player/images/", blank=True)
-    origin_name = models.CharField(verbose_name="Tur nomini kirit",max_length=250)
+    origin_name = models.CharField(verbose_name="Origin name",max_length=250)
     club = models.ForeignKey(Club,on_delete=models.PROTECT)
     position = models.CharField(max_length=250, choices=POS)
     country = CountryField()
