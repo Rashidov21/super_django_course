@@ -1,0 +1,38 @@
+<form action="{% url 'players:filter' %}" method="GET">
+    <label for="tournaments">Turnirni tanlang:</label>
+    <select id="tournaments" name="tournaments" required>
+        <option value="" selected>Tanlang</option>
+        {% for tour in tournaments %}
+            <option value="{{tour.name}}">{{tour.name}}</option>
+        {% endfor %}
+    </select>
+    <label for="clubs">Klubni tanlang:</label>
+    <select id="clubs" name="clubs">
+        <option value="" selected>Tanlang</option>
+        {% for club in clubs %}
+            <option value="{{club.name}}">{{club.name}}</option>
+        {% endfor %}
+    </select>
+    <label for="postions">Pozitsiya tanlang:</label>
+    <select id="postions" name="postions">
+        <option value="" selected>Tanlang</option>
+        <option value="gk">GoalKeeper</option>
+        <option value="df">Deffender</option>
+        <option value="mdf">Middle deffender</option>
+        <option value="fw">Forward</option>
+        <option value="st">Striker</option>
+    </select>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author">
+
+    <label for="rating">Rating:</label>
+    <input type="range" id="rating" name="rating" min="0" max="10">
+
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" name="tags">
+
+    <button type="submit">Filter</button>
+</form>

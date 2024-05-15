@@ -5,6 +5,7 @@ from . import views
 app_name = "players"
 
 urlpatterns = [
-    path("", views.HomePageView.as_view(), name='home')
+    path("", views.HomePageView.as_view(), name='home'),
+    path("filter/", views.FilterView.as_view(), name="filter")
 ]
 
