@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 
 
@@ -42,9 +43,15 @@ class Player(models.Model):
     position = models.CharField(max_length=250, choices=POS)
     country = CountryField()
     date_of_birth = models.DateField(blank=True)
+    age = models.PositiveSmallIntegerField(default=0)
     height = models.PositiveSmallIntegerField(default=0)
     weight = models.PositiveSmallIntegerField(default=0)
     transfer_summa = models.FloatField(blank=True)
+    
+    def get_player_age(self):
+        current_year = datetime.datetime.now().year # int 2024
+        age = current_year - self.date_of_birth.year
+        return age
     
     def __str__(self):
         return self.name

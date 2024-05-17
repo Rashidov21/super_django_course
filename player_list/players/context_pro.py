@@ -19,3 +19,6 @@ def get_all(request):
             "positions":POS
         }
         return context
+    else:
+        return {}
+    

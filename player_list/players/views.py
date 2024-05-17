@@ -17,27 +17,40 @@ class HomePageView(ListView):
     # object_list - data list 
     
     def get_queryset(self):
-        return super().get_queryset()
+        qs = Player.objects.select_related("club").all()
+        return qs
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["tournaments"] = Tournament.objects.all()
         context["clubs"] = Club.objects.all()
+        
+        # for player in Player.objects.all():
+        #     player.age = player.get_player_age()
+        #     player.save()
+        
         return context
 
 
 class FilterView(View):
     
     def get(self, request):
-        tournament_name = request.GET.get("tournaments")
-        club_name = request.GET.get("clubs")
-        tournament = Tournament.objects.get(name=tournament_name)
-        club = Club.objects.get(name=club_name)
-        pos = request.GET.get("postions")
-        if pos:
-            players = Player.objects.filter(club=club,position=pos)
-        else:
-            players = Player.objects.filter(club=club)
+        # tournament_name = request.GET.get("tournaments")
+        # tournament = Tournament.objects.get(name=tournament_name)
+        # from_age = int(request.GET.get("from_age"))
+        # to_age = int(request.GET.get("to_age"))
+        height = int(request.GET.get("height"))
+        weight = int(request.GET.get("weight"))
+        # club_name = request.GET.get("clubs")
+        # club = Club.objects.get(name=club_name)
+        # pos = request.GET.get("postions")
+        # if pos:
+        #     players = Player.objects.filter(club=club,position=pos)
+        # if all([from_age,to_age]):
+        #     players = Player.objects.filter(age__range=(from_age,to_age))
+        
+        if all([height,weight]):
+            players = Player.objects.filter(height__gte=height, weight__gte=weight)
         
         data = {
             "object_list":players

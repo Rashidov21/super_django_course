@@ -24,7 +24,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("players.urls", namespace="players"))
+    path("", include("players.urls", namespace="players")),
+    
+    # DEBUGGING 
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 if settings.DEBUG:

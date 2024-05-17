@@ -1,6 +1,6 @@
 <form action="{% url 'players:filter' %}" method="GET">
     <label for="tournaments">Turnirni tanlang:</label>
-    <select id="tournaments" name="tournaments" required>
+    <select id="tournaments" name="tournaments">
         <option value="" selected>Tanlang</option>
         {% for tour in tournaments %}
             <option value="{{tour.name}}">{{tour.name}}</option>
@@ -22,11 +22,15 @@
         <option value="fw">Forward</option>
         <option value="st">Striker</option>
     </select>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date">
+    <label for="from_age">Yosh dan:</label>
+    <input type="number" id="from_age" name="from_age">
+    <label for="to_age">Yosh gacha:</label>
+    <input type="number" id="to_age" name="to_age">
 
-    <label for="author">Author:</label>
-    <input type="text" id="author" name="author">
+    <label for="height">Bo'y:</label>
+    <input type="number" id="height" name="height">
+    <label for="weight">Vazn:</label>
+    <input type="number" id="weight" name="weight">
 
     <label for="rating">Rating:</label>
     <input type="range" id="rating" name="rating" min="0" max="10">
