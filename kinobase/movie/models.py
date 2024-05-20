@@ -1,0 +1,80 @@
+from django.db import models
+from django_countries.fields import CountryField
+# Create your models here.
+
+
+class Category(models.Model):
+    name = models.CharField("Name", max_length=150)
+    slug = models.SlugField("*", max_length=150)
+    
+    
+    def __str__(self):
+        return self.name
+    
+class Genre(models.Model):
+    name = models.CharField("Name", max_length=150)
+    slug = models.SlugField("*", max_length=150)
+    
+    
+    def __str__(self):
+        return self.name
+
+QUALITIES = (
+    ("bdrip","BDRip"),
+    ("hdrip","HDRip"),
+    ("ts","TS"),
+)
+
+class Movie(models.Model):
+    cover = models.ImageField(upload_to="movie_posters/", blank=True)
+    title = models.CharField("Title", max_length=250)
+    slug = models.SlugField("*", max_length=250)
+    origin_title = models.CharField("Origin title", max_length=250, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="movies")
+    genres = models.ManyToManyField(Genre)
+    country = CountryField(multiple=True)
+    year = models.PositiveSmallIntegerField(default=0)
+    kp_rating = models.FloatField(blank=True)
+    imdb_rating = models.FloatField(blank=True)
+    quality = models.CharField(max_length=150, choices=QUALITIES)
+    drafts = models.BooleanField(default=False)
+    duration = models.CharField(max_length=150, blank=True)
+    description = models.TextField(blank=True)
+    sd_file_url = models.URLField(blank=True)
+    hd_file_url = models.URLField(blank=True)
+    
+    
+    def __str__(self):
+        return self.title
+    
+    
+class Author(models.Model):
+    name = models.CharField("Name", max_length=150)
+    slug = models.SlugField("*", max_length=150)
+    
+    
+    def __str__(self):
+        return self.name
+    
+
+class Role(models.Model):
+    movie = models.ManyToManyField(Movie)
+    author = models.ManyToManyField(Author)
+    actor = models.BooleanField(default=False)
+    director = models.BooleanField(default=False)
+    producer = models.BooleanField(default=False)
+    
+    
+    def __str__(self):
+        return self.author.name
+
+
+class Comment(models.Model):
+    author = models.CharField(max_length=150, default="Гость")
+    comment = models.TextField()
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    commented_time = models.DateTimeField(auto_now_add=True)
+    
+    
+    def __str__(self):
+        return self.author
