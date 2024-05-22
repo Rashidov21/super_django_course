@@ -3,9 +3,6 @@ from .models import *
 # Register your models here.
 
 
-
-
-
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ("id","name")
@@ -26,11 +23,15 @@ class GanreAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Comment)
+admin.site.register(Role)
 
-
+class MovieRoleStackedInline(admin.StackedInline):
+    model = Role
+    
+    
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ("id","title")
     prepopulated_fields = {"slug":("title",)}
+    inlines = [MovieRoleStackedInline]
     
-admin.site.register(Role)

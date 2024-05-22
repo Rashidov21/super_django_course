@@ -58,7 +58,7 @@ class Author(models.Model):
     
 
 class Role(models.Model):
-    movie = models.ManyToManyField(Movie)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     author = models.ManyToManyField(Author)
     actor = models.BooleanField(default=False)
     director = models.BooleanField(default=False)
@@ -66,7 +66,7 @@ class Role(models.Model):
     
     
     def __str__(self):
-        return self.author.name
+        return f"{self.movie.title}"
 
 
 class Comment(models.Model):

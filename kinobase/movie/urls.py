@@ -1,10 +1,11 @@
 from django.urls import path
-from django.views.generic.base import TemplateView
-# from . import views
+from . import views
 
 app_name = "movie"
 
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="index.html"))
+    path("",views.MovieListView.as_view(), name="movie_list"),
+    path("film/<slug>", views.MovieDetailView.as_view(), name="movie_detail"),
+    path("category/<slug>", views.MovieCategoryListView.as_view(), name="movie_category_list")
 ]

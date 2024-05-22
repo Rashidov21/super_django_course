@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <div id="main">
+            <div class="container">
+
+
+
+
+                <div id="filters_row" class="row">
+                    <div class="left">
+                        <h1>{{category.name}}</h1>
+                    </div>
+                    <div class="right" id="filters">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                <svg height="18" width="18" class="icon" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M8 7.1a1.35 1.35 0 1 0 0-2.7 1.35 1.35 0 0 0 0 2.7Zm0 1.4c1.259 0 2.32-.846 2.646-2H21.25a.75.75 0 0 0 0-1.5H10.646a2.751 2.751 0 0 0-5.292 0H2.75a.75.75 0 0 0 0 1.5h2.604A2.751 2.751 0 0 0 8 8.5Zm8 4.85a1.35 1.35 0 1 0 0-2.7 1.35 1.35 0 0 0 0 2.7Zm2.646-.6a2.751 2.751 0 0 1-5.293 0H2.75a.75.75 0 0 1 0-1.5h10.604a2.751 2.751 0 0 1 5.293 0h2.603a.75.75 0 0 1 0 1.5h-2.604Zm-9.296 5.5a1.35 1.35 0 1 1-2.7 0 1.35 1.35 0 0 1 2.7 0Zm1.296.75a2.751 2.751 0 0 1-5.292 0H2.75a.75.75 0 0 1 0-1.5h2.604a2.751 2.751 0 0 1 5.292 0H21.25a.75.75 0 0 1 0 1.5H10.646Z"
+                                        clip-rule="evenodd" />
+                                </svg> <span>Фильтры</span>
+                            </a>
+
+                            <div id="filter" class="dropdown-menu dropdown-menu-right">
+                                <ul id="filter_main">
+                                    <li><a href="#" onclick="dropdown_filter('genres', true);return false;"><span
+                                                class="left">Жанр</span> <span class="right"><span
+                                                    class="next"></span></span></a></li>
+                                    <li><a href="#" onclick="dropdown_filter('countries', true);return false;"><span
+                                                class="left">Страна</span> <span class="right"><span
+                                                    class="next"></span></span></a></li>
+                                    <li><a href="#" onclick="dropdown_filter('years', true);return false;"><span
+                                                class="left">Год</span> <span class="right"><span
+                                                    class="next"></span></span></a></li>
+                                    <li><a href="#" onclick="dropdown_filter('video', true);return false;"><span
+                                                class="left">Качество</span> <span class="right"><span
+                                                    class="next"></span></span></a></li>
+                                    <li><a href="#" onclick="dropdown_filter('audio', true);return false;"><span
+                                                class="left">Перевод</span> <span class="right"><span
+                                                    class="next"></span></span></a></li>
+                                </ul>
+
+                                <div id="filter_genres" class="hide">
+                                    <ul>
+                                        <li><a href="#" class="title-options"
+                                                onclick="dropdown_filter('genres', false);return false;"><span
+                                                    class="prev"></span> Жанр</a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                    <ul id="genres" class="options"></ul>
+                                </div>
+
+                                <div id="filter_countries" class="hide">
+                                    <ul>
+                                        <li><a href="#" class="title-options"
+                                                onclick="dropdown_filter('countries', false);return false;"><span
+                                                    class="prev"></span> Страна</a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                    <ul id="countries" class="options"></ul>
+                                </div>
+
+                                <div id="filter_years" class="hide">
+                                    <ul>
+                                        <li><a href="#" class="title-options"
+                                                onclick="dropdown_filter('years', false);return false;"><span
+                                                    class="prev"></span> Год</a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                    <ul id="years" class="options"></ul>
+                                </div>
+
+                                <div id="filter_video" class="hide">
+                                    <ul>
+                                        <li><a href="#" class="title-options"
+                                                onclick="dropdown_filter('video', false);return false;"><span
+                                                    class="prev"></span> Качество</a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                    <ul id="video" class="options"></ul>
+                                </div>
+
+                                <div id="filter_audio" class="hide">
+                                    <ul>
+                                        <li><a href="#" class="title-options"
+                                                onclick="dropdown_filter('audio', false);return false;"><span
+                                                    class="prev"></span> Перевод</a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                    <ul id="audio" class="options"></ul>
+                                </div>
+
+                                <div class="buttons">
+                                    <center>
+                                        <button class="btn" id="clear_filters">Сбросить</button>
+                                        <button class="btn" id="submit_filters">Применить</button>
+                                    </center>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="dropdown-toggle sort" href="#" data-toggle="dropdown">
+                                <svg height="18" width="18" class="icon" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M8 17H4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2ZM14 11H4a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2ZM20 5H4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2Z" />
+                                </svg> <span>Сортировать</span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="active"><a href="films.html" rel="nofollow">Новинки</a></li>
+                                <li><a href="films5f91.html?sort=year" rel="nofollow">Год</a></li>
+                                <li><a href="films67ec.html?sort=viewed_day" rel="nofollow">Популярные за сутки</a></li>
+                                <li><a href="filmsa692.html?sort=viewed_week" rel="nofollow">Популярные за неделю</a>
+                                </li>
+                                <li><a href="films9066.html?sort=viewed_month" rel="nofollow">Популярные за месяц</a>
+                                </li>
+                                <li><a href="filmse6e7.html?sort=viewed_all" rel="nofollow">Популярные за все время</a>
+                                </li>
+                                <li><a href="films8b48.html?sort=rating" rel="nofollow">Рейтинг пользователей</a></li>
+                                <li><a href="films7f52.html?sort=kp_rating" rel="nofollow">Рейтинг Кинопоиск</a></li>
+                                <li><a href="films7e06?sort=imdb_rating" rel="nofollow">Рейтинг IMDb</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="items with_spacer">
+                    {% for movie in object_list %}
+                    <li class="item">
+                        <div class="poster">
+                        <a href="{% url 'movie:movie_detail' movie.slug %}"
+                            ><img
+                            src="{{movie.cover.url}}"
+                            class="img-responsive"
+                            loading="lazy"
+                            alt="{{movie.title}}"
+                            title="{{movie.title}}"
+                            width="242"
+                            height="358" /></a
+                        ><button
+                            class="favorite"
+                            data-movie-id="223525"
+                            title="Добавить в избранное"
+                        ></button>
+                        </div>
+                        <div class="title">
+                        <a
+                            href="{% url 'movie:movie_detail' movie.slug %}"
+                            alt="{{movie.title}}"
+                            title="{{movie.title}}"
+                            >{{movie.title}}</a
+                        >
+                        </div>
+                        <span class="rating">0</span
+                        ><span class="year">{{movie.year}}, {{movie.quality}}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <center>
+                    <div id="pg_full">
+                        <ul class="pagination">
+                            <li class="disabled"><span class="prev">Предыдущая</span></li>
+                            <li class="active"><span>1</span></li>
+                            <li><a href="films4658?page=2">2</a></li>
+                            <li><a href="films9ba9?page=3">3</a></li>
+                            <li><a href="filmsfdb0?page=4">4</a></li>
+                            <li><a href="filmsaf4d?page=5">5</a></li>
+                            <li><a href="filmsc575?page=6">6</a></li>
+                            <li class="disabled"><span>...</span></li>
+                            <li><a href="films42bb?page=370">370</a></li>
+                            <li><a href="films4658?page=2" class="next">Следующая</a></li>
+                        </ul>
+                    </div>
+                </center>
+                <center>
+                    <div id="pg_small">
+                        <ul class="pagination">
+                            <li class="disabled"><span class="prev">Предыдущая</span></li>
+                            <li><select action="https://kinobase.org/films?" method="get">
+                                    <option value="1" selected="selected">1 / 370</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="..." disabled="disabled">...</option>
+                                    <option value="370">370</option>
+                                </select></li>
+                            <li><a href="films4658?page=2" class="next">Следующая</a></li>
+                        </ul>
+                </center>
+
+
+                <script type="text/javascript">
+                    window.addEventListener("DOMContentLoaded", function () {
+                        MOVIES_URL = "films.html";
+                        MOVIES_SORT = "";
+
+
+                        genres = [{ url: 'biography', title: 'Биография', ch: '' }, { url: 'action', title: 'Боевик', ch: '' }, { url: 'western', title: 'Вестерн', ch: '' }, { url: 'war', title: 'Военный', ch: '' }, { url: 'detective', title: 'Детектив', ch: '' }, { url: 'documental', title: 'Документальный', ch: '' }, { url: 'drama', title: 'Драма', ch: '' }, { url: 'history', title: 'Исторический', ch: '' }, { url: 'comedy', title: 'Комедия', ch: '' }, { url: 'short-film', title: 'Короткометражка', ch: '' }, { url: 'crime', title: 'Криминал', ch: '' }, { url: 'melodrama', title: 'Мелодрама', ch: '' }, { url: 'mystic', title: 'Мистика', ch: '' }, { url: 'animation', title: 'Мультфильм', ch: '' }, { url: 'musical', title: 'Мюзикл', ch: '' }, { url: 'adventure', title: 'Приключения', ch: '' }, { url: 'family', title: 'Семейный', ch: '' }, { url: 'sport', title: 'Спорт', ch: '' }, { url: 'thriller', title: 'Триллер', ch: '' }, { url: 'horror', title: 'Ужасы', ch: '' }, { url: 'sci-fi', title: 'Фантастика', ch: '' }, { url: 'fantasy', title: 'Фэнтези', ch: '' }, {}];
+                        countries = [{ url: 'aus', title: 'Австралия', ch: '' }, { url: 'aut', title: 'Австрия', ch: '' }, { url: 'aze', title: 'Азербайджан', ch: '' }, { url: 'alb', title: 'Албания', ch: '' }, { url: 'arg', title: 'Аргентина', ch: '' }, { url: 'arm', title: 'Армения', ch: '' }, { url: 'afg', title: 'Афганистан', ch: '' }, { url: 'bah', title: 'Багамы', ch: '' }, { url: 'ban', title: 'Бангладеш', ch: '' }, { url: 'blr', title: 'Беларусь', ch: '' }, { url: 'bel', title: 'Бельгия', ch: '' }, { url: 'bg', title: 'Болгария', ch: '' }, { url: 'bol', title: 'Боливия', ch: '' }, { url: 'boh', title: 'Босния и Герцеговина', ch: '' }, { url: 'bra', title: 'Бразилия', ch: '' }, { url: 'gbr', title: 'Великобритания', ch: '' }, { url: 'hun', title: 'Венгрия', ch: '' }, { url: 'ven', title: 'Венесуэла', ch: '' }, { url: 'vie', title: 'Вьетнам', ch: '' }, { url: 'gan', title: 'Гана', ch: '' }, { url: 'gva', title: 'Гватемала', ch: '' }, { url: 'deu', title: 'Германия', ch: '' }, { url: 'hkg', title: 'Гонконг', ch: '' }, { url: 'gre', title: 'Греция', ch: '' }, { url: 'geo', title: 'Грузия', ch: '' }, { url: 'dnk', title: 'Дания', ch: '' }, { url: 'dom', title: 'Доминикана', ch: '' }, { url: 'egp', title: 'Египет', ch: '' }, { url: 'isr', title: 'Израиль', ch: '' }, { url: 'ind', title: 'Индия', ch: '' }, { url: 'ina', title: 'Индонезия', ch: '' }, { url: 'irn', title: 'Иран', ch: '' }, { url: 'irl', title: 'Ирландия', ch: '' }, { url: 'isl', title: 'Исландия', ch: '' }, { url: 'esp', title: 'Испания', ch: '' }, { url: 'ita', title: 'Италия', ch: '' }, { url: 'kaz', title: 'Казахстан', ch: '' }, { url: 'kam', title: 'Камбоджа', ch: '' }, { url: 'can', title: 'Канада', ch: '' }, { url: 'ken', title: 'Кения', ch: '' }, { url: 'kpr', title: 'Кипр', ch: '' }, { url: 'kir', title: 'Киргизия', ch: '' }, { url: 'chn', title: 'Китай', ch: '' }, { url: 'co', title: 'Колумбия', ch: '' }, { url: 'kor', title: 'Корея Южная', ch: '' }, { url: 'kos', title: 'Косово', ch: '' }, { url: 'kuv', title: 'Кувейт', ch: '' }, { url: 'kgz', title: 'Кыргызстан', ch: '' }, { url: 'lva', title: 'Латвия', ch: '' }, { url: 'lit', title: 'Литва', ch: '' }, { url: 'lux', title: 'Люксембург', ch: '' }, { url: 'mal', title: 'Малайзия', ch: '' }, { url: 'mex', title: 'Мексика', ch: '' }, { url: 'mol', title: 'Молдова', ch: '' }, { url: 'mon', title: 'Монголия', ch: '' }, { url: 'nep', title: 'Непал', ch: '' }, { url: 'nig', title: 'Нигерия', ch: '' }, { url: 'nld', title: 'Нидерланды', ch: '' }, { url: 'nz', title: 'Новая Зеландия', ch: '' }, { url: 'nor', title: 'Норвегия', ch: '' }, { url: 'aed', title: 'ОАЭ', ch: '' }, { url: 'pak', title: 'Пакистан', ch: '' }, { url: 'pan', title: 'Панама', ch: '' }, { url: 'par', title: 'Парагвай', ch: '' }, { url: 'per', title: 'Перу', ch: '' }, { url: 'pol', title: 'Польша', ch: '' }, { url: 'por', title: 'Португалия', ch: '' }, { url: 'pue', title: 'Пуэрто Рико', ch: '' }, { url: 'rus', title: 'Россия', ch: '' }, { url: 'ro', title: 'Румыния', ch: '' }, { url: 'sau', title: 'Саудовская Аравия', ch: '' }, { url: 'sen', title: 'Сенегал', ch: '' }, { url: 'kna', title: 'Сент-Китс и Невис', ch: '' }, { url: 'srb', title: 'Сербия', ch: '' }, { url: 'sin', title: 'Сингапур', ch: '' }, { url: 'syr', title: 'Сирия', ch: '' }, { url: 'svk', title: 'Словакия', ch: '' }, { url: 'slo', title: 'Словения', ch: '' }, { url: 'su', title: 'СССР', ch: '' }, { url: 'usa', title: 'США', ch: '' }, { url: 'tha', title: 'Таиланд', ch: '' }, { url: 'twn', title: 'Тайвань', ch: '' }, { url: 'tto', title: 'Тринидад и Тобаго', ch: '' }, { url: 'tun', title: 'Тунис', ch: '' }, { url: 'tur', title: 'Турция', ch: '' }, { url: 'uga', title: 'Уганда', ch: '' }, { url: 'uzb', title: 'Узбекистан', ch: '' }, { url: 'ukr', title: 'Украина', ch: '' }, { url: 'ury', title: 'Уругвай', ch: '' }, { url: 'phi', title: 'Филиппины', ch: '' }, { url: 'fin', title: 'Финляндия', ch: '' }, { url: 'fra', title: 'Франция', ch: '' }, { url: 'hor', title: 'Хорватия', ch: '' }, { url: 'cze', title: 'Чехия', ch: '' }, { url: 'csk', title: 'Чехословакия', ch: '' }, { url: 'chi', title: 'Чили', ch: '' }, { url: 'che', title: 'Швейцария', ch: '' }, { url: 'swe', title: 'Швеция', ch: '' }, { url: 'sri', title: 'Шри-Ланка', ch: '' }, { url: 'ekv', title: 'Эквадор', ch: '' }, { url: 'eri', title: 'Эритрея', ch: '' }, { url: 'est', title: 'Эстония', ch: '' }, { url: 'eth', title: 'Эфиопия', ch: '' }, { url: 'zaf', title: 'ЮАР', ch: '' }, { url: 'yug', title: 'Югославия', ch: '' }, { url: 'jpn', title: 'Япония', ch: '' }, {}];
+                        years = [{ url: '2024', title: '2024', ch: '' }, { url: '2023', title: '2023', ch: '' }, { url: '2022', title: '2022', ch: '' }, { url: '2021', title: '2021', ch: '' }, { url: '2020', title: '2020', ch: '' }, { url: '2019', title: '2019', ch: '' }, { url: '2018', title: '2018', ch: '' }, { url: '2017', title: '2017', ch: '' }, { url: '2016', title: '2016', ch: '' }, { url: '2015', title: '2015', ch: '' }, { url: '2014', title: '2014', ch: '' }, { url: '2013', title: '2013', ch: '' }, { url: '2012', title: '2012', ch: '' }, { url: '2011', title: '2011', ch: '' }, { url: '2010', title: '2010', ch: '' }, { url: '2009', title: '2009', ch: '' }, { url: '2008', title: '2008', ch: '' }, { url: '2007', title: '2007', ch: '' }, { url: '2006', title: '2006', ch: '' }, { url: '2005', title: '2005', ch: '' }, { url: '2004', title: '2004', ch: '' }, { url: '2003', title: '2003', ch: '' }, { url: '2002', title: '2002', ch: '' }, { url: '2001', title: '2001', ch: '' }, { url: '2000', title: '2000', ch: '' }, { url: '1999', title: '1999', ch: '' }, { url: '1998', title: '1998', ch: '' }, { url: '1997', title: '1997', ch: '' }, { url: '1996', title: '1996', ch: '' }, { url: '1995', title: '1995', ch: '' }, { url: '1994', title: '1994', ch: '' }, { url: '1993', title: '1993', ch: '' }, { url: '1992', title: '1992', ch: '' }, { url: '1991', title: '1991', ch: '' }, { url: '1990', title: '1990', ch: '' }, { url: '1989', title: '1989', ch: '' }, { url: '1988', title: '1988', ch: '' }, { url: '1987', title: '1987', ch: '' }, { url: '1986', title: '1986', ch: '' }, { url: '1985', title: '1985', ch: '' }, { url: '1984', title: '1984', ch: '' }, { url: '1983', title: '1983', ch: '' }, { url: '1982', title: '1982', ch: '' }, { url: '1981', title: '1981', ch: '' }, { url: '1980', title: '1980', ch: '' }, { url: '1979', title: '1979', ch: '' }, { url: '1978', title: '1978', ch: '' }, { url: '1977', title: '1977', ch: '' }, { url: '1976', title: '1976', ch: '' }, { url: '1975', title: '1975', ch: '' }, { url: '1974', title: '1974', ch: '' }, { url: '1973', title: '1973', ch: '' }, { url: '1972', title: '1972', ch: '' }, { url: '1971', title: '1971', ch: '' }, { url: '1970', title: '1970', ch: '' }, { url: '1969', title: '1969', ch: '' }, { url: '1968', title: '1968', ch: '' }, { url: '1967', title: '1967', ch: '' }, { url: '1966', title: '1966', ch: '' }, { url: '1965', title: '1965', ch: '' }, { url: '1964', title: '1964', ch: '' }, { url: '1963', title: '1963', ch: '' }, { url: '1962', title: '1962', ch: '' }, { url: '1961', title: '1961', ch: '' }, { url: '1960', title: '1960', ch: '' }, { url: '1959', title: '1959', ch: '' }, { url: '1958', title: '1958', ch: '' }, { url: '1957', title: '1957', ch: '' }, { url: '1956', title: '1956', ch: '' }, { url: '1955', title: '1955', ch: '' }, { url: '1954', title: '1954', ch: '' }, { url: '1953', title: '1953', ch: '' }, { url: '1952', title: '1952', ch: '' }, { url: '1949', title: '1949', ch: '' }, { url: '1948', title: '1948', ch: '' }, { url: '1947', title: '1947', ch: '' }, { url: '1944', title: '1944', ch: '' }, { url: '1943', title: '1943', ch: '' }, { url: '1940', title: '1940', ch: '' }, { url: '1938', title: '1938', ch: '' }, { url: '1931', title: '1931', ch: '' }, { url: '1928', title: '1928', ch: '' }, { url: '1927', title: '1927', ch: '' }, { url: '1925', title: '1925', ch: '' }, { url: '1924', title: '1924', ch: '' }, {}];
+
+                        video = [{ url: 'license', title: 'Лицензия', ch: '' }, { url: 'normal', title: 'Приемлемое', ch: '' }, {}];
+                        audio = [{ url: 'dubbing', title: 'Дублированный', ch: '' }, { url: 'uadubbing', title: 'Дублированный (Украинский)', ch: '' }, { url: 'allua', title: 'Все украинские', ch: '' }, { url: 'authors', title: 'Все авторские', ch: '' }, { url: 'dolsky', title: 'Андрей Дольский', ch: '' }, { url: 'gavrilov', title: 'Андрей Гаврилов', ch: '' }, { url: 'mihalyov', title: 'Алексей Михалёв', ch: '' }, { url: 'matveev', title: 'Алексей Матвеев', ch: '' }, { url: 'gorchakov', title: 'Василий Горчаков', ch: '' }, { url: 'puchkov', title: 'Дмитрий Пучков (Гоблин)', ch: '' }, { url: 'esarev', title: 'Дмитрий Есарев', ch: '' }, { url: 'volodarsky', title: 'Леонид Володарский', ch: '' }, { url: 'ivanov', title: 'Михаил Иванов', ch: '' }, { url: 'chadov', title: 'Михаил Чадов', ch: '' }, { url: 'vizgunov', title: 'Сергей Визгунов', ch: '' }, { url: 'glants', title: 'Петр Гланц', ch: '' }, { url: 'zhivov', title: 'Юрий Живов', ch: '' }, { url: 'serbin', title: 'Юрий Сербин', ch: '' }, {}];
+                    });
+                </script>
+
+
+
+            </div>
+        </div>
+{% endblock %}

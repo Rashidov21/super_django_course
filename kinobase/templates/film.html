@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load countries %}
+{% block content %}
+<div id="main">
+    <div class="container">
+
+
+
+
+        <div class="row">
+            <div class="left" id="movie" itemscope itemtype="https://schema.org/Movie">
+
+
+
+                <div class="row">
+
+                    <div id="media">
+                        <div class="poster">
+                            <img src="{{object.cover.url}}" itemprop="image" class="img_responsive">
+                            <button class="favorite" data-movie-id="217155" title="Добавить в избранное"></button>
+
+                            <div class="label">Лицензия</div>
+                        </div>
+
+
+                        <div id="rating_block">
+                            <div id="rating_votes" class="clearfix">
+                                <div class="block">
+                                    <span class="rt">
+                                        <span class="rating_site" title="Кинобейс &ndash; 6.9 (1925)"></span>
+                                        6.9 </span>
+                                    <span class="num">1 925</span>
+                                </div>
+                                <div class="block">
+                                    <span class="rt">
+                                        <span class="rating_kp" title="КиноПоиск &ndash; 6.4 (14 169)"></span>
+                                        <a href="https://www.kinopoisk.ru/film/1437923/" target="_blank">6.4</a>
+                                    </span>
+                                    <span class="num">14 169</span>
+                                </div>
+                                <div class="block">
+                                    <span class="rt">
+                                        <span class="rating_imdb" title="IMDb &ndash; 6.5 (75 293)"></span> 6.5
+                                    </span>
+                                    <span class="num">75 293</span>
+                                </div>
+                            </div>
+
+                            <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <meta itemprop="ratingValue" content="6.9">
+                                <meta itemprop="worstRating" content="0">
+                                <meta itemprop="bestRating" content="10">
+                                <meta itemprop="ratingCount" content="1925">
+                            </span>
+
+                            <input type="hidden" id="rating" value="6.9">
+
+                            <div id="rating_success">
+                                <span id="rating_text">Ваша оценка: 0</span>
+                                <span id="remove_rating">
+                                    <svg height="14" width="14" class="icon" viewBox="0 0 96 96">
+                                        <path fill-rule="evenodd"
+                                            d="M71.476 77.133a2.8 2.8 0 0 0 3.96 0l1.697-1.697a2.8 2.8 0 0 0 0-3.96L53.66 48.005l23.479-23.479a2.8 2.8 0 0 0 0-3.96l-1.697-1.696a2.8 2.8 0 0 0-3.96 0L48.003 42.347l-23.48-23.479a2.8 2.8 0 0 0-3.959 0l-1.697 1.697a2.8 2.8 0 0 0 0 3.96l23.48 23.48-23.474 23.472a2.8 2.8 0 0 0 0 3.96l1.697 1.697a2.8 2.8 0 0 0 3.96 0l23.473-23.473 23.473 23.472Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="info">
+
+                        <div id="title">
+                            <h1>{{object.title}}</h1>
+                        </div>
+
+                        <div class="info_items">
+
+                            <div class="info_item">
+                                <div class="key">Название</div>
+                                <div class="value" itemprop="alternativeHeadline">{{object.origin_title}}</div>
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Год</div>
+                                <div class="value"><a href="#">{{object.year}}</a></div>
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Страна</div>
+                                <div class="value">
+                                    {% for country in object.country %}
+                                    <a href="#" rel="nofollow">{{ country.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Жанр</div>
+                                <div class="value">
+                                    {% for genre in object.genres.all %}
+                                    <a href="#" rel="nofollow">
+                                        <span itemprop="genre">{{genre.name}}<span>
+                                    </a>,
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+
+                            <div class="info_item">
+                                <div class="key">Режиссер</div>
+                                {% for role in object.role_set.all %}
+                                    <div class="value">
+                                        {% if role.director %} 
+                                        {% for author in role.author.all %}
+                                        <span>
+                                            <a href="#" rel="nofollow">
+                                                <span>{{author.name}}</span>
+                                            </a>
+                                        </span>
+                                        {% endfor %} 
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Продюсер</div>
+                                {% for role in object.role_set.all %}
+                                    <div class="value">
+                                        {% if role.producer %} 
+                                        {% for author in role.author.all %}
+                                        <span>
+                                            <a href="#" rel="nofollow">
+                                                <span>{{author.name}}</span>
+                                            </a>
+                                        </span>
+                                        {% endfor %} 
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Актеры</div>
+                                <div class="value">
+                                        {% for role in object.role_set.all %}
+                                        {% if role.actor %} 
+                                        {% for author in role.author.all %}
+                                        <span>
+                                            <a href="#" rel="nofollow">
+                                                <span> {{ author.name }}, </span>
+                                            </a>
+                                        </span>
+                                        {% endfor %} 
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                            </div>
+
+
+
+                            <div class="info_item">
+                                <div class="key">Качество</div>
+                                <div class="value">{{object.quality}}</div>
+                            </div>
+
+                            <div class="info_item">
+                                <div class="key">Время</div>
+                                <div class="value" itemprop="duration">{{object.duration}}</div>
+                            </div>
+
+                        </div>
+
+                        <div class="body" itemprop="description">
+                            {{object.description}}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="watch">
+                    <ul class="nav-tabs" id="tab-options">
+                        <li><a href="#online" data-toggle="tab">СМОТРЕТЬ</a></li>
+                        <li><a href="#trailer" data-toggle="tab">ТРЕЙЛЕР</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane" id="online">
+                            <div id="videoplayer"></div>
+                        </div>
+                        <div class="tab-pane" id="trailer">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="left">
+                            <button id="btn_fav" class="btn" title="Добавить в избранное">В избранное</button>
+                        </div>
+                        <div class="right">
+                            <button class="btn player_settings" title="Настройки плеера">Настройки
+                                плеера</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="comments">
+                    <h3>44 комментария</h3>
+
+                    <form action="https://kinobase.org/comments/add" id="comment_form" method="post">
+                        <textarea class="input" id="comment" rows="2" placeholder="Ваш комментарий"></textarea>
+                        <button id="add_comment" class="btn" title="Добавить комментарий">Добавить</button>
+                    </form>
+
+                    <div id="comments_entries">
+                        <div class="comment new_comment" data-comment-id="" style="display:none;">
+                            <div class="comment_avatar">
+                                <img class="img_circle" src="#">
+                            </div>
+                            <div class="comment_body">
+                                <div class="comment_head"><span class="username"></span><span
+                                        class="comment_date"></span></div>
+                                <p></p>
+                                <ul class="list-inline">
+                                    <li class="showfull"><a href="javascript:void(0);" class="muted"
+                                            title="Показать весь комментарий">Показать весь комментарий</a></li>
+                                    <li class="remove"><a href="javascript:void(0);" class="muted"
+                                            title="Удалить">Удалить</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="right" id="sidebar">
+            </div>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            var MOVIE_ID = 217155;
+            var MOVIE_URL = "napoleon";
+            var MOVIE_TYPE = "films";
+            var MOVIE_TRAILER = "https://www.youtube.com/embed/VdvIVekcRNg";
+            var MOVIE_IS_COMING = 0;
+            var COMMENTS_PAGES = 1;
+            var PLAYER_CUID = "a2b74ed75cb5b884320d5c1a15cd6eef";
+            var IDENTIFIER = "2fN60lW5anRN4EYTAaAs";
+        </script>
+
+
+
+        <script src="../../st.kinobase.org/static/player/509/hls.js" defer></script>
+        <script src="../../st.kinobase.org/static/player/509/playerjs76d5.js?v=1705132301563" defer></script>
+
+
+        <script src="../../st.kinobase.org/static/js/movie76d5.js?v=1705132301563" defer></script>
+
+    </div>
+</div>
+
+{% endblock %}
