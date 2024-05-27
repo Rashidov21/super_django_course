@@ -33,5 +33,6 @@ class MovieRoleStackedInline(admin.StackedInline):
 class MovieAdmin(admin.ModelAdmin):
     list_display = ("id","title")
     prepopulated_fields = {"slug":("title",)}
+    search_fields = ('country__code', 'country__name')
     inlines = [MovieRoleStackedInline]
     
