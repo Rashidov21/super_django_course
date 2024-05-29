@@ -78,7 +78,14 @@
                                                     class="prev"></span> Год</a></li>
                                         <li role="separator" class="divider"></li>
                                     </ul>
-                                    <ul id="years" class="options"></ul>
+                                    <ul id="years" class="options">
+                                        {% for year in movie_years %}
+                                        <li>
+                                            <a href="{% url 'movie:movie_filter' 'year' year  %}">
+                                            {{year}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
                                 </div>
 
                                 <div id="filter_video" class="hide">
@@ -90,18 +97,17 @@
                                                 </li>
                                         <li role="separator" class="divider"></li>
                                     </ul>
-                                    <ul id="video" class="options"></ul>
+                                    <ul id="video" class="options">
+                                        {% for q in qualities %}
+                                        <li>
+                                            <a href="{% url 'movie:movie_filter' 'quality' q  %}">
+                                                {{q}}
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
                                 </div>
 
-                                <div id="filter_audio" class="hide">
-                                    <ul>
-                                        <li><a href="#" class="title-options"
-                                                onclick="dropdown_filter('audio', false);return false;"><span
-                                                    class="prev"></span> Перевод</a></li>
-                                        <li role="separator" class="divider"></li>
-                                    </ul>
-                                    <ul id="audio" class="options"></ul>
-                                </div>
 
                                 <div class="buttons">
                                     <center>
@@ -122,18 +128,51 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li class="active"><a href="films.html" rel="nofollow">Новинки</a></li>
-                                <li><a href="films5f91.html?sort=year" rel="nofollow">Год</a></li>
-                                <li><a href="films67ec.html?sort=viewed_day" rel="nofollow">Популярные за сутки</a></li>
-                                <li><a href="filmsa692.html?sort=viewed_week" rel="nofollow">Популярные за неделю</a>
+                                <li class="active">
+                                    <a href="{% url 'movie:movie_sort' 'new' %}" rel="nofollow">
+                                        Новинки
+                                    </a>
                                 </li>
-                                <li><a href="films9066.html?sort=viewed_month" rel="nofollow">Популярные за месяц</a>
+                                <li>
+                                    <a href="{% url 'movie:movie_sort' 'year' %}" rel="nofollow">
+                                        Год
+                                    </a>
                                 </li>
-                                <li><a href="filmse6e7.html?sort=viewed_all" rel="nofollow">Популярные за все время</a>
+                                <li>
+                                    <a href="{% url 'movie:movie_sort' 'day' %}" rel="nofollow">
+                                        Популярные за сутки
+                                    </a>
                                 </li>
-                                <li><a href="films8b48.html?sort=rating" rel="nofollow">Рейтинг пользователей</a></li>
-                                <li><a href="films7f52.html?sort=kp_rating" rel="nofollow">Рейтинг Кинопоиск</a></li>
-                                <li><a href="films7e06?sort=imdb_rating" rel="nofollow">Рейтинг IMDb</a></li>
+                                <li>
+                                    <a href="filmsa692.html?sort=viewed_week" rel="nofollow">
+                                        Популярные за неделю
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="films9066.html?sort=viewed_month" rel="nofollow">
+                                        Популярные за месяц
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="filmse6e7.html?sort=viewed_all" rel="nofollow">
+                                        Популярные за все время
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="films8b48.html?sort=rating" rel="nofollow">
+                                        Рейтинг пользователей
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'movie:movie_sort' 'kp_rating' %}" rel="nofollow">
+                                        Рейтинг Кинопоиск
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'movie:movie_sort' 'imdb_rating' %}" rel="nofollow">
+                                        Рейтинг IMDb
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
