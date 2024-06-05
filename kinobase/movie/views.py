@@ -19,6 +19,15 @@ class MovieListView(ListView):
 class MovieDetailView(DetailView):
     model = Movie
     template_name = "film.html"
+    
+    def get_context_data(self, **kwargs):
+        if self.object.id not in self.request.user.profile.history.all():
+            self.request.user.profile.history.add(self.object.id )
+        else:
+            pass
+        context = super().get_context_data(**kwargs)
+        return context
+    
 
 
 class MovieCategoryListView(ListView):

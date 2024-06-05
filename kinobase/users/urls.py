@@ -7,5 +7,12 @@ app_name = "users"
 urlpatterns = [
     path("login/", views.CustomLoginView.as_view(), name="login"),
     path("register/", views.CustomRegisterView.as_view(), name="register"),
-    path("profile/", views.CustomUserProfileView.as_view(), name="profile")
+    path("profile/", views.CustomUserProfileView.as_view(), name="profile"),
+    
+    path("profile/history/", views.ProfileHistoryView.as_view(), name="history"),
+    path("profile/history/clear", views.ProfileClearHistoryView.as_view(), name="clear_history"),
+    path("profile/favorites/clear", views.ProfileClearFavoritesView.as_view(), name="clear_favorites"),
+    
+    path("profile/favorites/", views.ProfileFavoritesView.as_view(), name="favorites"),
+    path("profile/favorites/add/<int:movie_id>", views.AddToFavoritesView.as_view(), name="add_to_favorites"),
 ]

@@ -7,13 +7,20 @@
             <h1>Профиль</h1>
 
             <form action="" name="profile" method="post" enctype="multipart/form-data">
+              {% if messages %}
+              <span class="help">
+                  {% for message in messages %}
+                    {{ message }}
+                  {% endfor %}
+              </span> 
+            {% endif %}
                 {% csrf_token %}
               <div id="avatar_preview">
                 <img
                 {% if request.user.profile.image %}
                   src="{{ request.user.profile.image.url }}"
                   {% else %}
-                  src="image/avatar.svg"
+                    src="image/avatar.svg"
                   {% endif %}
                   
                   width="100"
@@ -22,14 +29,9 @@
                 />
               </div>
 
-              <div id="upload_avatar" class="js-fileapi-wrapper">
-                <div class="js-browse btn-upload btn">
-                  <span class="btn-upload-txt">Выбрать</span>
-                  <input type="file" name="avatar_file" accept="image/*" />
-                </div>
-                <div class="js-upload btn">
-                  <span class="btn-upload-txt">Загрузить</span>
-                </div>
+   
+              <div class="form-group">
+                <input type="file" name="avatar_file" />
               </div>
 
               <div class="form-group">
@@ -39,13 +41,11 @@
                   class="input"
                   id="email"
                   name="email"
-                  value="{{reqeust.user.email}}"
+                  value="{{request.user.email}}"
                   placeholder="Электронная почта"
                 />
-                <span class="help"
-                  >При изменении электронной почты, будет отравлено письмо с
-                  подтверждением</span
-                >
+         
+           
               </div>
 
               <div class="form-group">
@@ -55,7 +55,7 @@
                   class="input"
                   id="name"
                   name="name"
-                  value="{{reqauest.user.first_name}}"
+                  value="{{request.user.first_name}}"
                   placeholder="Ваше имя"
                 />
                 <span class="help"

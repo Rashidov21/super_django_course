@@ -19,11 +19,12 @@
                         title="{{movie.title}}"
                         width="242"
                         height="358" /></a
-                    ><button
-                        class="favorite"
-                        data-movie-id="223525"
+                    >
+                    <a
+                        class="{% if movie in request.user.profile.favorites.all %}favorite is_favorited{% else %}favorite{% endif %}"
+                        href="{% url 'users:add_to_favorites' movie.id %}"
                         title="Добавить в избранное"
-                    ></button>
+                    ></a>
                     </div>
                     <div class="title">
                     <a
