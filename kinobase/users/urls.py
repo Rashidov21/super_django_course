@@ -15,4 +15,8 @@ urlpatterns = [
     
     path("profile/favorites/", views.ProfileFavoritesView.as_view(), name="favorites"),
     path("profile/favorites/add/<int:movie_id>", views.AddToFavoritesView.as_view(), name="add_to_favorites"),
+    
+    
+    path("profile/rating/add/<int:movie_id>/<int:rating_value>", views.AddRatingView.as_view(), name="add_rating"),
+    
 ]

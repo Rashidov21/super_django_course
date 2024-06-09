@@ -137,3 +137,12 @@ class ProfileClearFavoritesView(LoginRequiredMixin,View):
     def get(self,request):
         request.user.profile.favorites.clear()
         return HttpResponseRedirect("/users/profile/favorites/")
+    
+
+class AddRatingView(LoginRequiredMixin,View):
+    
+    def get(self,request, movie_id,rating_value):
+        movie = Movie.objects.get(id=movie_id)
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    

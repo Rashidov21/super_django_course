@@ -24,6 +24,7 @@ class GanreAdmin(admin.ModelAdmin):
     
 admin.site.register(Comment)
 admin.site.register(Role)
+# admin.site.register(MovieRating)
 
 class MovieRoleStackedInline(admin.StackedInline):
     model = Role

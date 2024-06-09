@@ -80,10 +80,3 @@ class Comment(models.Model):
     def __str__(self):
         return self.author
 
-class Rating(models.Model):
-    value = models.PositiveSmallIntegerField(default=0)
-    movie = models.ManyToManyField(Movie)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return f"{self.user.username} - {self.value}"
