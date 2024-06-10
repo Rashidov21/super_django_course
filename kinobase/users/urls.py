@@ -18,5 +18,8 @@ urlpatterns = [
     
     
     path("profile/rating/add/<int:movie_id>/<int:rating_value>", views.AddRatingView.as_view(), name="add_rating"),
+    path("profile/rating/delete/<int:rating_id>", views.DeleteRatingView.as_view(), name="delete_rating"),
+    
+    path("profile/rating-list", views.ProfileRatingListView.as_view(), name="rating_list")
     
 ]

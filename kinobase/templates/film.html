@@ -47,9 +47,10 @@
                             <div id="rating_votes" class="clearfix">
                                 <div class="block">
                                     <span class="rt">
-                                        <span class="rating_site" title="Кинобейс &ndash; 6.9 (1925)"></span>
-                                        6.9 </span>
-                                    <span class="num">1 925</span>
+                                        <span class="rating_site" title="Кинобейс &ndash; {{movie.get_average_rating}} ({{movie.count_ratings}})"></span>
+
+                                    {{movie.get_average_rating}}</span>
+                                    <span class="num">{{movie.count_ratings}}</span>
                                 </div>
                                 <div class="block">
                                     <span class="rt">

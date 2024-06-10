@@ -159,7 +159,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="films8b48.html?sort=rating" rel="nofollow">
+                                    <a href="{% url 'movie:movie_sort' 'users_rating' %}" rel="nofollow">
                                         Рейтинг пользователей
                                     </a>
                                 </li>
@@ -206,7 +206,7 @@
                             >{{movie.title}}</a
                         >
                         </div>
-                        <span class="rating">0</span
+                        <span class="rating">{{movie.get_average_rating}}</span
                         ><span class="year">{{movie.year}}, {{movie.quality}}</span>
                     </li>
                   {% endfor %}

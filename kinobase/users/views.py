@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import authenticate,login
@@ -10,7 +11,7 @@ from django.contrib import messages
 from django.views.generic import View
 
 from movie.models import Movie
-from .models import Profile
+from .models import Profile,Rating
 from .forms import CustomLoginForm
 # Create your views here.
 
@@ -139,10 +140,33 @@ class ProfileClearFavoritesView(LoginRequiredMixin,View):
         return HttpResponseRedirect("/users/profile/favorites/")
     
 
+class ProfileRatingListView(ListView):
+    model = Movie
+    template_name = "ratings.html"
+    
+    
+    def get_queryset(self):
+        qs = Rating.objects.filter(user=self.request.user)
+        return qs
+    
+
+    
+
+
 class AddRatingView(LoginRequiredMixin,View):
     
     def get(self,request, movie_id,rating_value):
         movie = Movie.objects.get(id=movie_id)
-
+        Rating.objects.create(
+            value=rating_value,
+            movie=movie,
+            user=request.user)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
+class DeleteRatingView(View):
+    
+    def get(self,request, rating_id):
+        r = Rating.objects.get(id=rating_id)
+        r.delete()
+        messages.success(request,"Rating deletet !")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

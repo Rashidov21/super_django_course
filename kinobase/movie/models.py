@@ -48,6 +48,13 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
     
+    def get_average_rating(self):
+        rating = round(sum([r.value for r in self.ratings.all()]) / len([r.value for r in self.ratings.all()]),1)
+        return rating
+    
+    def count_ratings(self):
+        return len([r.value for r in self.ratings.all()])
+    
     
 class Author(models.Model):
     name = models.CharField("Name", max_length=150)

@@ -33,7 +33,7 @@ class MovieDetailView(DetailView):
 class MovieCategoryListView(ListView):
     model = Movie
     template_name = "films.html"
-    paginate_by = 1
+    paginate_by = 5
     
     
     def get_queryset(self):
@@ -87,4 +87,7 @@ class MovieSortView(ListView):
             return qs
         if self.kwargs.get("sort_by") == "imdb_rating":
             qs = sorted(Movie.objects.all(),key=lambda m: m.imdb_rating, reverse=True)
+            return qs
+        if self.kwargs.get("sort_by") == "users_rating":
+            qs = sorted(Movie.objects.all(),key=lambda m: m.get_average_rating(), reverse=True)
             return qs
