@@ -111,7 +111,7 @@
                   </a>
                   <div class="links">
                     <p>
-                      <a href="recover.html" class="recover"
+                      <a href="{% url 'users:password_reset' %}" class=""
                         >Я не помню пароль</a
                       >
                     </p>
@@ -227,7 +227,7 @@
                   >
                 </li>
                 <li>
-                  <a href="/logout" class="logout"
+                  <a href="{% url 'users:logout' %}" class="logout"
                     ><svg
                       height="15"
                       width="15"

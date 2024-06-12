@@ -1,4 +1,5 @@
-from django.urls import path 
+from django.urls import path ,reverse_lazy
+from django.contrib.auth.views import *
 from . import views
 
 
@@ -6,7 +7,33 @@ app_name = "users"
 
 urlpatterns = [
     path("login/", views.CustomLoginView.as_view(), name="login"),
+    path("logout/", views.custom_logout, name="logout"),
     path("register/", views.CustomRegisterView.as_view(), name="register"),
+    
+    path('password-reset/',PasswordResetView.as_view(
+        template_name='auth/password_reset.html',
+        html_email_template_name='auth/password_reset_email.html',
+        email_template_name='auth/password_reset_email.html',
+        success_url=reverse_lazy('users:password_reset_done')),
+         name='password_reset' ),
+    
+    path('password-reset-done/', PasswordResetDoneView.as_view(
+        template_name='auth/password_reset_done.html',
+         ),name='password_reset_done'),
+    
+    path('password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(
+        template_name='auth/password_reset_confirm.html',
+        success_url=reverse_lazy('users:password_reset_complete')),
+         name='password_reset_confirm'),
+    
+      path('password-reset-complete/', PasswordResetCompleteView.as_view(
+        template_name='auth/password_reset_complete.html',
+        
+         ),name='password_reset_complete'),
+      
+    
+    
+    # PROFILE 
     path("profile/", views.CustomUserProfileView.as_view(), name="profile"),
     
     path("profile/history/", views.ProfileHistoryView.as_view(), name="history"),

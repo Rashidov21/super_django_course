@@ -49,8 +49,13 @@ class Movie(models.Model):
         return self.title
     
     def get_average_rating(self):
-        rating = round(sum([r.value for r in self.ratings.all()]) / len([r.value for r in self.ratings.all()]),1)
-        return rating
+        summ_of_ratings = sum([r.value for r in self.ratings.all()])
+        len_of_ratings = len([r.value for r in self.ratings.all()])
+        if summ_of_ratings > 0:
+            rating = round(summ_of_ratings / len_of_ratings,1)
+            return rating
+        else:
+            return 0
     
     def count_ratings(self):
         return len([r.value for r in self.ratings.all()])

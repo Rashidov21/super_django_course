@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-=0s)osk56(3lxyk&sh1$k)(b@%o$p3$%e3jhc1v=53e&5c^5sf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+# ALLOWED_HOSTS = [NGROK_HOST,'localhost']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -122,7 +124,19 @@ LOGIN_REDIRECT_URL = "/"
 
 
 # AUTH_USER_MODEL = "users.CustomUser"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '42ikromjon@gmail.com'
+EMAIL_HOST_PASSWORD = 'jvnm ovsg dvbt zfjf'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
+
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 

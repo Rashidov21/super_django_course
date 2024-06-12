@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 
@@ -21,8 +21,10 @@ class CustomLoginView(LoginView):
     form_class = CustomLoginForm
     template_name = "auth/login.html"
 
-
-
+def custom_logout(request):
+    logout(request)
+    return HttpResponseRedirect("/")
+    
 class CustomRegisterView(View):
     
     def get(self,request):
