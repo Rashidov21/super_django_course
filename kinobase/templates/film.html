@@ -24,20 +24,24 @@
     .mystar.selected ~ .star {
         color: #f5b301;
     }
+
 </style>
 
 
         <div class="row">
-            <div class="left" id="movie" itemscope itemtype="https://schema.org/Movie">
-
-
+            <div class="left" id="movie">
+        
 
                 <div class="row">
-
+               
                     <div id="media">
                         <div class="poster">
                             <img src="{{object.cover.url}}" itemprop="image" class="img_responsive">
-                            <button class="favorite" data-movie-id="217155" title="Добавить в избранное"></button>
+                            <a
+                            class="{% if movie in request.user.profile.favorites.all %}favorite is_favorited{% else %}favorite{% endif %}"
+                            href="{% url 'users:add_to_favorites' movie.id %}"
+                            title="Добавить в избранное"
+                        ></a>
 
                             <div class="label">Лицензия</div>
                         </div>

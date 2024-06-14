@@ -1,6 +1,8 @@
 from typing import Any
 from django.db.models.query import QuerySet
+from django.db.models import Q
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.views.generic import ListView, DetailView
 # Create your views here.
 from .models import Category,Movie,Genre
@@ -21,10 +23,11 @@ class MovieDetailView(DetailView):
     template_name = "film.html"
     
     def get_context_data(self, **kwargs):
-        if self.object.id not in self.request.user.profile.history.all():
-            self.request.user.profile.history.add(self.object.id )
-        else:
-            pass
+        if self.request.user.is_authenticated:
+            if self.object.id not in self.request.user.profile.history.all():
+                self.request.user.profile.history.add(self.object.id )
+            else:
+                pass
         context = super().get_context_data(**kwargs)
         return context
     
@@ -91,3 +94,12 @@ class MovieSortView(ListView):
         if self.kwargs.get("sort_by") == "users_rating":
             qs = sorted(Movie.objects.all(),key=lambda m: m.get_average_rating(), reverse=True)
             return qs
+
+
+def search(request):
+    query = request.GET.get("data")
+    object_list = Movie.objects.filter(
+        Q(title__icontains=query) | Q(origin_title__icontains=query)
+    )
+
+    return JsonResponse({"data":list(object_list.values())})

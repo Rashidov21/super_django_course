@@ -11,5 +11,8 @@ urlpatterns = [
     
     # FILTER AND SORTING 
     path("filter/<filter_by_what>/<filter_by>", views.MovieFilterView.as_view(), name="movie_filter"),
-    path("sort/<str:sort_by>", views.MovieSortView.as_view(), name="movie_sort")
+    path("sort/<str:sort_by>", views.MovieSortView.as_view(), name="movie_sort"),
+    
+    # SEARCH 
+    path("search/", views.search, name="search")
 ]

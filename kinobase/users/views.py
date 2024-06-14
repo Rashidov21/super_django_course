@@ -23,6 +23,7 @@ class CustomLoginView(LoginView):
 
 def custom_logout(request):
     logout(request)
+    messages.success(request,"You logged out!")
     return HttpResponseRedirect("/")
     
 class CustomRegisterView(View):
@@ -109,6 +110,7 @@ class ProfileClearHistoryView(LoginRequiredMixin,View):
     
     def get(self,request):
         request.user.profile.history.clear()
+        messages.success(request,"Profile history list clear !")
         return HttpResponseRedirect("/users/profile/history/")
     
     
@@ -129,16 +131,19 @@ class AddToFavoritesView(LoginRequiredMixin,View):
         if profile.favorites.filter(id=movie_id).exists():
             profile.favorites.remove(movie)
             messages.info(request,"Movie deleted")
+            return HttpResponseRedirect(f"/film/{movie.slug}")
         else:
             profile.favorites.add(movie)
             messages.info(request,"Movie added")
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            return HttpResponseRedirect(f"/film/{movie.slug}")
+        
     
 
 class ProfileClearFavoritesView(LoginRequiredMixin,View):
     
     def get(self,request):
         request.user.profile.favorites.clear()
+        messages.success(request,"Profile favorite list clear !")
         return HttpResponseRedirect("/users/profile/favorites/")
     
 
@@ -163,6 +168,7 @@ class AddRatingView(LoginRequiredMixin,View):
             value=rating_value,
             movie=movie,
             user=request.user)
+        messages.success(request,"Rating added")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
 class DeleteRatingView(View):
