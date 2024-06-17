@@ -22,7 +22,8 @@ function dynamicSearch(value){
                 <img src="/media/${el.cover}">
                 <div class="info">
                     <div class="title">
-                    <span>${el.title}</span></div><span class="rating">${el.kp_rating}</span><span
+                    <span>${el.title}</span>
+                    </div><span class="rating">${el.kp_rating}</span><span
                     class="year">${el.year}, ${el.quality}</span>
                 </div>
                 </div>
