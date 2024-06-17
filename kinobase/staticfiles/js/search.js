@@ -24,8 +24,8 @@ function dynamicSearch(value){
                     <div class="title">
                     <span>${el.title}</span>
                     </div>
-                    <span class="rating">${el.kp_rating}</span><span
-                    class="year">${el.year}, ${el.quality}</span>
+                    <span class="rating">${el.kp_rating}</span>
+                    <span class="year">${el.year}, ${el.quality}</span>
                 </div>
                 </div>
             </div>
