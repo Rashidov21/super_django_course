@@ -1,11 +1,15 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.db.models import Q
+from django.contrib import messages
+from django.urls import reverse
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 # Create your views here.
-from .models import Category,Movie,Genre
+from .models import Category,Movie,Genre,Comment
+from users.forms import SetCommentForm
+
 
 class MovieListView(ListView):
     model = Movie
@@ -23,15 +27,41 @@ class MovieDetailView(DetailView):
     template_name = "film.html"
     
     def get_context_data(self, **kwargs):
+        form = SetCommentForm()
         if self.request.user.is_authenticated:
             if self.object.id not in self.request.user.profile.history.all():
                 self.request.user.profile.history.add(self.object.id )
             else:
                 pass
+        if self.request.method == "POST":
+            print("OK")
         context = super().get_context_data(**kwargs)
+        context["form"] = form
+        context["comments"] = Comment.objects.filter(movie=self.object)
         return context
     
-
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = SetCommentForm(request.POST)
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+    
+    def form_valid(self, form):
+        self.object = self.get_object()
+        comment = form.cleaned_data['comment']
+        if len(comment) > 2:
+            if self.request.user.is_authenticated:
+                Comment.objects.create(
+                author=self.request.user.first_name,
+                comment=comment,
+                movie=self.object)
+                messages.success(self.request,"Comment added !")
+            else:
+                messages.success(self.request,"Пользователь не может комментировать. Если у вас возникли вопросы, напишите письмо на электронную почту support@kinobase.org")
+             
+        return HttpResponseRedirect(reverse('movie:movie_detail', args=[str(self.object.slug)]))
 
 class MovieCategoryListView(ListView):
     model = Movie
@@ -101,5 +131,11 @@ def search(request):
     object_list = Movie.objects.filter(
         Q(title__icontains=query) | Q(origin_title__icontains=query)
     )
-
+    if object_list:
+        print(len(object_list))
     return JsonResponse({"data":list(object_list.values())})
+
+
+def comment_delete(request, comment_id):
+    Comment.objects.get(id=comment_id).delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

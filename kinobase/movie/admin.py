@@ -22,7 +22,12 @@ class GanreAdmin(admin.ModelAdmin):
     
     
     
-admin.site.register(Comment)
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ("author","comment")
+
+
+
 admin.site.register(Role)
 # admin.site.register(MovieRating)
 

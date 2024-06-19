@@ -237,30 +237,41 @@
 
 
                 <div id="comments">
-                    <h3>44 комментария</h3>
+                    <h3>{{object.comments.all.count}} комментария</h3>
 
-                    <form action="https://kinobase.org/comments/add" id="comment_form" method="post">
-                        <textarea class="input" id="comment" rows="2" placeholder="Ваш комментарий"></textarea>
+                    <form action="" id="comment_form" method="post">
+                         {% csrf_token %}
+                        {{form}}
                         <button id="add_comment" class="btn" title="Добавить комментарий">Добавить</button>
                     </form>
 
                     <div id="comments_entries">
-                        <div class="comment new_comment" data-comment-id="" style="display:none;">
+                        {% for comment in comments %}
+                        <div class="comment new_comment" data-comment-id="" style="display:block;">
                             <div class="comment_avatar">
-                                <img class="img_circle" src="#">
+                                <img class="img_circle" src="{% static 'images/avatar.svg' %}">
                             </div>
                             <div class="comment_body">
-                                <div class="comment_head"><span class="username"></span><span
-                                        class="comment_date"></span></div>
-                                <p></p>
+                                <div class="comment_head">
+                                    <span class="username">{{comment.author}}</span>
+                                    <span class="comment_date">{{comment.commented_time}}</span>
+                                </div>
+                                <p>{{comment.comment}}</p>
                                 <ul class="list-inline">
                                     <li class="showfull"><a href="javascript:void(0);" class="muted"
                                             title="Показать весь комментарий">Показать весь комментарий</a></li>
-                                    <li class="remove"><a href="javascript:void(0);" class="muted"
-                                            title="Удалить">Удалить</a></li>
+                                            {% if downloaded %}
+                                            <a href="">Dowload</a>
+                                            {% endif %}
+                                    {% if request.user.is_superuser %}
+                                            <li class="remove">
+                                        <a href="{% url 'movie:comment_delete' comment.id %}" class="muted" title="Удалить">Удалить</a>
+                                    </li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
 
                 </div>

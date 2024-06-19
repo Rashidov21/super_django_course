@@ -1,5 +1,5 @@
 from django.db import models
-from django_countries.fields import CountryField
+from django_countries.fields import CountryField # type: ignore
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -85,7 +85,7 @@ class Role(models.Model):
 class Comment(models.Model):
     author = models.CharField(max_length=150, default="Гость")
     comment = models.TextField()
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="comments")
     commented_time = models.DateTimeField(auto_now_add=True)
     
     
