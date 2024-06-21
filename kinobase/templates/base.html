@@ -18,6 +18,9 @@
   <link rel="dns-prefetch" href="https://st.kinobase.org/" />
   <link rel="icon" href="../st.kinobase.org/favicon76d5.png?v=1705132301563" type="image/png" />
   <link rel="icon" href="https://st.kinobase.org/favicon.ico?v=1705132301563" type="image/x-icon" />
+  {% if "film" in request.path %}
+    <script src="{% static 'js/playerjs.js' %}" type="text/javascript"></script>
+  {% endif %}
   <link rel="stylesheet" href="{% static 'css/style76d5.css' %}" type="text/css" />
 </head>
 

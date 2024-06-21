@@ -1,4 +1,6 @@
 from typing import Any
+import datetime
+from datetime import timedelta
 from django.db.models.query import QuerySet
 from django.db.models import Q
 from django.contrib import messages
@@ -105,15 +107,32 @@ class MovieFilterView(ListView):
             qs = Movie.objects.filter(quality__icontains=self.kwargs.get("filter_by"))
             return qs
         
-        
+_now = datetime.datetime.now()     
 class MovieSortView(ListView):
     model = Movie
     template_name = "films.html"
-    paginate_by = 5
+    paginate_by = 3
     
     def get_queryset(self):
         if self.kwargs.get("sort_by") == "new":
             qs = Movie.objects.all().order_by("-id")
+            return qs
+        if self.kwargs.get("sort_by") == "year":
+            qs = sorted(Movie.objects.filter(ratings__created_at__year=_now.year),key=lambda m: m.get_average_rating(), reverse=True)
+            return list(set(qs))
+        if self.kwargs.get("sort_by") == "day":
+            qs = sorted(Movie.objects.filter(ratings__created_at__day=_now.day),key=lambda m: m.get_average_rating(), reverse=True)
+            return list(set(qs))
+        if self.kwargs.get("sort_by") == "week":
+            last_week = _now - timedelta(days=7)
+            qs = sorted(Movie.objects.filter(ratings__created_at__range=[last_week, _now]),key=lambda m: m.get_average_rating(), reverse=True)
+            return list(set(qs))
+        if self.kwargs.get("sort_by") == "month":
+            last_month = _now - timedelta(days=30)
+            qs = sorted(Movie.objects.filter(ratings__created_at__range=[last_month, _now]),key=lambda m: m.get_average_rating(), reverse=True)
+            return list(set(qs))
+        if self.kwargs.get("sort_by") == "alltime":
+            qs = sorted(Movie.objects.all(),key=lambda m: m.get_average_rating(), reverse=True)
             return qs
         if self.kwargs.get("sort_by") == "kp_rating":
             qs = sorted(Movie.objects.all(),key=lambda m: m.kp_rating, reverse=True)

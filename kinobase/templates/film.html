@@ -218,7 +218,10 @@
 
                     <div class="tab-content">
                         <div class="tab-pane" id="online">
-                            <div id="videoplayer"></div>
+                            <div id="player"></div>
+                            <script>
+                            var player = new Playerjs({id:"player", file:"{{object.sd_file_url}}"});
+                            </script>
                         </div>
                         <div class="tab-pane" id="trailer">
                         </div>
