@@ -46,7 +46,7 @@
                             >{{movie.title}}</a
                         >
                         </div>
-                        <span class="rating">0</span
+                        <span class="rating">{{movie.get_average_rating}}</span
                         ><span class="year">{{movie.year}}, {{movie.quality}}</span>
                     </li>
                     {% empty %}

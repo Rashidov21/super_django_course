@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django_countries.fields import CountryField # type: ignore
 from django.contrib.auth.models import User
 # Create your models here.
@@ -49,13 +50,20 @@ class Movie(models.Model):
         return self.title
     
     def get_average_rating(self):
-        summ_of_ratings = sum([r.value for r in self.ratings.all()])
-        len_of_ratings = len([r.value for r in self.ratings.all()])
+        q = [r.value for r in self.ratings.all()]
+        summ_of_ratings = sum(q)
+        len_of_ratings = len(q)
         if summ_of_ratings > 0:
             rating = round(summ_of_ratings / len_of_ratings,1)
             return rating
         else:
             return 0
+    # def get_average_rating(self):
+    #     ratings = self.ratings.all()
+    #     if ratings.exists():
+    #         avg_rating = ratings.aggregate(Avg('value'))['value__avg']
+    #         return round(avg_rating, 1)
+    #     return 0
     
     def count_ratings(self):
         return len([r.value for r in self.ratings.all()])

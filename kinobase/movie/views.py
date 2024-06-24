@@ -5,7 +5,7 @@ from django.db.models.query import QuerySet
 from django.db.models import Q
 from django.contrib import messages
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import JsonResponse,HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 # Create your views here.
@@ -16,6 +16,12 @@ from users.forms import SetCommentForm
 class MovieListView(ListView):
     model = Movie
     template_name = "index.html"
+    
+    def get_queryset(self):
+        qs = Movie.objects.filter(drafts=False)
+        print(dir(Movie))
+        return qs
+    
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -28,6 +34,18 @@ class MovieDetailView(DetailView):
     model = Movie
     template_name = "film.html"
     
+    def get_queryset(self):
+        return (
+            Movie.objects
+            .select_related("category")  # Categorical ma'lumotlarni birgalikda olish
+            .prefetch_related("genres")  # Genre ma'lumotlarini oldindan yuklash
+            .filter(slug=self.kwargs.get("slug"), drafts=False)  # Filtrlashni to'g'ri qo'llash
+            )
+
+    # def get_object(self):
+    #     return get_object_or_404(self.get_queryset(), slug=self.kwargs.get('slug'))
+    
+    
     def get_context_data(self, **kwargs):
         form = SetCommentForm()
         if self.request.user.is_authenticated:
@@ -39,7 +57,7 @@ class MovieDetailView(DetailView):
             print("OK")
         context = super().get_context_data(**kwargs)
         context["form"] = form
-        context["comments"] = Comment.objects.filter(movie=self.object)
+        context["comments"] = Comment.objects.filter(movie=self.object).select_related("movie")
         return context
     
     def post(self, request, *args, **kwargs):
@@ -74,7 +92,7 @@ class MovieCategoryListView(ListView):
     def get_queryset(self):
         category_slug = self.kwargs.get("slug")
         category = Category.objects.get(slug=category_slug)
-        return Movie.objects.filter(category=category)
+        return Movie.objects.select_related("category").prefetch_related("genres").filter(category=category)
 
 
     def get_context_data(self, **kwargs):

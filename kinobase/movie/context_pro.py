@@ -18,10 +18,13 @@ def get_movie_year():
 
 
 def get_context(request):
-    context = {
-        "genres":Genre.objects.all(),
-        "movie_countries":get_movie_countries(),
-        "movie_years":get_movie_year(),
-        "qualities":["BDRip","HDRip","TS"]
-    }
-    return context
+    if "category" in request.path:
+        context = {
+            "genres":Genre.objects.all(),
+            "movie_countries":get_movie_countries(),
+            "movie_years":get_movie_year(),
+            "qualities":["BDRip","HDRip","TS"]
+            }
+        return context
+    else:
+        return {}

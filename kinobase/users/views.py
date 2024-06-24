@@ -10,7 +10,7 @@ from django.contrib import messages
 
 from django.views.generic import View
 
-from movie.models import Movie
+from movie.models import Movie,Comment
 from .models import Profile,Rating
 from .forms import CustomLoginForm
 # Create your views here.
@@ -156,6 +156,16 @@ class ProfileRatingListView(ListView):
         qs = Rating.objects.filter(user=self.request.user)
         return qs
     
+    
+class CommentListView(ListView):
+    model = Comment
+    template_name = "comments.html"
+    
+    
+    def get_queryset(self):
+        qs = Comment.objects.filter(author__icontains=self.request.user.first_name)
+        return qs
+    
 
     
 
@@ -177,4 +187,13 @@ class DeleteRatingView(View):
         r = Rating.objects.get(id=rating_id)
         r.delete()
         messages.success(request,"Rating deletet !")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    
+    
+class DeleteCommentView(View):
+    
+    def get(self,request, comment_id):
+        c = Comment.objects.get(id=comment_id)
+        c.delete()
+        messages.success(request,"Comment deletet !")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

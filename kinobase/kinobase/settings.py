@@ -29,7 +29,11 @@ DEBUG = True
 # ALLOWED_HOSTS = [NGROK_HOST,'localhost']
 ALLOWED_HOSTS = ["*"]
 
-
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "django_countries",
     'movie',
-    'users'
+    'users',
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'kinobase.urls'
