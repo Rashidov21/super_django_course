@@ -50,7 +50,7 @@ class Movie(models.Model):
         return self.title
     
     def get_average_rating(self):
-
+       
         q = [r.value for r in self.ratings.all()]
         summ_of_ratings = sum(q)
         len_of_ratings = len(q)

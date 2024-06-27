@@ -1,4 +1,8 @@
+from django.db.models import Avg,Max,Min
+
 from .models import Category,Genre,Movie
+
+
 
 def get_movie_countries():
     countr_list = []
@@ -18,6 +22,15 @@ def get_movie_year():
 
 
 def get_context(request):
+    max_val = Movie.objects.last().ratings.aggregate(Max("value"))['value__max']
+    min_val = Movie.objects.last().ratings.aggregate(Min("value"))['value__min']
+    avg_val = Movie.objects.last().ratings.aggregate(Avg("value"))['value__avg']
+    print(max_val)
+    print(min_val)
+    print(avg_val)
+    
+    
+    
     if "category" in request.path:
         context = {
             "genres":Genre.objects.all(),
