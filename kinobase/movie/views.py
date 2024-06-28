@@ -2,14 +2,14 @@ from typing import Any
 import datetime
 from datetime import timedelta
 from django.db.models.query import QuerySet
-from django.db.models import Q
+from django.db.models import Q,Avg,Max,Min,Count
 from django.contrib import messages
 from django.urls import reverse
 from django.shortcuts import render,get_object_or_404
 from django.http import JsonResponse,HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 # Create your views here.
-from .models import Category,Movie,Genre,Comment
+from .models import Category,Movie,Genre,Comment,Author
 from users.forms import SetCommentForm
 
 
@@ -17,9 +17,33 @@ class MovieListView(ListView):
     model = Movie
     template_name = "index.html"
     
+    
+    # Max
+    
     def get_queryset(self):
         qs = Movie.objects.filter(drafts=False)
-        print(dir(Movie))
+        # author  = Author.objects.annotate(movie_count=Count("role"))
+        # movies  = Movie.objects.annotate(max_author_count=Max("role"))
+        # for m in movies:
+        #     print(m.title, m.max_author_count)
+
+        # movies = Movie.objects.annotate(most_rating_movie=Count("ratings")).filter(most_rating_movie__gte=3)
+        # for m in movies:
+        #     print(m.title, m.most_rating_movie)
+        # movies = Movie.objects.aggregate(high=Max("ratings"), low=Min("ratings"),avg=Avg("ratings"))
+        # avg_movie_rating = Movie.objects.aggregate(avg=Avg("ratings"))
+        # movies = Movie.objects.filter(ratings__gte=int(avg_movie_rating.get("avg")))
+        # print(movies)
+        # print(Movie.objects.filter(drafts=False).aggregate(authors=Count("role")))
+        # for m in movies:
+        #     print(m.title, m.count_ratings())
+        # for i in author:  
+        #     print(i)
+        #     print(f"{i.name} - filmlar soni {i.max_movie_count}")
+        # print(Comment.objects.earliest("commented_time")) # vaqti boyicha oldinroq qoshilgan obyektlar
+        # print(Comment.objects.latest("commented_time"))# vaqti boyicha keyinroq qoshilgan obyektlar
+        # c = Category.objects.first()
+        # print(c.movies.filter(origin_title__icontains="Har").exists()) # True
         return qs
     
     
