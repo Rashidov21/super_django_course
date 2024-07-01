@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="image_src" content="" />
+    <meta name="author" content="Mukhammadjonov Javlon" />
+
+    <meta property="og:title" content="Avtoxizmatlar.uz" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Avtoxizmatlar.uz" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- All css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <title>Avtoxizmatlar.uz</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="nav__img">
+                    <a href="/">
+                        <img src="./assets/img/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="nav__item">
+                    <form class='nav__searchBox' action="#">
+                        <input type="text" id="myInput" class="nav__searchBox__input"
+                            placeholder='Qanday yordam bera olamiz ?' />
+                        <button type="submit" class="nav__searchBox__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">урьер на одну доставку</a>
+                        <a href="#">ужен курьер на машине</a>
+                        <a href="#">борка квартиры</a>
+                        <a href="#">делать маникюр с покрытием шеллак</a>
+                        <a href="#">аращивание ресниц</a>
+                        <a href="#">аращивание ногтей</a>
+                        <a href="#">очинить стиральную машину</a>
+                        <a href="#">тремонтировать телефон</a>
+                    </div>
+
+                    <ul class="nav__list">
+                        <li class="list__item">
+                            <a href="/">Ustaxonalar</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Xizmat ko’rsatish</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Men ustaman</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav__log">
+                    <div class="log__item">
+                        <p>Andijon</p>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <a class="log__item" href="login.html">Kirish</a>
+                </div>
+
+                <div class="menu" id="menu">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                    <span class="line-3"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="opacity"></div>
+        <section>
+            <div class="container">
+                <div class="category__list">
+                    <div class="category__left">
+                        <p id="title" class="title">
+                            Xizmat turlari
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </p>
+                        <ul id="list">
+                            <li>
+                                <a href="#">
+                                    <p>Razval</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Xadavoy</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Motor sozlash</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Moy almashtirish </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Shumka</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Elektronika</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Kuzov sozlash</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Razval</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Xadavoy</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Motor sozlash</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Moy almashtirish </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Shumka</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Elektronika</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Kuzov sozlash</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category__items">
+                        <h2>Shinomontaj </h2>
+                        <p class="des">Andijon shahri</p>
+                        <ul class="category__items__list">
+                            <div id="modalOpasitiy" onclick="closeModal()" class="modelOpasitiy"></div>
+                            <div id="modalContent" class="myModal">
+                                <p>
+                                    <i onclick="closeModal()" class="fa-solid fa-x"></i>
+                                </p>
+                                <div class="top">
+                                    <h5>avtoxizmatlar.uz</h5>
+                                    <h4>+998901234567</h4>
+                                    <b>Avtosoz</b>
+                                    <p>Xizmat ko’rsatuvchiga uni avtoxizmatlar.uz dan topganingizni ayting</p>
+                                </div>
+                                <div class="bottom">
+                                    <b>Qo’ng’iroq qilamizmi ?</b>
+                                    <ul>
+                                        <li>
+                                            <a href="tel:+998901234567">Ha</a>
+                                        </li>
+                                        <li>
+                                            <button onclick="closeModal()">Yo’q</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <li class="item">
+                                <div class="item__left">
+                                    <a href="category-detail.html">
+                                        <img src="./assets/img/category/face.png" alt="">
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-house"></i>
+                                            <p>2 ta joyda</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>00:00-00:00</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-credit-card"></i>
+                                            <p>Karta</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-money-bill"></i>
+                                            <p>Naqd pul</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item__right">
+                                    <div class="item__right__top">
+                                        <div class="reting">
+                                            <div class="titles">
+                                                <a href="category-detail.html">
+                                                    <h3>Avtosoz</h3>
+                                                </a>
+                                                <b><span><i class="fa-solid fa-star"></i></span>0 reyting </b>
+                                            </div>
+                                            <p>Andijon shahar, 222 yo’lida, proyezd</p>
+                                        </div>
+                                        <div class="categorys">
+                                            <ul class="list1">
+                                                <li>
+                                                    <a href="#">Moy almashtirish</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Motor sozlamalari</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Yana 12 ta xizmatlar</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list2">
+                                                <li><span></span>kelishilgan holda</li>
+                                                <li><span></span>kelishilgan holda</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item__right__bottom">
+                                        <a onclick="openModal()">
+                                            <i class="fa-solid fa-phone"></i>
+                                            Telefon
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Anijon shahar, Boburshox, 23a uy
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="item__left">
+                                    <a href="category-detail.html">
+                                        <img src="./assets/img/category/face.png" alt="">
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-house"></i>
+                                            <p>2 ta joyda</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>00:00-00:00</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-credit-card"></i>
+                                            <p>Karta</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-money-bill"></i>
+                                            <p>Naqd pul</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item__right">
+                                    <div class="item__right__top">
+                                        <div class="reting">
+                                            <div class="titles">
+                                                <a href="category-detail.html">
+                                                    <h3>Avtosoz</h3>
+                                                </a>
+                                                <b><span><i class="fa-solid fa-star"></i></span>0 reyting </b>
+                                            </div>
+                                            <p>Andijon shahar, 222 yo’lida, proyezd</p>
+                                        </div>
+                                        <div class="categorys">
+                                            <ul class="list1">
+                                                <li>
+                                                    <a href="#">Moy almashtirish</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Motor sozlamalari</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Yana 12 ta xizmatlar</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list2">
+                                                <li><span></span>kelishilgan holda</li>
+                                                <li><span></span>kelishilgan holda</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item__right__bottom">
+                                        <a onclick="openModal()">
+                                            <i class="fa-solid fa-phone"></i>
+                                            Telefon
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Anijon shahar, Boburshox, 23a uy
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="item__left">
+                                    <a href="category-detail.html">
+                                        <img src="./assets/img/category/face.png" alt="">
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-house"></i>
+                                            <p>2 ta joyda</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>00:00-00:00</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-credit-card"></i>
+                                            <p>Karta</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-money-bill"></i>
+                                            <p>Naqd pul</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item__right">
+                                    <div class="item__right__top">
+                                        <div class="reting">
+                                            <div class="titles">
+                                                <a href="category-detail.html">
+                                                    <h3>Avtosoz</h3>
+                                                </a>
+                                                <b><span><i class="fa-solid fa-star"></i></span>0 reyting </b>
+                                            </div>
+                                            <p>Andijon shahar, 222 yo’lida, proyezd</p>
+                                        </div>
+                                        <div class="categorys">
+                                            <ul class="list1">
+                                                <li>
+                                                    <a href="#">Moy almashtirish</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Motor sozlamalari</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Yana 12 ta xizmatlar</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list2">
+                                                <li><span></span>kelishilgan holda</li>
+                                                <li><span></span>kelishilgan holda</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item__right__bottom">
+                                        <a onclick="openModal()">
+                                            <i class="fa-solid fa-phone"></i>
+                                            Telefon
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Anijon shahar, Boburshox, 23a uy
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="item__left">
+                                    <a href="category-detail.html">
+                                        <img src="./assets/img/category/face.png" alt="">
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-house"></i>
+                                            <p>2 ta joyda</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>00:00-00:00</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-credit-card"></i>
+                                            <p>Karta</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-money-bill"></i>
+                                            <p>Naqd pul</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item__right">
+                                    <div class="item__right__top">
+                                        <div class="reting">
+                                            <div class="titles">
+                                                <a href="category-detail.html">
+                                                    <h3>Avtosoz</h3>
+                                                </a>
+                                                <b><span><i class="fa-solid fa-star"></i></span>0 reyting </b>
+                                            </div>
+                                            <p>Andijon shahar, 222 yo’lida, proyezd</p>
+                                        </div>
+                                        <div class="categorys">
+                                            <ul class="list1">
+                                                <li>
+                                                    <a href="#">Moy almashtirish</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Motor sozlamalari</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Yana 12 ta xizmatlar</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list2">
+                                                <li><span></span>kelishilgan holda</li>
+                                                <li><span></span>kelishilgan holda</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item__right__bottom">
+                                        <a onclick="openModal()">
+                                            <i class="fa-solid fa-phone"></i>
+                                            Telefon
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Anijon shahar, Boburshox, 23a uy
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="pagin">
+                            <li class="pagin__btn">
+                                <span>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                            </li>
+                            <li class="pagin__numbers"> 1</li>
+                            <li class="pagin__numbers paginActive">2</li>
+                            <li class="pagin__numbers">3</li>
+                            <li class="pagin__dots">...</li>
+                            <li class="pagin__numbers"> 10</li>
+                            <li class="pagin__btn">
+                                <span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category__right">
+                        <ul>
+                            <div>
+                                <img src="./assets/img/category/up.png" alt="">
+                                <b>Mijozlar sonini oshiring</b>
+                                <p>
+                                    Reklama berish orqali xizmatlaringizni mijozlarga birinchilardan bo’lib taklif
+                                    qilishingiz
+                                    mumkin. <span>Hozirda bu servis ishga tushmadi.</span>
+                                </p>
+                                <a href="/">Reklama yoqish</a>
+                            </div>
+                            <li class="revews">
+                                <div class="items">
+                                    <img src="./assets/img/home/register1.png" alt="">
+                                    <div>
+                                        <p>Abdurahmon Rashidov</p>
+                                        <ul>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="text">Aka yaxshi ish qiladikan, malades mashi ustalarni maslahat beraman!</p>
+                            </li>
+                            <li class="revews">
+                                <div class="items">
+                                    <img src="./assets/img/home/register1.png" alt="">
+                                    <div>
+                                        <p>Abdurahmon Rashidov</p>
+                                        <ul>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="text">Aka yaxshi ish qiladikan, malades mashi ustalarni maslahat beraman!</p>
+                            </li>
+                            <li class="revews">
+                                <div class="items">
+                                    <img src="./assets/img/home/register1.png" alt="">
+                                    <div>
+                                        <p>Abdurahmon Rashidov</p>
+                                        <ul>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="text">Aka yaxshi ish qiladikan, malades mashi ustalarni maslahat beraman!</p>
+                            </li>
+                            <li class="revews">
+                                <div class="items">
+                                    <img src="./assets/img/home/register1.png" alt="">
+                                    <div>
+                                        <p>Abdurahmon Rashidov</p>
+                                        <ul>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li class="star-act"><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="text">Aka yaxshi ish qiladikan, malades mashi ustalarni maslahat beraman!</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Up Start -->
+        <div id="scrollUp" class="scrollUp">
+            <span>&uarr;</span>
+        </div>
+        <!-- Scroll Up End -->
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <ul>
+                    <li>
+                        <a href="/">Xizmat ko’rsatish turkumlari</a>
+                    </li>
+                    <li>
+                        <a href="/">Xizmat ko’rsatuvchiga aylanish</a>
+                    </li>
+                    <li>
+                        <a href="/">Shaxsiy kabinet</a>
+                    </li>
+                    <li>
+                        <a href="/">Boshqa xizmatlar</a>
+                    </li>
+                    <li>
+                        <a href="/">Yordam</a>
+                    </li>
+                    <li>
+                        <a href="/">Portal haqida</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__bottom">
+                <div class="text">
+                    <p>avtoxizmatlar.uz - <a href="http://" target="_blank" rel="noopener noreferrer">Abdurahmon
+                            Rashidov</a> 2024 yil.</p>
+                    <p>Savol va takliflar yuzasidan: <a href="http://" target="_blank"
+                            rel="noopener noreferrer">abdurakhmonrashidov@yandex.ru</a></p>
+                </div>
+                <ul class="list">
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

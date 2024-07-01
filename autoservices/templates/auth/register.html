@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="opacity"></div>
+        <section class="login">
+            <div class="container">
+                <div class="login__items">
+                    <div class="login__items__title">
+                        <h3>Shaxsiy ma’lumotlar</h3>
+                        <p>Xizmat ko’rsatish turini va xizmatlaringiz haqida ma’lumotlarni to’ldiring, bu orqali
+                            mijozlar sizni tezroq va osonroq topa olishadi. Avvaldan profilingiz bormi ? U holda
+                            shunchaki <a href="{% url 'users:login' %}">kiring.</a></p>
+                    </div>
+                    <form class="login__items__form" action="#">
+                        <div>
+                            <span>Familya</span>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <span>Ism</span>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <span>Telefon</span>
+                            <input id="phoneNumberInput" onkeyup="formatPhoneNumber();" type="text" maxlength="12">
+                        </div>
+                        <div>
+                            <span>Адрес электронной почты</span>
+                            <input type="email">
+                        </div>
+                        <div>
+                            <span>Parol</span>
+                            <input type="text" id="password1" onkeyup="checkPasswordMatch();">
+                        </div>
+                        <div>
+                            <span>Parol takroran *</span>
+                            <input type="text" id="password2" onkeyup="checkPasswordMatch();">
+                            <div id="passwordMatch"></div>
+                        </div>
+                        <div class="check">
+                            <input type="checkbox" id="save">
+                            <label for="save">Shaxsiy ma’lumotlarimni e’lonlar oynasida joylanishiga va
+                                tarqatilishiga roziman</label>
+                        </div>
+                        <button type="submit">Ro’yhatdan o’tish</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Up Start -->
+        <div id="scrollUp" class="scrollUp">
+            <span>&uarr;</span>
+        </div>
+        <!-- Scroll Up End -->
+    </main>
+{% endblock content %}

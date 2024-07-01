@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="opacity"></div>
+        <!-- Intro Start -->
+        <section class="intro">
+            <div class="container">
+                <div class="intro__left">
+                    <h2>Mashinangiz uchun ustaxonani oson toping</h2>
+                    <a href="/">Ustaxonalar topish</a>
+                </div>
+            </div>
+        </section>
+        <!-- Intro End -->
+
+        <!-- About Start -->
+        <section class="about" id="about">
+            <div class="container">
+                <p class="title">avtoxizmatlar.uz - bu haydovchilar uchun xizmatlar topish xizmat ko’rsatuvchilar uchun
+                    esa oson mijoz topish mumkin bo’lgan portal</p>
+                <div class="item">
+                    <div class="item__left">
+                        <p>Mashinangizdagi muammolar va nosozliklarga qarab o’zingizga yaqin bo’lgan sifatli xizmat
+                            ko’rsatuvchi ustaxonani toping.</p>
+                    </div>
+                    <div class="item__right">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-car"></i>
+                                <p>Avtoustaxonalar ro’yhati</p>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-clock"></i>
+                                <p>Qisqa vaqt ichida</p>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                                <p>Mijozlar fikrlari orqali</p>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-gear"></i>
+                                <p>Ehtiyot qismlari do’konlari</p>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-stethoscope"></i>
+                                <p>Diagnostika markazlari</p>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-broom"></i>
+                                <p>Boshqa xizmatlar</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About End -->
+
+        <!-- Register Start -->
+        <section class="register" id="register">
+            <div class="container">
+                <div class="item">
+                    <p>Portaldan foydalanish uchun ro’yhatdan o’ting.</p>
+                    <ul class="list">
+                        <a href="/">
+                            <li>
+                                <p>Men haydovchiman</p>
+                            </li>
+                        </a>
+                        <a href="/">
+                            <li>
+                                <p>Men xizmat ko’rsatuvchiman</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Register End -->
+
+        <!-- Type Start -->
+        <section class="type" id="type">
+            <div class="container">
+                <div class="item">
+                    <p>Muammoni turini tanlang</p>
+                    <ul id="list1" class="list1">
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/moy.png" alt="">
+                                <p>Moy almashtirish</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/amart.png" alt="">
+                                <p>Amartizatsiya</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/kuzov.png" alt="">
+                                <p>Kuzov</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/elektr.png" alt="">
+                                <p>Elektronika</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/boshka.png" alt="">
+                                <p>Boshqa</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/yonilgi.png" alt="">
+                                <p>Yonilg’i</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/motor.png" alt="">
+                                <p>Motor</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/detaling.png" alt="">
+                                <p>Detailing</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/boyash.png" alt="">
+                                <p>Bo’yash</p>
+                            </button>
+                        </li>
+                        <li class="list1__item">
+                            <button onclick="toggleClass(this)">
+                                <img src="./assets/img/home/ximchistka.png" alt="">
+                                <p>Ximchistka</p>
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="list2">
+                        <ul class="subCategory">
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Kompyuter diagnostika</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Kalonka va ovoz</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Kalonka va ovoz</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <p>Signalizatsiya o’rnatish</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Moy almashtirish</p>
+                            </li>
+                        </a>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Amartizatsiya</p>
+                            </li>
+                        </a>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Kuzov</p>
+                            </li>
+                        </a>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Bo’yash</p>
+                            </li>
+                        </a>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Motor</p>
+                            </li>
+                        </a>
+                        <a class="a" href="category.html">
+                            <li>
+                                <p>Detailing</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Type End -->
+
+        <!-- Scroll Up Start -->
+        <div id="scrollUp" class="scrollUp">
+            <span>&uarr;</span>
+        </div>
+        <!-- Scroll Up End -->
+    </main>
+{% endblock content %}

@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="image_src" content="" />
+    <meta name="author" content="Mukhammadjonov Javlon" />
+
+    <meta property="og:title" content="Avtoxizmatlar.uz" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Avtoxizmatlar.uz" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- All css -->
+    <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <title>Avtoxizmatlar.uz</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="nav__img">
+                    <a class="nav__img" href="/">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="">
+                    </a>
+                </div>
+
+                <div class="nav__item">
+                    <form class='nav__searchBox' action="#">
+                        <input type="text" id="myInput" class="nav__searchBox__input"
+                            placeholder='Qanday yordam bera olamiz ?' />
+                        <button type="submit" class="nav__searchBox__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">урьер на одну доставку</a>
+                        <a href="#">ужен курьер на машине</a>
+                        <a href="#">борка квартиры</a>
+                        <a href="#">делать маникюр с покрытием шеллак</a>
+                        <a href="#">аращивание ресниц</a>
+                        <a href="#">аращивание ногтей</a>
+                        <a href="#">очинить стиральную машину</a>
+                        <a href="#">тремонтировать телефон</a>
+                    </div>
+
+                    <ul class="nav__list">
+                        <li class="list__item">
+                            <a href="/">Ustaxonalar</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Xizmat ko’rsatish</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Men ustaman</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav__log">
+                    <div class="log__item">
+                        <p>Andijon</p>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <a class="log__item" href="profil.html">Kirish</a>
+                </div>
+
+                <div class="menu" id="menu">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                    <span class="line-3"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+{% block content %}
+{% endblock content %}
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <ul>
+                <li>
+                    <a href="/">Xizmat ko’rsatish turkumlari</a>
+                </li>
+                <li>
+                    <a href="/">Xizmat ko’rsatuvchiga aylanish</a>
+                </li>
+                <li>
+                    <a href="/">Shaxsiy kabinet</a>
+                </li>
+                <li>
+                    <a href="/">Boshqa xizmatlar</a>
+                </li>
+                <li>
+                    <a href="/">Yordam</a>
+                </li>
+                <li>
+                    <a href="/">Portal haqida</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__bottom">
+            <div class="text">
+                <p>avtoxizmatlar.uz - <a href="http://" target="_blank" rel="noopener noreferrer">Abdurahmon
+                        Rashidov</a> 2024 yil.</p>
+                <p>Savol va takliflar yuzasidan: <a href="http://" target="_blank"
+                        rel="noopener noreferrer">abdurakhmonrashidov@yandex.ru</a></p>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'assets/js/index.js' %}"></script>
+</body>
+
+</html>

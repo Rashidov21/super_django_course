@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="image_src" content="" />
+    <meta name="author" content="Mukhammadjonov Javlon" />
+
+    <meta property="og:title" content="Avtoxizmatlar.uz" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Avtoxizmatlar.uz" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- All css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+    <title>Avtoxizmatlar.uz</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="nav__img">
+                    <a href="/">
+                        <img src="./assets/img/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="nav__item">
+                    <form class='nav__searchBox' action="#">
+                        <input type="text" id="myInput" class="nav__searchBox__input"
+                            placeholder='Qanday yordam bera olamiz ?' />
+                        <button type="submit" class="nav__searchBox__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">урьер на одну доставку</a>
+                        <a href="#">ужен курьер на машине</a>
+                        <a href="#">борка квартиры</a>
+                        <a href="#">делать маникюр с покрытием шеллак</a>
+                        <a href="#">аращивание ресниц</a>
+                        <a href="#">аращивание ногтей</a>
+                        <a href="#">очинить стиральную машину</a>
+                        <a href="#">тремонтировать телефон</a>
+                    </div>
+
+                    <ul class="nav__list">
+                        <li class="list__item">
+                            <a href="/">Ustaxonalar</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Xizmat ko’rsatish</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="/">Men ustaman</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav__log">
+                    <div class="log__item">
+                        <p>Andijon</p>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <a class="log__item logo" href="profil.html">
+                        <img src="./assets/img/home/register1.png" alt="">
+                    </a>
+                </div>
+
+                <div class="menu" id="menu">
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                    <span class="line-3"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="opacity"></div>
+        <section>
+            <div class="container">
+                <div class="category__list">
+                    <div class="category__left">
+                        <p id="title" class="title">
+                            Profil
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </p>
+                        <ul id="list">
+                            <li>
+                                <a href="#">
+                                    <p>Reklama (TEST)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Profil foto</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Manzil</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Shirkat haqida</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Mutaxasislik</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Gallereya</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category__items">
+                        <h2>Profil sozlamalari</h2>
+                        <p class="des">Profil e’lonlar oynasida</p>
+                        <form class="settings__form" action="#">
+                            <div class="titles__item">
+                                <h3>Shaxsiy ma’lumotlar</h3>
+                                <p>Xizmat ko’rsatish turini va xizmatlaringiz haqida ma’lumotlarni to’ldiring, bu orqali
+                                    mijozlar sizni tezroq va osonroq topa olishadi.</p>
+                            </div>
+                            <div class="inputs">
+                                <span>Profil rasmi</span>
+                                <label class="file">
+                                    <input type="file">
+                                </label>
+                            </div>
+                            <div class="inputs">
+                                <span>Xizmat ko’rsatuvchi shirkat nomi</span>
+                                <input type="text" placeholder="Avtosoz">
+                            </div>
+                            <div class="inputs">
+                                <span>Manzil</span>
+                                <input type="text" placeholder="Boburshox ko’chasi 23a uy">
+                            </div>
+                            <div class="inputs">
+                                <span>Mo’ljal</span>
+                                <input type="text" placeholder="Davlat arxivi yoni">
+                            </div>
+                            <div class="inputs">
+                                <span>Telefon asosiy</span>
+                                <input type="text" id="phoneInput1" onkeyup="formatPhoneNumber1();" placeholder="998" maxlength="12">
+                            </div>
+                            <div class="inputs">
+                                <span>Telefon 2</span>
+                                <input type="text" id="phoneInput2" onkeyup="formatPhoneNumber2();" placeholder="998" maxlength="12">
+                            </div>
+
+                            <div class="inputs">
+                                <span>Xizmat ko’rsatuvchi tashkilot haqida yozing</span>
+                                <textarea cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="inputs">
+                                <span>Xizmat ko’rsatish turlarini tanlang</span>
+                                <select name="type" id="types" multiple>
+                                    <option value="1">Moy almashtirish</option>
+                                    <option value="2">Motor sozlash</option>
+                                    <option value="3">Xodovoy</option>
+                                    <option value="4">Razval</option>
+                                    <option value="5">Elektrik</option>
+                                    <option value="6">Ximchistka</option>
+                                    <option value="7">Shumoizolyatsiya</option>
+                                    <option value="8">Signalizatsiya</option>
+                                    <option value="9">Kraska</option>
+                                    <option value="10">Moyka</option>
+                                    <option value="11">Shinomantaj</option>
+                                    <option value="12">Radiator sozlash</option>
+                                    <option value="13">Kuzov sozlash</option>
+                                    <option value="14">Eshik sozlash</option>
+                                    <option value="15">Boshqa</option>
+                                    <option value="16">Yoqilg’i sozlash</option>
+                                    <option value="17">Propan sozlash</option>
+                                    <option value="18">Metan o’rnatish</option>
+                                    <option value="19">Texnik ko’rik</option>
+                                    <option value="20">Ehtiyot qismlari</option>
+                                    <option value="21">Diagnostika</option>
+                                    <option value="22">Tyuning</option>
+                                    <option value="23">Detailing</option>
+                                    <option value="24">Kompyuter diagnostika</option>
+                                </select>
+                            </div>
+                            <div class="dayTime">
+                                <span>Ish vaqtlari</span>
+                                <div>
+                                    <input type="time" name="time">
+                                    <input type="time" name="time">
+                                </div>
+                                <p>
+                                    <input type="checkbox" id="24">
+                                    <label for="24">24 soat</label>
+                                </p>
+                            </div>
+                            <ul class="settings__day">
+                                <span>Ish kunlarini tanlang</span>
+                                <li>
+                                    <input type="checkbox" id="monday">
+                                    <label for="monday">Dushanba</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="tuesday">
+                                    <label for="tuesday">Seshanba</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="wednesday">
+                                    <label for="wednesday">Chorshanba</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="thursday">
+                                    <label for="thursday">Payshanba</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="friday">
+                                    <label for="friday">Juma</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="saturday">
+                                    <label for="saturday">Shanba</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="sunday">
+                                    <label for="sunday">Yakshanba</label>
+                                </li>
+                            </ul>
+                            <button type="submit">Saqlash</button>
+                        </form>
+                    </div>
+
+                    <div class="category__right">
+                        <ul>
+                            <div>
+                                <img src="./assets/img/category/up.png" alt="">
+                                <b>Mijozlar sonini oshiring</b>
+                                <p>
+                                    Reklama berish orqali xizmatlaringizni mijozlarga birinchilardan bo’lib taklif
+                                    qilishingiz
+                                    mumkin. <span>Hozirda bu servis ishga tushmadi.</span>
+                                </p>
+                                <a href="/">Reklama yoqish</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Up Start -->
+        <div id="scrollUp" class="scrollUp">
+            <span>&uarr;</span>
+        </div>
+        <!-- Scroll Up End -->
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <ul>
+                    <li>
+                        <a href="/">Xizmat ko’rsatish turkumlari</a>
+                    </li>
+                    <li>
+                        <a href="/">Xizmat ko’rsatuvchiga aylanish</a>
+                    </li>
+                    <li>
+                        <a href="/">Shaxsiy kabinet</a>
+                    </li>
+                    <li>
+                        <a href="/">Boshqa xizmatlar</a>
+                    </li>
+                    <li>
+                        <a href="/">Yordam</a>
+                    </li>
+                    <li>
+                        <a href="/">Portal haqida</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__bottom">
+                <div class="text">
+                    <p>avtoxizmatlar.uz - <a href="http://" target="_blank" rel="noopener noreferrer">Abdurahmon
+                            Rashidov</a> 2024 yil.</p>
+                    <p>Savol va takliflar yuzasidan: <a href="http://" target="_blank"
+                            rel="noopener noreferrer">abdurakhmonrashidov@yandex.ru</a></p>
+                </div>
+                <ul class="list">
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+    <script>
+        new MultiSelectTag('types')  // id
+    </script>
+</body>
+
+</html>
