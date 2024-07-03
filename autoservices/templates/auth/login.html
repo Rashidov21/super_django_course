@@ -1,38 +1,37 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-    <main>
-        <div class="opacity"></div>
-        <section class="login">
-            <div class="container">
-                <div class="login__items">
-                    <div class="signup__items__title">
-                        <h2>Avtoxizmatlarga kirish</h2>
-                    </div>
-                    <form class="login__items__form" action="#">
-                        <div>
-                            <span>Telefon</span>
-                            <input id="phoneNumberInput" onkeyup="formatPhoneNumber();" type="text" maxlength="12">
-                        </div>
-                        <div>
-                            <span>Parol</span>
-                            <input type="text" id="password1" onkeyup="checkPasswordMatch();">
-                        </div>
-                        <p>Shaxsiy profil yo’qmi ? Unda <a href="{% url 'users:register' %}">ro’yhatdan o’ting.</a> Agar parol esdan chiqgan
-                            bo’lsa uni tiklash
-                            uchun mana <a href="password-resert.html">bu yerga</a> bosing.</p>
-                        <button type="submit">Kirish</button>
-                    </form>
-                </div>
+  <main>
+    <div class="opacity"></div>
+    <section class="login">
+      <div class="container">
+        <div class="login__items">
+          <div class="signup__items__title">
+            <h2>Avtoxizmatlarga kirish</h2>
+          </div>
+          <form class="login__items__form" action="#" method="post">
+            {% csrf_token %}
+            <div>
+              <span>Telefon</span>
+              <input id="phoneNumberInput" name="username" onkeyup="formatPhoneNumber();" type="text" maxlength="12" />
             </div>
-        </section>
-
-        <!-- Scroll Up Start -->
-        <div id="scrollUp" class="scrollUp">
-            <span>&uarr;</span>
+            <div>
+              <span>Parol</span>
+              <input type="password" id="password1" name="password" onkeyup="checkPasswordMatch();" />
+            </div>
+            <p>
+              Shaxsiy profil yo’qmi ? Unda <a href="{% url 'users:register' %}">ro’yhatdan o’ting.</a> Agar parol esdan chiqgan bo’lsa uni tiklash uchun mana <a href="#">bu yerga</a> bosing.
+            </p>
+            <button type="submit">Kirish</button>
+          </form>
         </div>
-        <!-- Scroll Up End -->
-    </main>
+      </div>
+    </section>
 
-    {% endblock content %}
+    <!-- Scroll Up Start -->
+    <div id="scrollUp" class="scrollUp">
+      <span>&uarr;</span>
+    </div>
+    <!-- Scroll Up End -->
+  </main>
+{% endblock %}
