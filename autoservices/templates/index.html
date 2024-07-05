@@ -85,66 +85,16 @@
                 <div class="item">
                     <p>Muammoni turini tanlang</p>
                     <ul id="list1" class="list1">
+                        {% for category in object_list %}
                         <li class="list1__item">
                             <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/moy.png" alt="">
-                                <p>Moy almashtirish</p>
+                                {%  if category.image %}
+                                    <img src="{{category.image.url}}" width="56" alt="{{category.name}}">
+                                {% endif %}
+                                <p>{{category.name}}</p>
                             </button>
                         </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/amart.png" alt="">
-                                <p>Amartizatsiya</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/kuzov.png" alt="">
-                                <p>Kuzov</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/elektr.png" alt="">
-                                <p>Elektronika</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/boshka.png" alt="">
-                                <p>Boshqa</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/yonilgi.png" alt="">
-                                <p>Yonilg’i</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/motor.png" alt="">
-                                <p>Motor</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/detaling.png" alt="">
-                                <p>Detailing</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/boyash.png" alt="">
-                                <p>Bo’yash</p>
-                            </button>
-                        </li>
-                        <li class="list1__item">
-                            <button onclick="toggleClass(this)">
-                                <img src="./assets/img/home/ximchistka.png" alt="">
-                                <p>Ximchistka</p>
-                            </button>
-                        </li>
+                        {% endfor %}
                     </ul>
                     <ul class="list2">
                         <ul class="subCategory">
