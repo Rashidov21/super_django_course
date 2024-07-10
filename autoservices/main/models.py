@@ -45,11 +45,11 @@ class Service(models.Model):
     address_1 = models.CharField(max_length=150, blank=True)
     address_2 = models.CharField(max_length=150, blank=True)
     avatar = models.ImageField(upload_to="service/images/", blank=True)
-    work_time = models.TimeField(blank=True)
-    working_days = models.CharField(max_length=20, choices=DAYS_OF_WEEK)
+    work_time = models.TimeField(blank=True,null=True)
+    working_days = models.CharField(max_length=20, choices=DAYS_OF_WEEK, blank=True)
     description = models.TextField(blank=True)
     reyting_value = models.IntegerField(default=0)
-    payment_method = models.CharField(max_length=10, choices=PAYMENT_CHOICES)
+    payment_method = models.CharField(max_length=10, choices=PAYMENT_CHOICES, blank=True)
     
     def __str__(self):
         return self.title

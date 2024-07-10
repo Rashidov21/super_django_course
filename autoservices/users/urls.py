@@ -12,5 +12,6 @@ urlpatterns = [
         template_name="auth/login.html"
     ), name="login"),
     
-    path("register/", views.CustomUserRegisterView.as_view(), name='register')
+    path("register/", views.CustomUserRegisterView.as_view(), name='register'),
+    path("register/master", views.CustomMasterRegisterView.as_view(), name='master_register'),
 ]
