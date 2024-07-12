@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
+from main.models import Service
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -20,3 +21,9 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('email', 'first_name', 'last_name')
 
     
+# class ServiceCreateForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = Service
+#         fields = "__all__"
+#         exclude = ('user',)

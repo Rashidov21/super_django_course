@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import login,authenticate
+from django.contrib.auth import login,authenticate,logout
 from django.urls import reverse_lazy
 from django.views.generic import View, CreateView
 from .models import CustomUser
@@ -41,3 +41,51 @@ class CustomMasterRegisterView(View):
             print("User logged in")
             return redirect("/")
         return redirect("/")
+
+
+def custom_logout(request):
+    logout(request)
+    return redirect("/")
+
+
+class ProfileView(View):
+    
+    
+    def get(self, request):
+        form = ServiceCreateForm()
+        if request.user.service:
+            print("OK")
+        services = ServiceType.objects.all()
+        return render(request, "auth/settings.html", {"services": services,"form":form})
+    
+    def post(self, request):
+        form = ServiceCreateForm(request.POST,user=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+        
+        return render(request, "auth/settings.html")
+    
+    
+    
+    
+
+
+#   image = request.FILES.get("image")
+#         title = request.POST.get("title")
+#         address = request.POST.get("address")
+#         orientation = request.POST.get("orientation")
+#         phone_1 = request.POST.get("phone_1")
+#         phone_2 = request.POST.get("phone_2")
+#         description = request.POST.get("description")
+#         service_types = request.POST.getlist("service_types")
+#         from_time = request.POST.get("from_time")
+#         to_time = request.POST.get("to_time")
+#         hours24 = request.POST.get("24hours")
+#         du = request.POST.get("du")
+#         se = request.POST.get("se")
+#         chor = request.POST.get("chor")
+#         pay = request.POST.get("pay")
+#         jum = request.POST.get("jum")
+#         shan = request.POST.get("shan")
+#         yak = request.POST.get("yak")

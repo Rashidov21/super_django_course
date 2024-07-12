@@ -1810,6 +1810,15 @@ img {
     font-weight: 600;
     color: #7B92A4;
 }
+.settings__form .inputs select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7B92A4;
+    resize: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #7B92A4;
+}
 
 .settings__form .inputs textarea::placeholder {
     font-size: 15px;

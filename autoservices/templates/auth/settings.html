@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <main>
+        <div class="opacity"></div>
+        <section>
+            <div class="container">
+                <div class="category__list">
+                    <div class="category__left">
+                        <p id="title" class="title">
+                            Profil
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </p>
+                        <ul id="list">
+                            <li>
+                                <a href="#">
+                                    <p>Reklama (TEST)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Profil foto</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Manzil</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Shirkat haqida</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Mutaxasislik</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Gallereya</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="category__items">
+                        <h2>Profil sozlamalari</h2>
+                        <p class="des">Profil e’lonlar oynasida</p>
+                        <form class="settings__form" action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="titles__item">
+                                <h3>Shaxsiy ma’lumotlar</h3>
+                                <p>Xizmat ko’rsatish turini va xizmatlaringiz haqida ma’lumotlarni to’ldiring, bu orqali
+                                    mijozlar sizni tezroq va osonroq topa olishadi.</p>
+                            </div>
+                            {% for field in  form %}
+                                    {% for error in field.errors %}
+                                    <li>{{ field.label }}: {{ error }}</li>
+                                {% endfor %}
+                                {% if field.name == 'working_days'%}
+                                <div class="">
+                                    <span>{{field.label}}</span>
+                                    {{field}}
+                                </div>
+                                {% else %}
+                                <div class="inputs">
+                                    <span>{{field.label}}</span>
+                                    {{field}}
+                                    <span>{{field.error}}</span>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                                <br>
+                                <br>
+                            <button type="submit">Saqlash</button>
+                        </form>
+                    </div>
+
+                    <div class="category__right">
+                        <ul>
+                            <div>
+                                <img src="./assets/img/category/up.png" alt="">
+                                <b>Mijozlar sonini oshiring</b>
+                                <p>
+                                    Reklama berish orqali xizmatlaringizni mijozlarga birinchilardan bo’lib taklif
+                                    qilishingiz
+                                    mumkin. <span>Hozirda bu servis ishga tushmadi.</span>
+                                </p>
+                                <a href="/">Reklama yoqish</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Up Start -->
+        <div id="scrollUp" class="scrollUp">
+            <span>&uarr;</span>
+        </div>
+        <!-- Scroll Up End -->
+    </main>
+
+    {% endblock %}
