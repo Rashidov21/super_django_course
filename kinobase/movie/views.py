@@ -150,7 +150,6 @@ class MovieFilterView(ListView):
             return qs
         
 _now = datetime.datetime.now()  
-   
 class MovieSortView(ListView):
     model = Movie
     template_name = "films.html"
