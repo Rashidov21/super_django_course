@@ -149,6 +149,7 @@ class MovieFilterView(ListView):
             qs = Movie.objects.filter(quality__icontains=self.kwargs.get("filter_by"))
             return qs
         
+        
 _now = datetime.datetime.now()  
 class MovieSortView(ListView):
     model = Movie
