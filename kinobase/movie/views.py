@@ -43,7 +43,7 @@ class MovieListView(ListView):
         # print(Comment.objects.latest("commented_time"))# vaqti boyicha keyinroq qoshilgan obyektlar
         # c = Category.objects.first()
         # print(c.movies.filter(origin_title__icontains="Har").exists()) 
-        # # True
+        # True
         return qs
     
     
