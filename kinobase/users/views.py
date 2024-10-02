@@ -173,7 +173,8 @@ class AddRatingView(LoginRequiredMixin,View):
             user=request.user)
         messages.success(request,"Rating added")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    
+
+   
 class DeleteRatingView(View):
     
     def get(self,request, rating_id):
