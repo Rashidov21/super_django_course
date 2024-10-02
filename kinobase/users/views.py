@@ -135,7 +135,6 @@ class AddToFavoritesView(LoginRequiredMixin,View):
             messages.info(request,"Movie added")
             return HttpResponseRedirect(f"/film/{movie.slug}")
         
-    
 
 class ProfileClearFavoritesView(LoginRequiredMixin,View):
     
@@ -154,7 +153,6 @@ class ProfileRatingListView(ListView):
         qs = Rating.objects.filter(user=self.request.user)
         return qs
     
-    
 class CommentListView(ListView):
     model = Comment
     template_name = "comments.html"
@@ -164,9 +162,6 @@ class CommentListView(ListView):
         qs = Comment.objects.filter(author__icontains=self.request.user.first_name)
         return qs
     
-
-    
-
 
 class AddRatingView(LoginRequiredMixin,View):
     
