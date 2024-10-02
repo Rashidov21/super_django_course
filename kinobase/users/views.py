@@ -39,7 +39,6 @@ class CustomRegisterView(View):
         password = request.POST.get("password")
         password_confirmation = request.POST.get("password_confirmation")
     
-        
         if password == password_confirmation:
             u = User.objects.create(
                 username=username,
