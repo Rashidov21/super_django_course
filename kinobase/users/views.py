@@ -103,8 +103,7 @@ class ProfileHistoryView(LoginRequiredMixin,View):
         context["object_list"] = self.request.user.profile.history.all()
         return render(request,"history.html", context=context)
     
-    
-    
+        
 class ProfileClearHistoryView(LoginRequiredMixin,View):
     
     def get(self,request):
