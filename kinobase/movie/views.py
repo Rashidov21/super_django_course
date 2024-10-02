@@ -19,7 +19,6 @@ class MovieListView(ListView):
     
     
     # Max
-    
     def get_queryset(self):
         qs = Movie.objects.filter(drafts=False)
         # author  = Author.objects.annotate(movie_count=Count("role"))
@@ -43,7 +42,8 @@ class MovieListView(ListView):
         # print(Comment.objects.earliest("commented_time")) # vaqti boyicha oldinroq qoshilgan obyektlar
         # print(Comment.objects.latest("commented_time"))# vaqti boyicha keyinroq qoshilgan obyektlar
         # c = Category.objects.first()
-        # print(c.movies.filter(origin_title__icontains="Har").exists()) # True
+        # print(c.movies.filter(origin_title__icontains="Har").exists()) 
+        # # True
         return qs
     
     
