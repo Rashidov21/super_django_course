@@ -200,3 +200,7 @@ def search(request):
 def comment_delete(request, comment_id):
     Comment.objects.get(id=comment_id).delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+
+
