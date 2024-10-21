@@ -188,6 +188,7 @@ class MovieSortView(ListView):
 
 
 def search(request):
+    
     query = request.GET.get("data")
     
     object_list = Movie.objects.filter(
