@@ -1,13 +1,204 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
-{% block title %}
-<title>Home page</title>
-{% endblock title %}
-    <main>
-        <section>
-            <div class="container">
-                <h1>Hello world status = {{status}}</h1>
+    <section class="form-discuss mt-5">
+        <div class="container">
+            <div class="row">
+
+
+
+                <!-- start col -->
+                <div class="col-lg-4 col-md-12 col-sm-12 py-3">
+                    <!-- forms-part -->
+
+
+
+                    <div class="form cards">
+
+
+                        <h4>Ichingizdagi gaplar</h4>
+                        <p>Yozing , hamfikrlar topliladi!</p>
+
+
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="title" class="form-label" id="label">Fikr nomi</label>
+                                <input type="text" name="title" class="form-control" placeholder="Nima gap ?" id="title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label" id="label">Fikr turkumi</label>
+                                <select class="form-select" name="category" aria-label="Default select example" required>
+                                    <option selected>Turkumni tanlang</option>
+                                    {% for cat in categories %}
+                                        <option value="{{cat.id}}">{{cat.name}}</option>
+                                    {% endfor %}
+
+                                  </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="desp" class="form-label">To'liq yozing</label>
+                                <textarea name="content" id="" rows="5" class="form-control"
+                                    placeholder="Fikr to'liq" id="desp"></textarea>
+                            </div>
+
+                            {% comment %} <div class="card-in-card">
+                                <div class="mb-3">
+                                    <label for="Name" class="form-label">Name*</label>
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Email" class="form-label">Email*</label>
+                                    <input type="text" class="form-control" placeholder="Your email adress" id="name">
+                                </div>
+                            </div> {% endcomment %}
+
+                            <button type="submit" class="btn btn-primary my-3">Fikr bildirish</button>
+
+                        </form>
+
+                    </div>
+                    <!-- end forms-part -->
+                </div>
+                <!-- end col -->
+
+
+
+
+                <!-- start col -->
+                <div class="col-lg-8 col-md-12 col-sm-12 py-3">
+                    <!-- start  discuss-part -->
+                    <div class="discuss cards p-0">
+
+                        <!-- start dropdown  -->
+
+                        <div class="sorter d-flex py-3 flex-wrap">
+
+                            <div class="d-flex gap-3">
+                                <ul class="filtering mx-3" style="list-style: none;">
+                                    <li class="nav-item dropdown">
+                                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="fas fa-list"></i>
+                                            Most discussed
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="#">Most votes</a></li>
+                                            <li><a class="dropdown-item" href="#">Recent</a></li>
+                                            <li><a class="dropdown-item" href="#">Trending</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+
+
+
+                                <ul class="filtering" style="list-style: none;">
+                                    <li class="nav-item dropdown">
+                                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            All Statuses
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="#">Done</a></li>
+                                            <li><a class="dropdown-item" href="#">Not set</a></li>
+                                            <li><a class="dropdown-item" href="#">Not done</a></li>
+                                            <hr>
+                                            <li><a class="dropdown-item" href="#">Need your opinion</a></li>
+                                            <li><a class="dropdown-item" href="#">Planned</a></li>
+                                            <li><a class="dropdown-item" href="#">In progress</a></li>
+                                            <li><a class="dropdown-item" href="#">Done</a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <ul class="filtering last mx-3" style="list-style: none; float: right;">
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-filter"></i> All
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Voted for</a></li>
+                                        <li><a class="dropdown-item" href="#">My ideas</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <!--  end dropdown -->
+                        <hr class="m-0">
+
+                        <!-- start lists -->
+
+                        <div class="lists w-100">
+
+
+                            {% for post in posts %}
+                            <div class="list d-flex">
+
+                                <div class="vote-btn d-flex flex-column m-0 p-3 btn">
+                                    <i class="fas fa-caret-up" role="button"></i>
+                                    <h3 class="counter">0</h3>
+                                </div>
+
+                                <div class="content">
+                                    <a href="./detail.html" class="link">
+                                    <div class="desp-body p-3">
+                                        <a href="./detail.html" class="text-decoration-none"><h5 class="desp-title">{{post.title}}</h5></a>
+                                        <p class="desp">
+                                            {{post.content}}
+                                        </p>
+                                    </div>
+
+                                    <div class="user-profile p-3 d-flex gap-3">
+                                        <i class="fas fa-user"></i>
+                                        <p>Abdurakhman</p>
+
+                                        <p>
+                                            <i class="fas fa-calendar"></i> 
+                                            {{post.created_at|date:"Y-m-d - H:s"}}
+                                         </p>
+
+                                        <p><i class="far fa-comments"></i> 2 </p>
+                                    </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+
+                        <!-- end lists -->
+
+                    </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center my-5">
+                          <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+    </section>
 {% endblock content %}
+
+

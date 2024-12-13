@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.navbar-logo {
+    width: 40px;
+    height: auto;
+}
+.navbar{
+    background-color: white;
+    border: solid 1px lightgray;
+}
+.btn-signup {
+
+    border-radius: 10px;
+}
+.container-custom {
+    max-width: 1200px;
+}
+body{
+    background-color: #F9FAFB;
+}
+
+.cards{
+    tab-size: 4;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(46 64 82 / var(--tw-text-opacity));
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Inter var,sans-serif;
+    line-height: inherit;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    border-radius: .75rem;
+    border-width: 1px;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #FFFFFF;
+}
+
+
+form label{
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Inter var,sans-serif;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    margin-bottom: .25rem;
+    display: block;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color: rgb(55 65 81/var(--tw-text-opacity));
+}
+
+
+.cards p{
+    font-size: .875rem;
+    color: rgb(82 82 82 / var(--tw-text-opacity));
+    line-height: 1.25rem;
+}
+
+#file-upload {
+    display: none; 
+}
+
+.custom-file-upload .btn {
+    cursor: pointer; 
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.custom-file-upload .btn:hover {
+    background-color: #0056b3; 
+}
+
+
+.card-in-card{
+    background-color: #F9FAFB;
+    border-radius: .75rem;
+    padding: 1rem;
+
+}
+.list:hover{
+    background-color: aliceblue;
+}
+.sorter{
+    justify-content: space-between;
+}
+
+.vote-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    border-right: solid 1px #F0F0F0;
+    justify-content: center;
+}
+
+.filtering{
+    padding: 0;
+}
+
+.counter {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.list{
+    border-bottom: solid 1px #F0F0F0;
+
+}
+
+.desp-title , .post-title ,.comment-author{
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Inter var,sans-serif;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    text-decoration: inherit;
+    color: rgb(38 38 38 / var(--tw-text-opacity));
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-text-decoration-color,-webkit-backdrop-filter;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.comment-author{
+    color:rgb(38 38 38 / var(--tw-text-opacity)) ;
+}
+
+
+.desp , .post-description{
+    color: rgb(122 122 122 / var(--tw-text-opacity));
+
+
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Inter var,sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    margin: 0;
+    margin-top: .25rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    color: rgb(122 122 122/var(--tw-text-opacity));
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vote-detail{
+    width: 8%;
+    border: #F0F0F0 solid 1px;
+}
+
+
+.post{
+    display: flex;
+}
+
+
+.form-check-label, .attachment{
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Inter var,sans-serif;
+    font-size: .75rem;
+    line-height: 1rem;
+    color: rgb(122 122 122/var(--tw-text-opacity));
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    color: rgb(122 122 122 / var(--tw-text-opacity));
+}
+
+#road-lists::-webkit-scrollbar{
+    display: none;
+}
+
+#road-lists{
+    overflow: auto;
+    height: 60vh;
+}
