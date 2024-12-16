@@ -1,0 +1,89 @@
+{% load countries %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <title>Players</title>
+</head>
+<body>
+    <style>
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .country{
+            border: solid 1px orange;
+            padding: 5px 7px;
+        }
+    </style>
+    <main style="padding: 50px;">
+        <section>
+            <h3>
+                <a href="{% url 'main:add' %}">Add player</a>
+            </h3>
+        </section>
+        <section class="filters">
+            <h3>Clubs</h3>
+            <table border="1">
+                <tr>
+                    {% for club in clubs %}
+                    <td>
+                        <a href="{% url 'main:club_players' club.id %}">{{club.name}}</a>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+            <h3>Positions</h3>
+            <table border="1">
+                <tr>
+                    <td>
+                        <a href="{% url 'main:player_postions' 'striker' %}">Striker</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'main:player_postions' 'middefender' %}">Middefender</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'main:player_postions' 'defender' %}">Defender</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'main:player_postions' 'goalkeeper' %}">Goalkeeper</a>
+                    </td>
+                </tr>
+            </table>
+            <h3>Countries</h3>
+            <div class="row">
+                {% get_countries as countries %}
+                {% for country in countries %}
+                <div class="col">
+                    <div class="country">
+                        <a href="{% url 'main:player_country' country.code %}">{{country.name}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="player-list">
+            <h3>Players</h3>
+            <ul>
+                {% for player in players %}
+                <li>
+                    <img src="" alt="">
+                    <h4>{{player.name}}</h4>
+                    <p>
+                        Club : <a href="">{{player.club}}</a> <br>
+                        Nationality : <a href="">{{player.country.name}}</a><br>
+                        Weight : <span>{{player.weight}}kg</span><br>
+                        Height : <span>{{player.height}} sm</span><br>
+                        Position : <a href="">{{player.position}}</a>
+                    </p>
+                </li>
+                {% empty %}
+                <h3>Players not yet</h3>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

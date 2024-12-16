@@ -1,0 +1,62 @@
+{% load countries %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <title>Player add</title>
+</head>
+<body>
+    <main style="margin:50px;">
+        <section style="max-width: 500px;">
+            <div class="container flex ">
+                <h3>Add new Player</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <fieldset class="flex two">
+                        <label><input type="text" name="name" placeholder="Full name"></label>
+                        <label><input type="date" name="date" placeholder="Date of birth"></label>
+                      </fieldset>
+                    <p>
+                        <select name="country">
+                            <option selected>Select a country</option>
+                            {% get_countries as countries %}
+                            {% for country in countries %}
+                                <option value="{{ country.code }}">{{ country.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+                    <p>
+                        <select name="club">
+                            <option>Select a club</option>
+                            {% for club in clubs %}
+                                <option value="{{club.id}}">{{club.name}}</option>
+                            {% endfor %}
+                          </select>
+                    </p>
+                     <p>
+                        <select name="position">
+                            <option>Select a position</option>
+                            <option value="striker">Striker</option>
+                            <option value="defender">Defender</option>
+                            <option value="midfielder">Midfielder</option>
+                            <option value="goalkeeper">Goalkeeper</option>
+                          </select>
+                     </p>
+                      <p>
+                        <label><input type="text" name="height" placeholder="Height"></label>
+                      </p>
+                      <p>
+                        <label><input type="text" name="weight" placeholder="Weight"></label>
+                      </p>
+                      <p>
+                        <input type="submit" value="Add player">
+                      </p>
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
