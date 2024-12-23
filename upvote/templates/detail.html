@@ -6,6 +6,16 @@
 
     <section class="py-5  ">
         <div class="container">
+                 <!-- end navbar -->
+                 {% if messages %}
+                 <div class="alert alert-success my-5" id="notification" >
+                     <div class="messages">
+                         {% for message in messages %}
+                         <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+                         {% endfor %}
+                     </div>
+                 </div>
+                 {% endif %}
             <div class="row">
 
 
@@ -19,25 +29,26 @@
                     <div class="cards post my-3">
                         <!-- counter btn -->
                         <div class="vote-btn vote-detail d-flex flex-column m-0 p-3 btn" style="height: 50%;">
-                            <i class="fas fa-caret-up" role="button"></i>
-                            <h3 class="counter">0</h3>
+                            <a href="{% url 'main:add_votes' post.id %}" class="text-decoration-none">
+                                <i class="fas fa-caret-up" role="button"></i>
+                                <h3 class="counter">{{post.votes}}</h3>
+                            </a>
                         </div>
                         <!-- end counter -->
 
 
                         <!-- post body -->
 
-                        <div class="post-body p-3">
-                            <h2 class="post-title">Post Title</h2>
-                            <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quaestus
-                                quidem
+                        <div class="post-body p-2">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <p class="post-description">
+                                {{post.content}}
                             </p>
 
                             <div class="user-profile pt-5 d-flex gap-3">
                                 <i class="fas fa-user"></i>
                                 <p>Abdurakhman</p>
-                                <p>posted 1 day ago</p>
+                                <p>{{post.get_published_days}} </p>
                             </div>
 
                         </div>
@@ -53,53 +64,43 @@
 
                         <!-- start forms -->
                         <div class="card-in-card">
-                            <input type="text" class="form-control" placeholder="What do you think?">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                            <input type="text" name="comment" class="form-control" placeholder="What do you think?">
                             <div class="d-flex gap-1">
-                                <input type="text" class="form-control my-3" placeholder="Name">
-                                <input type="email" class="form-control my-3" placeholder="Email">
+                                <input type="text" name="name" class="form-control my-3" placeholder="Name" required>
+                                <input type="email" name="email" class="form-control my-3" placeholder="Email" required>
                             </div>
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">I agree with Privacy Policy and Terms
-                                and Conditions</label>
-
                             <div class="d-flex justify-content-between">
-                                <div class="custom-file-upload my-3">
-                                    <label for="file-upload" class="attachment fs-6" role="button">
-                                        <i class="fas fa-paperclip"></i>
-                                        Attach Images
-                                    </label>
-                                    <input id="file-upload" type="file" accept="image/*" multiple>
-                                </div>
-
                                 <button type="submit" class="btn btn-primary px-4">Submit</button>
                             </div>
+                        </form>
                         </div>
                         <!-- end forms -->
 
 
                         <!-- comment part -->
                         <div class="comment-part">
+                            {% for comment in post.comments.all %}
                             <div class="comment-box py-3">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="comment-author"><i class="fas fa-user"></i> Abdurahmon</span>
-                                    <span class="comment-time">in 3 days</span>
+                                    <a href="mailto:{{comment.email}}" class="comment-author">
+                                        <i class="fas fa-user"></i> 
+                                        {{comment.name}}
+                                    </a>
+                                
                                 </div>
-                                <div class="comment-text px-4 py-3">no yes</div>
-                                <a href="#" class="text-decoration-none fs-6 text-primary px-4"><i
-                                        class="fa-solid fa-reply"></i> Reply</a>
+                                <div class="comment-text px-4 py-3">
+                                    {{comment.comment}}
+                                </div>
                             </div>
-
+                            {% empty %}
+                            <div class="comment-text px-4 py-3">
+                                No comment yet !
+                            </div>
+                            {% endfor %}
                             <br>
-                            <!-- Reply -->
-                            <div class="comment-box reply px-4 p-3" style="border-left: solid 3px;background: #F9FAFB;">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="comment-author"><i class="fas fa-user"></i> Абдурахмон</span>
-                                    <span class="comment-time">in 3 days</span>
-                                </div>
-                                <div class="comment-text px-4 py-3">no yes</div>
-                                <a href="#" class="text-decoration-none fs-6 text-primary px-4"><i
-                                        class="fa-solid fa-reply"></i> Reply</a>
-                            </div>
+            
 
                             <!-- end comment -->
                         </div>

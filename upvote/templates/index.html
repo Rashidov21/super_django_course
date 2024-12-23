@@ -2,6 +2,16 @@
 {% block content %}
     <section class="form-discuss mt-5">
         <div class="container">
+                <!-- end navbar -->
+                {% if messages %}
+                <div class="alert alert-success my-5" id="notification" >
+                    <div class="messages">
+                        {% for message in messages %}
+                        <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
             <div class="row">
 
 
@@ -82,7 +92,11 @@
                                             Most discussed
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-dark">
-                                            <li><a class="dropdown-item" href="#">Most votes</a></li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'main:filter' 'by_votes' %}">
+                                                Most votes
+                                                </a>
+                                            </li>
                                             <li><a class="dropdown-item" href="#">Recent</a></li>
                                             <li><a class="dropdown-item" href="#">Trending</a></li>
                                         </ul>
@@ -139,18 +153,20 @@
                         <div class="lists w-100">
 
 
-                            {% for post in posts %}
+                            {% for post in page_obj %}
                             <div class="list d-flex">
 
                                 <div class="vote-btn d-flex flex-column m-0 p-3 btn">
+                                   <a href="{% url 'main:add_votes' post.id %}" class="text-decoration-none text-success">
                                     <i class="fas fa-caret-up" role="button"></i>
-                                    <h3 class="counter">0</h3>
+                                    <h3 class="counter">{{post.votes}}</h3>
+                                   </a>
                                 </div>
 
                                 <div class="content">
-                                    <a href="./detail.html" class="link">
+                                    <a href="{% url 'main:detail' post.id %}" class="link">
                                     <div class="desp-body p-3">
-                                        <a href="./detail.html" class="text-decoration-none"><h5 class="desp-title">{{post.title}}</h5></a>
+                                        <a href="{% url 'main:detail' post.id %}" class="text-decoration-none"><h5 class="desp-title">{{post.title}}</h5></a>
                                         <p class="desp">
                                             {{post.content}}
                                         </p>
@@ -182,15 +198,25 @@
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center my-5">
-                          <li class="page-item disabled">
-                            <a class="page-link">Previous</a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                          </li>
+                        {% if page_obj.has_previous %} 
+                            <li class="page-item">
+                                <a  href="?page={{ page_obj.previous_page_number }}" class="page-link">Previous</a>
+                            </li>
+                          {% endif %}
+                          {% for page in page_obj.paginator.page_range %}
+                            <li class="page-item">
+                                {% if page == page_obj.number %}
+                                    <a class="page-link bg-primary text-light" href="?page={{page}}">{{page}}</a>
+                                    {% else %}
+                                    <a class="page-link" href="?page={{page}}">{{page}}</a>
+                                {% endif %}  
+                            </li>
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                                </li>
+                          {% endif %}
                         </ul>
                       </nav>
 
