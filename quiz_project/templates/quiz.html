@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="icon" href="{% static 'img/favicon.svg' %}">
+
+</head>
+
+<body>
+  <!-- =================== HEADER =================== -->
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">
+          <img src="{% static 'img/logo.jpg' %}" alt="logo" /></a>
+        <a class="number" href="tel:++998902113123">+998 90 211 31 23</a>
+      </nav>
+    </div>
+  </header>
+  <!-- =================== MAIN =================== -->
+  <main>
+    <form class="container" action="/result/" method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="2gpFN3YwwVyn7mhJ0OYLBL0o92lZRd6sMYWCzSFD6q8XD8sDXNpw4BUJU3fUcnRL">
+      
+      <div class="quiz-container" style="display: block;">
+          <div class="quiz-box">
+              <div class="quiz-header">
+                  <div class="quiz-left">
+                      <div class="purple-line"></div>
+                      <h4># 1 / 5</h4>
+                  </div>
+                  <!-- <div class="quiz-right">
+                      <div class="timer">
+                          <p>15:00</p>
+                      </div>
+                  </div> -->
+              </div>
+              <div class="quiz-content">
+                  <p class="quiz-text">Lorem ipsum</p>
+              </div>
+              <div class="content-container">
+                  
+                  <div class="answer-card" data-value="this is text">
+                      <p>this is text</p>
+                  </div>
+                  
+                  <div class="answer-card" data-value="grecks write">
+                      <p>grecks write</p>
+                  </div>
+                  
+                  <div class="answer-card" data-value="i dont know">
+                      <p>i dont know</p>
+                  </div>
+                  
+              </div>
+              <input type="hidden" name="answer_1" value="">
+          </div>
+      </div>
+
+      
+      <div class="navigation-buttons">
+          <button type="submit" class="submit-btn" >Yuborish</button>
+      </div>
+  </form>
+  </main>
+  <script>
+    let chooseAnswer = document.querySelectorAll(".answer-item");
+    let rotate = document.querySelectorAll(".rotate")
+    chooseAnswer.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        item.classList.toggle("active_answer");
+      });
+    });
+    const startingMinutes = 15;
+    let time = startingMinutes * 60;
+    const countdown = document.querySelector(".countdown")
+    setInterval(updateCountdown, 1000);
+    function updateCountdown() {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      seconds = seconds < 15 ? '0' + seconds : seconds;
+      countdown.innerHTML = `${minutes}:${seconds}`;
+      time--;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.svg' %}">
+</head> 
+<body>
+    <div class="modal-block">
+        <div class="modal">
+            <button class="close-btn">
+                <img src="{% static 'img/close.svg' %}" alt="close-icon"></button>
+                <h3 class="modal-title">IT ga birinchi qadam 
+                    shu yerdan boshlanadi!</h3>
+                    <p class="modal-text">Test natijalari bo’yicha yordam berishimiz uchun bizga ma’lumotlaringizni qoldiring.</p>
+                <form class="post-form">
+                    <input type="text" placeholder="Ismingiz" required>
+                    <input type="number" placeholder="Yoshingiz" required>
+                    <input type="number" placeholder="Telefon" required>
+                    <button class="post-btn">Yuborish</button>
+                </form>
+            </div>
+        </div>
+        <div class="main">
+             <!-- =================== HEADER =================== -->
+             <header>
+                 <div class="container">
+                     <nav>
+                         <a class="logo" href="#">
+                            <img src="{% static 'img/logo.jpg' %}" alt="logo">
+                        </a>
+                         <a class="number" href="tel:++998902113123">+998 90 211 31 23</a>
+                        </nav>
+                    </div>
+                </header>
+            <!-- =================== MAIN =================== -->
+             <main>
+                 <section class="hero-section">
+                     <div class="container">
+                         <div class="hero">
+                             <div class="hero-content">
+                                 <h1 class="hero-title">
+                                     IT sohasida o’zingiz uchun qaysi kasb mos kelishini bilib oling
+                                 </h1>
+                                 <div class="button">
+                                     <a href="#" class="btn">Bilib olish</a>
+                                 </div>
+                             </div>
+                             <div>
+                                 <img class="hero-img" src="{% static 'img/hero-img.svg' %}" alt="hero-img">
+                             </div>
+                         </div>
+                     </div>
+                 </section>
+             </main>
+
+         </div>
+     </div>
+     <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
