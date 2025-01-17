@@ -1,0 +1,48 @@
+/* tablet */
+@media screen and (max-width: 992px) {
+    body{
+        background-color: green;
+    }
+    nav .navbar{
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        float: right;
+        margin-top: 10px;
+    }
+    nav .navbar li a{
+        text-decoration: none;
+        color: #292929;
+        font-weight: 700;
+        font-size: 1em;
+    }
+}
+/* small tablets */
+@media screen and (max-width: 768px) {
+    body{
+        background-color: yellowgreen;
+    }
+    nav .navbar{
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+/* smartphones */
+@media screen and (max-width: 540px) {
+    body{
+        background-color: red;
+    }
+}
+
+
+/* small smartphones */
+@media screen and (max-width: 350px) {
+    body{
+        background-color: orange;
+    }
+}
+
+
+

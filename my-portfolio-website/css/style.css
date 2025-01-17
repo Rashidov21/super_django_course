@@ -38,7 +38,12 @@ nav .navbar{
     float: right;
     margin-top: 10px;
 }
-nav .navbar li a{
+.mobile-menu{
+    display: none;
+    float: right;
+    margin-top: 10px;
+}
+nav .navbar li a, .mobile-menu a{
     text-decoration: none;
     color: #292929;
     font-weight: 900;
@@ -130,24 +135,4 @@ nav .navbar li a:hover{
     font-weight: 700px;
 }
 
-@media screen and (max-width: 992px) {
-    .row{
-        background-color: red;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* gap: 0 20px; */
-    }
-    .about h1{
-        font-size: 20px;
-    }
-    .content_img{
-        width: 100%;
-        background-image: url("../src/hero-img.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 16px;
-    }
-}
 
