@@ -60,4 +60,8 @@ class FilterView(View):
     
     def post(self, request):
         pass
-    
+
+
+
+def dynamic(request):
+    return render(request,"dynamic.html")

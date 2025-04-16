@@ -43,7 +43,15 @@ INSTALLED_APPS = [
     'players',
     'django_countries',
     "debug_toolbar",
+    "rest_framework",
+    "api"
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

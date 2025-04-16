@@ -25,6 +25,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("players.urls", namespace="players")),
+    path("api/", include("api.urls", namespace="api")),
     
     # DEBUGGING 
     path("__debug__/", include("debug_toolbar.urls")),

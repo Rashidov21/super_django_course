@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+
+  <main>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    {% for number in "12345" %}
+                        <li style="list-style: none;">
+                            <a href="#" class="button" onclick="getPlayer({{number}})">{{number}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+        <br>
+        <section>
+            <ul class="players">
+            </ul>
+        </section>
+  </main>
+    <script>
+        function getPlayer(id){
+            let url = `http://127.0.0.1:8000/api/detail/${id}/`
+            fetch(url, {
+                method:"GET"
+            })
+            .then(response => response.json())
+            .then(data => {
+                let ul = document.querySelector(".players")
+                let li = document.createElement("li")
+                li.innerHTML = `<h3>${data.name}<h3> 
+                <p>
+                <img src="${data.image}" width="200">
+                ${data.club}
+                ${data.country}
+                </p>`
+                ul.appendChild(li)
+            })
+        }
+    </script>
+</body>
+{% endblock %}
